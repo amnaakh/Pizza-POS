@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { RouterLink } from '@angular/router';
-import { CommonModule } from '@angular/common';  // Import CommonModule for NgFor
+import { CommonModule } from '@angular/common';  
 import { FeathericonsModule } from '../../icons/feathericons/feathericons.module';
 
 @Component({
   selector: 'app-stats:not(2)',
   standalone: true,
-  imports: [RouterLink, MatCardModule, CommonModule, FeathericonsModule],  // Add CommonModule here
+  imports: [RouterLink, MatCardModule, CommonModule, FeathericonsModule],  
   templateUrl: './stats.component.html',
   styleUrls: ['./stats.component.scss']
 })
@@ -62,6 +62,6 @@ export class StatsComponent {
   }
 
   showDeclareTips() {
-    // Your method logic
+   
   }
 }
