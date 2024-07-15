@@ -381,8 +381,12 @@ export const routes: Routes = [
             {path: 'connections', component: ConnectionsComponent},
             {path: 'privacy-policy', component: PrivacyPolicyComponent},
             {path: 'terms-conditions', component: TermsConditionsComponent}
+
         ]
-    },
+      },
+
+      {path: 'to-do-list', component: ToDoListComponent },
+
     {
         path: 'authentication',
         component: AuthenticationComponent,
