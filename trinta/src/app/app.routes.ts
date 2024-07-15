@@ -343,7 +343,7 @@ export const routes: Routes = [
             {path: 'file-uploader', component: FileUploaderComponent},
         ]
     },
-    
+
     {
         path: 'charts',
         component: ChartsComponent,
@@ -398,5 +398,6 @@ export const routes: Routes = [
     },
     // Here add new pages component
 
-    {path: '**', component: NotFoundComponent} // This line will remain down from the whole pages component list
+    {path: '**', component: NotFoundComponent}, // This line will remain down from the whole pages component list
+    { path: 'to-do-list', component: ToDoListComponent }
 ];
