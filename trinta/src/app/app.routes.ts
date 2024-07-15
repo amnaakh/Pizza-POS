@@ -397,7 +397,7 @@ export const routes: Routes = [
         ]
     },
     // Here add new pages component
+    { path: 'to-do-list', component: ToDoListComponent },
+    {path: '**', component: NotFoundComponent} // This line will remain down from the whole pages component list
 
-    {path: '**', component: NotFoundComponent}, // This line will remain down from the whole pages component list
-    { path: 'to-do-list', component: ToDoListComponent }
 ];
