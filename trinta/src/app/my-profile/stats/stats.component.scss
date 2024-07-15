@@ -10,12 +10,13 @@
                 height: 62px;
                 margin-bottom: 30px;
                 border-radius: 12.718px;
-                background-color: var(--primaryColor);
+                background-color: #f5c54c;
+                color: #90551b;
 
                 i-feather {
                     width: 32px;
                     height: 32px;
-                    stroke: var(--whiteColor);
+                    stroke: #fceabd;
                 }
             }
             span {
@@ -41,14 +42,14 @@
                             right: 0;
                             top: 50%;
                             font-size: 20px;
-                            color: #00b69b;
+                            color: #f5c54c;
                             margin-top: -0.8px;
                             position: absolute;
                             transform: translateY(-50%);
                         }
                         &.down {
                             i {
-                                color: var(--dangerColor);
+                                color: #f5c54c;
                             }
                         }
                     }
@@ -75,7 +76,7 @@
                 &.pm-stat-card {
                     .mat-mdc-card-content {
                         .icon {
-                            background-color: var(--infoColor);
+                            background-color: #f5c54c;
                         }
                     }
                 }
@@ -86,7 +87,7 @@
                 &.pm-stat-card {
                     .mat-mdc-card-content {
                         .icon {
-                            background-color: var(--dangerColor);
+                            background-color: #d18501;
                         }
                     }
                 }
@@ -97,7 +98,7 @@
                 &.pm-stat-card {
                     .mat-mdc-card-content {
                         .icon {
-                            background-color: var(--primaryColor);
+                            background-color: #d18501;
                         }
                     }
                 }
@@ -108,7 +109,7 @@
                 &.pm-stat-card {
                     .mat-mdc-card-content {
                         .icon {
-                            background-color: #00b69b;
+                            background-color: #90551b;
                         }
                     }
                 }
@@ -131,7 +132,7 @@
                     margin-bottom: 16px;
                 }
                 span {
-                    font-size: 13px;
+                    font-size: 20px;
                 }
                 h5 {
                     font-size: 16px;
@@ -163,7 +164,7 @@
                     margin-bottom: 20px;
                 }
                 span {
-                    font-size: 14px;
+                    font-size: 20px;
                 }
                 h5 {
                     font-size: 18px;
@@ -194,10 +195,10 @@
 .icon {
   background-color: rgb(233, 0, 0); /* Fond rouge */
   width: 100%; /* S'étend sur toute la largeur de la page */
-  border-radius: 15px; /* Coins arrondis */
+  border-radius: 30px; /* Coins arrondis */
   padding: 20px; /* Espacement intérieur */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre douce */
-  color: white; /* Couleur du texte en blanc */
+  color: rgb(0, 0, 0); /* Couleur du texte en blanc */
   text-align: center; /* Centrer le texte */
   box-sizing: border-box;
   /* Ajoutez ici vos styles spécifiques pour l'icône */
@@ -207,7 +208,7 @@
   font-weight: bold; /* Texte en gras */
   color: rgb(0, 0, 0); /* Couleur du texte en noir */
   text-align: center; /* Centrer le texte */
-  font-size: 25px; /* Taille de texte grande */
+  font-size: 30px; /* Taille de texte grande */
   font-family: poppins;
   display: inline-block; /* Assurez que l'élément est en ligne pour centrer correctement */
 }
@@ -230,15 +231,15 @@ button {
   max-width: 250px; /* Largeur maximale des boutons */
   padding: 10px 20px;
   border: none;
-  background-color: #e0e0e0; /* Couleur de fond des boutons */
+ /* Couleur de fond des boutons */
   color: rgb(231, 231, 231); /* Couleur du texte */
-  font-size: 16px;
+  font-size: 20px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
 button:hover {
-  background-color: #a8ccff; /* Changement de couleur au survol */
+  background-color: #fceabd; /* Changement de couleur au survol */
 }
 
 .icon {
