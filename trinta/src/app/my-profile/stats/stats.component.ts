@@ -1,13 +1,23 @@
 import { Component } from '@angular/core';
-import { MatCardModule } from '@angular/material/card';
+
 import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';  
+
+
+import { MatSelectModule } from '@angular/material/select';
+
+
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatCardModule } from '@angular/material/card';
+import { MatNativeDateModule } from '@angular/material/core';
 import { FeathericonsModule } from '../../icons/feathericons/feathericons.module';
 
 @Component({
   selector: 'app-stats:not(2)',
   standalone: true,
-  imports: [RouterLink, MatCardModule, CommonModule, FeathericonsModule],  
+  imports: [RouterLink, MatFormFieldModule,   MatInputModule, MatNativeDateModule,MatCardModule, CommonModule, FeathericonsModule,MatDatepickerModule, MatSelectModule],  
   templateUrl: './stats.component.html',
   styleUrls: ['./stats.component.scss']
 })
