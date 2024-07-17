@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 import { RouterLink } from '@angular/router';
-import { CommonModule } from '@angular/common';  
+import { CommonModule } from '@angular/common';
 
 
 import { MatSelectModule } from '@angular/material/select';
@@ -17,7 +17,7 @@ import { FeathericonsModule } from '../../icons/feathericons/feathericons.module
 @Component({
   selector: 'app-stats:not(2)',
   standalone: true,
-  imports: [RouterLink, MatFormFieldModule,   MatInputModule, MatNativeDateModule,MatCardModule, CommonModule, FeathericonsModule,MatDatepickerModule, MatSelectModule],  
+  imports: [RouterLink, MatFormFieldModule,   MatInputModule, MatNativeDateModule,MatCardModule, CommonModule, FeathericonsModule,MatDatepickerModule, MatSelectModule],
   templateUrl: './stats.component.html',
   styleUrls: ['./stats.component.scss']
 })
@@ -28,7 +28,7 @@ export class StatsComponent {
     { id: 3, username: 'Ciser C', firstName :'Ciser' , lastName:'C' ,Due : 70 },
     { id: 4, username: 'Sara P' , firstName :'Sara' , lastName:'P' ,Due : 92},
     { id: 5, username: 'Juthi M' , firstName :'Juthi' , lastName:'M' ,Due : 28},
-    
+
   ];
   selectedUserId: number | null = null;
   selectedUsername: string | null = null;
@@ -71,7 +71,19 @@ export class StatsComponent {
     }
   }
 
-  showDeclareTips() {
-   
+  openModel() {
+    const modelDiv=document.getElementById('myModal');
+    if (modelDiv!=null){
+      modelDiv!.style.display='block';
+    }
+
   }
+
+closeModel() {
+  const modelDiv=document.getElementById('myModal');
+  if (modelDiv!=null){
+    modelDiv!.style.display='none';
+  }
+
+}
 }
