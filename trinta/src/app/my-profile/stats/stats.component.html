@@ -51,7 +51,7 @@
                     <div class="icon d-flex align-items-center justify-content-center ml-auto mr-auto">
                         <i-feather name="user"></i-feather>
                     </div>
-                    <button type="button" class="btn btn-primary"  data-toggle="modal" data-target="#openticketsModal">
+                    <button type="button" class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#openticketsModal">
                       open tickets
                     </button>
                 </mat-card-content>
@@ -373,7 +373,7 @@
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Open Tcikets</h5>
+        <h5 class="modal-title" id="exampleModalLongTitle">Open Tickets</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -383,7 +383,9 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="closeModel()">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-primary">Done</button>
+        <button type="button" class="btn btn-primary">Settle all</button>
+        <button type="button" class="btn btn-primary">Transfer All</button>
       </div>
     </div>
   </div>
