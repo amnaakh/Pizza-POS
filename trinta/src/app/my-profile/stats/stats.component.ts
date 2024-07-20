@@ -1,12 +1,7 @@
-import { Component } from '@angular/core';
-
+import { Component, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { CommonModule } from '@angular/common';  
-
-
+import { CommonModule } from '@angular/common';
 import { MatSelectModule } from '@angular/material/select';
-
-
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -17,30 +12,45 @@ import { FeathericonsModule } from '../../icons/feathericons/feathericons.module
 @Component({
   selector: 'app-stats:not(2)',
   standalone: true,
-  imports: [RouterLink, MatFormFieldModule,   MatInputModule, MatNativeDateModule,MatCardModule, CommonModule, FeathericonsModule,MatDatepickerModule, MatSelectModule],  
+  imports: [RouterLink, MatFormFieldModule, MatInputModule, MatNativeDateModule, MatCardModule, CommonModule, FeathericonsModule, MatDatepickerModule, MatSelectModule],
   templateUrl: './stats.component.html',
   styleUrls: ['./stats.component.scss']
 })
-export class StatsComponent {
+export class StatsComponent implements OnInit {
   users = [
-    { id: 1, username: 'Adam K', firstName :'Adam' , lastName:'K' ,Due : 22 },
-    { id: 2, username: 'Manuel M' , firstName :'Manuel' , lastName:'M' ,Due : 67},
-    { id: 3, username: 'Ciser C', firstName :'Ciser' , lastName:'C' ,Due : 70 },
-    { id: 4, username: 'Sara P' , firstName :'Sara' , lastName:'P' ,Due : 92},
-    { id: 5, username: 'Juthi M' , firstName :'Juthi' , lastName:'M' ,Due : 28},
-    
+    { id: 1, username: 'Adam K', firstName: 'Adam', lastName: 'K', Due: 22 },
+    { id: 2, username: 'Manuel M', firstName: 'Manuel', lastName: 'M', Due: 67 },
+    { id: 3, username: 'Ciser C', firstName: 'Ciser', lastName: 'C', Due: 70 },
+    { id: 4, username: 'Sara P', firstName: 'Sara', lastName: 'P', Due: 92 },
+    { id: 5, username: 'Juthi M', firstName: 'Juthi', lastName: 'M', Due: 28 },
   ];
   selectedUserId: number | null = null;
   selectedUsername: string | null = null;
   selectedlastname: string | null = null;
   selectedfirstname: string | null = null;
   selectedDue: number | null = null;
+  selectedFromDate: string | null = null;
+  selectedToDate: string | null = null;
+  ReportTime: string | null = null;
 
   get totalDue(): number {
     return this.users.reduce((total, user) => total + user.Due, 0);
   }
 
   constructor() { }
+
+  ngOnInit(): void {
+    this.setReportTime();
+  }
+
+  setReportTime(): void {
+    const now = new Date();
+    const day = now.getDate();
+    const month = now.toLocaleString('fr-FR', { month: 'short' });
+    const year = now.getFullYear();
+    const time = now.toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit', hour12: true });
+    this.ReportTime = `${day} ${month} ${year}, ${time}`;
+  }
 
   onUserSelect(event: Event): void {
     const selectElement = event.target as HTMLSelectElement;
@@ -72,6 +82,32 @@ export class StatsComponent {
   }
 
   showDeclareTips() {
-   
+
   }
+  
+  onFromDateChange(event: Event): void {
+    const inputElement = event.target as HTMLInputElement;
+    this.selectedFromDate = inputElement.value;
+  }
+
+  onToDateChange(event: Event): void {
+    const inputElement = event.target as HTMLInputElement;
+    this.selectedToDate = inputElement.value;
+  }
+  printContent() {
+    const printWindow = window.open('', '', 'height=600,width=800');
+    const content = document.getElementById('printableContent')?.innerHTML || '';
+    
+    printWindow?.document.write('<html><head><title>Print</title>');
+    printWindow?.document.write('<style> /* Add any specific styles you need for printing */ </style>');
+    printWindow?.document.write('</head><body >');
+    printWindow?.document.write(content);
+    printWindow?.document.write('</body></html>');
+    printWindow?.document.close();
+    printWindow?.focus();
+    printWindow?.print();
+  }
+
+
+ 
 }
