@@ -109,5 +109,20 @@ export class StatsComponent implements OnInit {
   }
 
 
+  printContent1() {
+    const printWindow = window.open('', '', 'height=600,width=800');
+    const content = document.getElementById('printableContent1')?.innerHTML || '';
+    
+    printWindow?.document.write('<html><head><title>Print</title>');
+    printWindow?.document.write('<style> /* Add any specific styles you need for printing */ </style>');
+    printWindow?.document.write('</head><body >');
+    printWindow?.document.write(content);
+    printWindow?.document.write('</body></html>');
+    printWindow?.document.close();
+    printWindow?.focus();
+    printWindow?.print();
+  }
+
+
  
 }

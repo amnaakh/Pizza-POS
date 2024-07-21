@@ -104,7 +104,7 @@
     </div>
 
     <div class="col-xxxl-2 col-sm-6 col-md-4">
-        <button (click)="showDeclareTips()">
+        <button data-toggle="modal" data-target="#ll">
             <mat-card class="trinta-card pm-stat-card mb-25 bg-white border-none d-block text-center">
                 <mat-card-content>
                     <div class="icon d-flex align-items-center justify-content-center ml-auto mr-auto">
@@ -119,7 +119,7 @@
     </div>
 
     <div class="col-xxxl-2 col-sm-6 col-md-4">
-        <button  data-toggle="modal" data-target="#noAmnaId">
+        <button data-toggle="modal" data-target="#kk">
             <mat-card class="trinta-card pm-stat-card mb-25 bg-white border-none d-block text-center">
                 <mat-card-content>
                     <div class="icon d-flex align-items-center justify-content-center ml-auto mr-auto">
@@ -134,7 +134,7 @@
     </div>
 
     <div class="col-xxxl-2 col-sm-6 col-md-4">
-        <button>
+        <button data-toggle="modal" data-target="#server">
             <mat-card class="trinta-card pm-stat-card mb-25 bg-white border-none d-block text-center">
                 <mat-card-content>
                     <div class="icon d-flex align-items-center justify-content-center ml-auto mr-auto">
@@ -148,346 +148,739 @@
         </button>
     </div>
 
-    <div class="icon">
+    <!-- <div class="icon">
         <button class="exit-button">
             Exit
         </button>
-    </div>
+    </div> -->
 </div>
 
+
+
+<!-- modal -->
+    <div class="modal fade" id="ll" tabindex="-1" role="dialog" aria-labelledby="ll" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="ll">Declare Tips</h5>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-10 d-flex">
+                                <mat-card
+                                    class="trinta-card profile-intro-card mb-25 bg-white border-none d-block flex-grow-1">
+                                    <mat-card-header>
+
+                                    </mat-card-header>
+                                    <mat-card-content>
+                                        <div class="row">
+                                            <div class="col-12 d-flex">
+                                                <div>
+
+
+                                                    <table
+                                                        style="width: 250%; border: 1px solid #b0acac; border-collapse: collapse;">
+                                                        <thead>
+                                                            <tr>
+                                                                <th
+                                                                    style="border: 1px solid #b0acac; padding: 8px; width: 50%;">
+                                                                    <h6>Declared Time</h6>
+                                                                </th>
+                                                                <th
+                                                                    style="border: 1px solid #b0acac; padding: 8px;width: 50%;">
+                                                                    <h6>Amount</h6>
+                                                                </th>
+                                                                <th
+                                                                    style="border: 1px solid #b0acac; padding: 8px;width: 70%;">
+                                                                    <h6> </h6>
+                                                                </th>
+
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+
+
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </mat-card-content>
+                                </mat-card>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+
+                    <button type="button" class="btn btn-sm btn-primary me-2" id="payButton" data-toggle="modal"
+                        data-target="#history1">Tips details</button>
+                    <button type="button" class="btn btn-sm btn-primary me-2" id="payButton">Add</button>
+                    <button type="button" class="btn btn-sm btn-primary me-2" id="payButton">Done</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<!-- modal -->
+    <div class="modal fade" id="history1" tabindex="-1" role="dialog" aria-labelledby="noSaleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="noSaleModalLabel">Server Tips Report</h5>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+
+
+
+                        <div class="row mt-3" id="printableContent">
+                            <div class="col-12 bg-white p-3 text-center" style="width: 80%;">
+                                <h4>Demo Store</h4>
+                                <h5>Server Tips Report </h5>
+                                <hr>
+                                <h6>20 juil. 2024, 11:22 PM</h6>
+
+                                <h6>Server : Adam K </h6>
+                                <h6>Report Time: {{ReportTime}}</h6>
+                                <h6>Trans.Count : 0</h6>
+                                <h6>Cash Tips: $0.00 </h6>
+                                <h6>Charged Tips: $0.00</h6>
+                                <h6>Declared Tips: $0.00</h6>
+                                ------------------------------------------------------------
+
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        <h6>Token</h6>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <h6>Ticket</h6>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <h6>Charged</h6>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <h6>Cash</h6>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <h6>Tips</h6>
+                                    </div>
+
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        <h6>No</h6>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <h6>Total</h6>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <h6>Tips</h6>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <h6>Tips</h6>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <h6>Paid</h6>
+                                    </div>
+
+
+
+                                </div>
+                                ------------------------------------------------------------
+                                ------------------------------------------------------------
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        <h6></h6>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <h6>0.00</h6>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <h6>0.00</h6>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <h6>0.00</h6>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <h6>0.00</h6>
+                                    </div>
+
+                                </div>
+                                &nbsp;
+                                <div align="right">
+                                    <h6>Total Tips : $ 0.00</h6>
+                                    <h6>Declared Tips : $ 0.00</h6>
+                                    <h6>Paid Tips : $ 0.00</h6>
+                                    <h6>Tips Due : $ 0.00</h6>
+                                </div>
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-sm btn-primary me-2" id="historyButton"
+                                    (click)="printContent()">Print</button>
+                                <button type="button" class="btn btn-sm btn-secondary" data-bs-dismiss="modal"
+                                    id="cancelButton">Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        </div>
+
+
+
+       
+<!-- modal -->
+            <div class="modal fade" id="noSaleModal" tabindex="-1" role="dialog" aria-labelledby="noSaleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="noSaleModalLabel">Tips Management</h5>
+                        </div>
+                        <div class="modal-body">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-3 d-flex">
+                                        <mat-card
+                                            class="trinta-card profile-intro-card mb-25 bg-white border-none d-block flex-grow-1">
+                                            <mat-card-header>
+                                                <mat-card-title>
+                                                    <h5 class="mt-0 mb-0">Users</h5>
+                                                </mat-card-title>
+                                            </mat-card-header>
+                                            <mat-card-content>
+                                                <div class="user-select">
+
+                                                    <select id="userSelect" class="form-select" multiple
+                                                        (change)="onUserSelect($event)">
+                                                        <option value="">All</option>
+                                                        <option *ngFor="let user of users" [value]="user.id">{{
+                                                            user.username }}
+                                                        </option>
+                                                    </select>
+                                                </div>
+                                            </mat-card-content>
+                                        </mat-card>
+                                    </div>
+                                    <div class="col-md-9 d-flex">
+                                        <mat-card
+                                            class="trinta-card profile-intro-card mb-25 bg-white border-none d-block flex-grow-1">
+                                            <mat-card-header>
+                                                <mat-card-title>
+                                                    <h5 class="mt-0 mb-0">Users Details</h5>
+                                                </mat-card-title>
+                                            </mat-card-header>
+                                            <mat-card-content>
+                                                <div class="row">
+                                                    <div class="col-12 d-flex">
+                                                        <div>
+
+                                                            <p *ngIf="!selectedUserId">
+                                                                <strong>Showing details for all users</strong>
+                                                            </p>
+                                                            <table *ngIf="!selectedUserId"
+                                                                style="width: 155%; border: 1px solid #b0acac; border-collapse: collapse;">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th
+                                                                            style="border: 1px solid #b0acac; padding: 8px; width: 20%;">
+                                                                            <h6>User Id</h6>
+                                                                        </th>
+                                                                        <th
+                                                                            style="border: 1px solid #b0acac; padding: 8px;width: 20%;">
+                                                                            <h6>First Name</h6>
+                                                                        </th>
+                                                                        <th
+                                                                            style="border: 1px solid #b0acac; padding: 8px;width: 20%;">
+                                                                            <h6>Last Name</h6>
+                                                                        </th>
+                                                                        <th
+                                                                            style="border: 1px solid #b0acac; padding: 8px;width: 20%;">
+                                                                            <h6>Due</h6>
+                                                                        </th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr *ngFor="let user of users">
+                                                                        <td>{{ user.id }}</td>
+                                                                        <td>{{ user.firstName }}</td>
+                                                                        <td>{{ user.lastName }}</td>
+                                                                        <td>{{ user.Due }}</td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+
+                                                            <p *ngIf="selectedUserId">
+                                                                <strong>User ID:</strong> {{ selectedUserId }}
+                                                            </p>
+                                                            <p *ngIf="selectedUsername">
+                                                                <strong>Username:</strong> {{ selectedUsername }}
+                                                            </p>
+                                                            <p *ngIf="selectedUsername"> <strong> User Details
+                                                                    :</strong></p>
+                                                            <table *ngIf="selectedUserId"
+                                                                style="width: 150%; border: 1px solid #b0acac; border-collapse: collapse;">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th
+                                                                            style="border: 1px solid #b0acac; padding: 8px; width: 20%;">
+                                                                            <h6>User Id</h6>
+                                                                        </th>
+                                                                        <th
+                                                                            style="border: 1px solid #b0acac; padding: 8px;width: 20%;">
+                                                                            <h6>First Name</h6>
+                                                                        </th>
+                                                                        <th
+                                                                            style="border: 1px solid #b0acac; padding: 8px;width: 20%;">
+                                                                            <h6>Last Name</h6>
+                                                                        </th>
+                                                                        <th
+                                                                            style="border: 1px solid #b0acac; padding: 8px;width: 20%;">
+                                                                            <h6>Due</h6>
+                                                                        </th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td>{{ selectedUserId }}</td>
+                                                                        <td>{{ selectedfirstname }}</td>
+                                                                        <td>{{ selectedlastname }}</td>
+                                                                        <td>{{ selectedDue }}</td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                            <p *ngIf="selectedUserId">Due Amount :{{ selectedDue }}</p>
+
+                                                            <p *ngIf="!selectedUserId">Total Due Amount : {{ totalDue }}
+                                                            </p>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </mat-card-content>
+                                        </mat-card>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-sm btn-primary me-2" id="historyButton"
+                                data-toggle="modal" data-target="#history">History</button>
+                            <button type="button" class="btn btn-sm btn-primary me-2" id="payButton" data-toggle="modal"
+                            data-target="#history1">Details</button>
+                            <button type="button" class="btn btn-sm btn-primary me-2" id="payButton">Pay</button>
+                            <button type="button" class="btn btn-sm btn-secondary" data-bs-dismiss="modal"
+                                id="cancelButton">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+<!-- modal -->
+<div class="modal fade" id="history" tabindex="-1" role="dialog" aria-labelledby="noSaleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="noSaleModalLabel">Server Tips Report</h5>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <form>
+                                        <label for="userOptions">Users :</label>
+                                        <select id="userOptions" name="userOptions" class="form-control"
+                                            (change)="onUserSelect($event)">
+                                            <option *ngFor="let user of users" [value]="user.id">{{user.username}}
+                                            </option>
+                                        </select>
+                                    </form>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <form>
+                                        <label for="sessionOptions">Session :</label>
+                                        <select id="sessionOptions" name="sessionOptions" class="form-control">
+                                            <option value="All Sessions">All Sessions</option>
+                                            <option value="Current Session">Current Session</option>
+                                        </select>
+                                    </form>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <form>
+                                        <label for="date-picker-from">From :</label>
+                                        <input type="date" id="date-picker-from" name="date-picker-from"
+                                            class="form-control" (change)="onFromDateChange($event)">
+                                    </form>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <form>
+                                        <label for="date-picker-to">To :</label>
+                                        <input type="date" id="date-picker-to" name="date-picker-to"
+                                            class="form-control" (change)="onToDateChange($event)">
+                                    </form>
+                                </div>
+                            </div>
+
+                            <div class="row mt-3" id="printableContent">
+                                <div class="col-12 bg-white p-3 text-center" style="width: 80%;">
+                                    <h4>Demo Store</h4>
+                                    <h5>Server Tips Report </h5>
+                                    <hr>
+                                    <h6 *ngIf="selectedFromDate && selectedToDate">{{ selectedFromDate }} to {{
+                                        selectedToDate }}</h6>
+
+                                    <h6 *ngIf="selectedUsername">Server : {{ selectedUsername }}</h6>
+                                    <h6 *ngIf="ReportTime">Report Time: {{ ReportTime }}</h6>
+                                    <h6>Trans.Count : 0</h6>
+                                    <h6>Cash Tips: $0.00 </h6>
+                                    <h6>Charged Tips: $0.00</h6>
+                                    <h6>Declared Tips: $0.00</h6>
+                                    ------------------------------------------------------------
+
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <h6>Token</h6>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <h6>Ticket</h6>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <h6>Charged</h6>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <h6>Cash</h6>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <h6>Tips</h6>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <h6>No</h6>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <h6>Total</h6>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <h6>Tips</h6>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <h6>Tips</h6>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <h6>Paid</h6>
+                                        </div>
+
+
+
+                                    </div>
+                                    ------------------------------------------------------------
+                                    ------------------------------------------------------------
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <h6></h6>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <h6>0.00</h6>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <h6>0.00</h6>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <h6>0.00</h6>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <h6>0.00</h6>
+                                        </div>
+
+                                    </div>
+                                    &nbsp;
+                                    <div align="right">
+                                        <h6>Total Tips : $ 0.00</h6>
+                                        <h6>Declared Tips : $ 0.00</h6>
+                                        <h6>Paid Tips : $ 0.00</h6>
+                                        <h6>Tips Due : $ 0.00</h6>
+                                    </div>
+
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-sm btn-primary me-2" id="historyButton"
+                                        (click)="printContent()">Print</button>
+                                    <button type="button" class="btn btn-sm btn-secondary" data-bs-dismiss="modal"
+                                        id="cancelButton">Cancel</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
 
 
 <!-- Modal -->
 
-<div class="modal fade" id="noSaleModal" tabindex="-1" role="dialog" aria-labelledby="noSaleModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="noSaleModalLabel">Tips Management</h5>
-            </div>
-            <div class="modal-body">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-3 d-flex">
-                            <mat-card
-                                class="trinta-card profile-intro-card mb-25 bg-white border-none d-block flex-grow-1">
-                                <mat-card-header>
-                                    <mat-card-title>
-                                        <h5 class="mt-0 mb-0">Users</h5>
-                                    </mat-card-title>
-                                </mat-card-header>
-                                <mat-card-content>
-                                    <div class="user-select">
+<div class="modal fade" id="kk" tabindex="-1" role="dialog" aria-labelledby="kk" aria-hidden="true">
+                    <div class="modal-dialog modal-lg" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="kk">Select user</h5>
+                            </div>
+                            <div class="modal-body">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-md-10 d-flex">
+                                            <mat-card
+                                                class="trinta-card profile-intro-card mb-25 bg-white border-none d-block flex-grow-1">
+                                                <mat-card-header>
+                                                    <mat-card-title>
+                                                        <h5 class="mt-0 mb-0">Select User</h5>
+                                                    </mat-card-title>
+                                                </mat-card-header>
+                                                <mat-card-content>
+                                                    <div class="user-select">
 
-                                        <select id="userSelect" class="form-select" multiple
+                                                        <select id="userSelect" class="form-select" multiple
+                                                            (change)="onUserSelect($event)">
+
+                                                            <option *ngFor="let user of users" [value]="user.id">{{
+                                                                user.username }}
+                                                            </option>
+                                                        </select>
+                                                    </div>
+                                                </mat-card-content>
+                                            </mat-card>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+
+                                <button type="button" class="btn btn-sm btn-primary me-2" id="payButton">Ok</button>
+                                <button type="button" class="btn btn-sm btn-secondary" data-bs-dismiss="modal"
+                                    id="cancelButton">Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+<!-- modal -->                
+<div class="modal fade" id="server" tabindex="-1" role="dialog" aria-labelledby="server"
+                aria-hidden="true">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="server">Server Summary Report</h5>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-md-3" >
+                                    <form>
+                                        <label for="userOptions">Select User :</label>
+                                        <select id="userOptions" name="userOptions" class="form-control"
                                             (change)="onUserSelect($event)">
-                                            <option value="">All</option>
-                                            <option *ngFor="let user of users" [value]="user.id">{{ user.username }}
+                                            <option *ngFor="let user of users" [value]="user.id">{{user.username}}
                                             </option>
                                         </select>
-                                    </div>
-                                </mat-card-content>
-                            </mat-card>
-                        </div>
-                        <div class="col-md-9 d-flex">
-                            <mat-card
-                                class="trinta-card profile-intro-card mb-25 bg-white border-none d-block flex-grow-1">
-                                <mat-card-header>
-                                    <mat-card-title>
-                                        <h5 class="mt-0 mb-0">Users Details</h5>
-                                    </mat-card-title>
-                                </mat-card-header>
-                                <mat-card-content>
-                                    <div class="row">
-                                        <div class="col-12 d-flex">
-                                            <div>
+                                    </form>
+                                </div>
 
-                                                <p *ngIf="!selectedUserId">
-                                                    <strong>Showing details for all users</strong>
-                                                </p>
-                                                <table *ngIf="!selectedUserId"
-                                                    style="width: 155%; border: 1px solid #b0acac; border-collapse: collapse;">
-                                                    <thead>
-                                                        <tr>
-                                                            <th
-                                                                style="border: 1px solid #b0acac; padding: 8px; width: 20%;">
-                                                                <h6>User Id</h6>
-                                                            </th>
-                                                            <th
-                                                                style="border: 1px solid #b0acac; padding: 8px;width: 20%;">
-                                                                <h6>First Name</h6>
-                                                            </th>
-                                                            <th
-                                                                style="border: 1px solid #b0acac; padding: 8px;width: 20%;">
-                                                                <h6>Last Name</h6>
-                                                            </th>
-                                                            <th
-                                                                style="border: 1px solid #b0acac; padding: 8px;width: 20%;">
-                                                                <h6>Due</h6>
-                                                            </th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr *ngFor="let user of users">
-                                                            <td>{{ user.id }}</td>
-                                                            <td>{{ user.firstName }}</td>
-                                                            <td>{{ user.lastName }}</td>
-                                                            <td>{{ user.Due }}</td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-
-                                                <p *ngIf="selectedUserId">
-                                                    <strong>User ID:</strong> {{ selectedUserId }}
-                                                </p>
-                                                <p *ngIf="selectedUsername">
-                                                    <strong>Username:</strong> {{ selectedUsername }}
-                                                </p>
-                                                <p *ngIf="selectedUsername"> <strong> User Details :</strong></p>
-                                                <table *ngIf="selectedUserId"
-                                                    style="width: 150%; border: 1px solid #b0acac; border-collapse: collapse;">
-                                                    <thead>
-                                                        <tr>
-                                                            <th
-                                                                style="border: 1px solid #b0acac; padding: 8px; width: 20%;">
-                                                                <h6>User Id</h6>
-                                                            </th>
-                                                            <th
-                                                                style="border: 1px solid #b0acac; padding: 8px;width: 20%;">
-                                                                <h6>First Name</h6>
-                                                            </th>
-                                                            <th
-                                                                style="border: 1px solid #b0acac; padding: 8px;width: 20%;">
-                                                                <h6>Last Name</h6>
-                                                            </th>
-                                                            <th
-                                                                style="border: 1px solid #b0acac; padding: 8px;width: 20%;">
-                                                                <h6>Due</h6>
-                                                            </th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td>{{ selectedUserId }}</td>
-                                                            <td>{{ selectedfirstname }}</td>
-                                                            <td>{{ selectedlastname }}</td>
-                                                            <td>{{ selectedDue }}</td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                                <p *ngIf="selectedUserId">Due Amount :{{ selectedDue }}</p>
-
-                                                <p *ngIf="!selectedUserId">Total Due Amount : {{ totalDue }}</p>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </mat-card-content>
-                            </mat-card>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-sm btn-primary me-2" id="historyButton" data-toggle="modal"
-                    data-target="#history">History</button>
-                <button type="button" class="btn btn-sm btn-primary me-2" data-bs-dismiss="modal"
-                    id="detailsButton">Details</button>
-                <button type="button" class="btn btn-sm btn-primary me-2" id="payButton">Pay</button>
-                <button type="button" class="btn btn-sm btn-secondary" data-bs-dismiss="modal"
-                    id="cancelButton">Cancel</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
-<!-- Modal2 -->
-<div class="modal fade" id="history" tabindex="-1" role="dialog" aria-labelledby="noSaleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="noSaleModalLabel">Server Tips Report</h5>
-            </div>
-            <div class="modal-body">
-                <div class="row">
-                    <div class="col-md-3">
-                        <form>
-                            <label for="userOptions">Users :</label>
-                            <select id="userOptions" name="userOptions" class="form-control" (change)="onUserSelect($event)">
-                                <option *ngFor="let user of users" [value]="user.id">{{user.username}}</option>
-                            </select>
-                        </form>
-                    </div>
-
-                    <div class="col-md-3">
-                        <form>
-                            <label for="sessionOptions">Session :</label>
-                            <select id="sessionOptions" name="sessionOptions" class="form-control">
-                                <option value="All Sessions">All Sessions</option>
-                                <option value="Current Session">Current Session</option>
-                            </select>
-                        </form>
-                    </div>
-
-                    <div class="col-md-3">
-                        <form>
-                            <label for="date-picker-from">From :</label>
-                            <input type="date" id="date-picker-from" name="date-picker-from" class="form-control" (change)="onFromDateChange($event)">
-                        </form>
-                    </div>
-
-                    <div class="col-md-3">
-                        <form>
-                            <label for="date-picker-to">To :</label>
-                            <input type="date" id="date-picker-to" name="date-picker-to" class="form-control" (change)="onToDateChange($event)">
-                        </form>
-                    </div>
-                </div>
-
-                <div class="row mt-3" id="printableContent">
-                    <div class="col-12 bg-white p-3 text-center" style="width: 80%;">
-                        <h4>Demo Store</h4>
-                        <h5>Server Tips Report </h5>
-                        <hr>
-                            <h6 *ngIf="selectedFromDate && selectedToDate">{{ selectedFromDate }} to {{ selectedToDate }}</h6>
-                    
-                        <h6  *ngIf="selectedUsername">Server : {{ selectedUsername }}</h6>
-                        <h6 *ngIf="ReportTime">Report Time: {{ ReportTime }}</h6>
-                        <h6 >Trans.Count : 0</h6>
-                        <h6 >Cash Tips: $0.00 </h6>
-                        <h6 >Charged Tips: $0.00</h6>
-                        <h6 >Declared Tips: $0.00</h6>
-                        ------------------------------------------------------------
-
-                        <div class="row">
-                            <div class="col-md-2">
-                                <h6>Token</h6>
-                            </div>
-                            <div class="col-md-2">
-                                <h6>Ticket</h6>
-                            </div>
-                            <div class="col-md-2">
-                                <h6>Charged</h6>
-                            </div>
-                            <div class="col-md-2">
-                                <h6>Cash</h6>
-                            </div>
-                            <div class="col-md-2">
-                                <h6>Tips</h6>
-                            </div>
-        
-                         </div>
-
-                         <div class="row">
-                            <div class="col-md-2">
-                                <h6>No</h6>
-                            </div>
-                            <div class="col-md-2">
-                                <h6>Total</h6>
-                            </div>
-                            <div class="col-md-2">
-                                <h6>Tips</h6>
-                            </div>
-                            <div class="col-md-2">
-                                <h6>Tips</h6>
-                            </div>
-                            <div class="col-md-2">
-                                <h6>Paid</h6>
+                              
                             </div>
 
+                            <div class="row mt-3" id="printableContent1">
+                                <div class="col-12 bg-white p-3 " style="width: 80%;">
+                                    
+                                    <div class="text-center">
+                                        <h4>Demo Store</h4>
+                                    <h5>Server Summary Report </h5>
+                                    <hr>
+                                    <h6 *ngIf="selectedFromDate && selectedToDate">{{ selectedFromDate }} to {{
+                                        selectedToDate }}</h6>
 
+                                    <h6 >Staff : {{ selectedUsername }}</h6>
+                                    <h6 >From : 14-08-20 10:49:21 PM</h6>
+                                    <h6>To :  21-07-24 03:41:46 PM</h6>
+                                    &nbsp;
+                                    &nbsp;
+
+                                 <h6>Sales balance</h6>
+                                </div>
+                                 <hr>
+                                 
+                              
                                 
-                         </div>
-                         ------------------------------------------------------------
-                         ------------------------------------------------------------
-                         <div class="row">
-                            <div class="col-md-2">
-                                <h6></h6>
-                            </div>
-                            <div class="col-md-2">
-                                <h6>0.00</h6>
-                            </div>
-                            <div class="col-md-2">
-                                <h6>0.00</h6>
-                            </div>
-                            <div class="col-md-2">
-                                <h6>0.00</h6>
-                            </div>
-                            <div class="col-md-2">
-                                <h6>0.00</h6>
-                            </div>
-       
-                         </div>
-&nbsp;
-                         <div align="right">
-                            <h6>Total Tips : $ 0.00</h6>
-                            <h6>Declared Tips : $ 0.00</h6>
-                            <h6>Paid Tips : $ 0.00</h6>
-                            <h6>Tips Due : $ 0.00</h6>
-                        </div>
-            
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-sm btn-primary me-2" id="historyButton" (click)="printContent()">Print</button>
-                    <button type="button" class="btn btn-sm btn-secondary" data-bs-dismiss="modal" id="cancelButton">Cancel</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+                                    
+                                 <style>
+                                    .align-right {
+                                        text-align: right;
+                                    }
+                                    .align-left {
+                                        text-align: left;
+                                        padding-right: 20px; /* Adjust the padding as needed */
+                                    }
 
 
+                                    .align-left1 {
+                                        text-align: left;
+                                        padding-right: 93px; /* Adjust the padding as needed */
+                                    }
 
-
-
-<div class="modal fade" id="noAmnaId" tabindex="-1" role="dialog" aria-labelledby="noAmnaIdLabel"
-    aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="noAmnaIdLabel">Tips Management</h5>
-            </div>
-            <div class="modal-body">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-3 d-flex">
-                            <mat-card
-                                class="trinta-card profile-intro-card mb-25 bg-white border-none d-block flex-grow-1">
-                                <mat-card-header>
-                                    <mat-card-title>
-                                        <h5 class="mt-0 mb-0">Users</h5>
-                                    </mat-card-title>
-                                </mat-card-header>
-                                <mat-card-content>
-                                  
-                                </mat-card-content>
-                            </mat-card>
-                        </div>
-                        <div class="col-md-9 d-flex">
-                            <mat-card
-                                class="trinta-card profile-intro-card mb-25 bg-white border-none d-block flex-grow-1">
-                                <mat-card-header>
-                                    <mat-card-title>
-                                        <h5 class="mt-0 mb-0">Users Details</h5>
-                                    </mat-card-title>
-                                </mat-card-header>
-                                <mat-card-content>
-                                  
-                                </mat-card-content>
-                            </mat-card>
+                                    .align-left2 {
+                                        text-align: left;
+                                        padding-right: 83px; /* Adjust the padding as needed */
+                                    }
+                                </style>
+                                
+                                <div>
+                                    <table>
+                                        <tr>
+                                            <td class="align-left1"><h6>Gross Sales</h6></td>
+                                            <td class="align-right"><h6>0.00</h6></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="align-left1"><h6>-Discount</h6></td>
+                                            <td class="align-right"><h6>0.00</h6></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="align-left1"><h6>-Return</h6></td>
+                                            <td class="align-right"><h6>0.00</h6></td>
+                                        </tr>
+                                    </table>
+                                    <hr>
+                                    <table>
+                                        <tr>
+                                            <td class="align-left"><h6>=Net Sales</h6></td>
+                                            <td class="align-right"><h6>0.00</h6></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="align-left"><h6>+Service charge</h6></td>
+                                            <td class="align-right"><h6>0.00</h6></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="align-left"><h6>+Sales tax</h6></td>
+                                            <td class="align-right"><h6>0.00</h6></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="align-left"><h6>+Delivery charge</h6></td>
+                                            <td class="align-right"><h6>0.00</h6></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="align-left"><h6>+Gratuity</h6></td>
+                                            <td class="align-right"><h6>0.00</h6></td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2"><hr></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="align-left"><h6>=Total</h6></td>
+                                            <td class="align-right"><h6>0.00</h6></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="align-left"><h6>-Cash receipts</h6></td>
+                                            <td class="align-right"><h6>0.00</h6></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="align-left"><h6>-Credit cards</h6></td>
+                                            <td class="align-right"><h6>0.00</h6></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="align-left"><h6>-Debit cards</h6></td>
+                                            <td class="align-right"><h6>0.00</h6></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="align-left"><h6>-Customer payments</h6></td>
+                                            <td class="align-right"><h6>0.00</h6></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="align-left"><h6>-Custom payments</h6></td>
+                                            <td class="align-right"><h6>0.00</h6></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="align-left"><h6>-Gift cert.</h6></td>
+                                            <td class="align-right"><h6>0.00</h6></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="align-left"><h6>+Refund</h6></td>
+                                            <td class="align-right"><h6>0.00</h6></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="align-left"><h6>Rounding</h6></td>
+                                            <td class="align-right"><h6>0.00</h6></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="align-left"><h6>+Tolerance</h6></td>
+                                            <td class="align-right"><h6>0.00</h6></td>
+                                        </tr>
+                                    </table>
+                                    <hr>
+                                    <table>
+                                        <tr>
+                                            <td class="align-left2"><h6>=Recepit diff</h6></td>
+                                            <td class="align-right"><h6>0.00</h6></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="align-left2"><h6>Cash tips</h6></td>
+                                            <td class="align-right"><h6>0.00</h6></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="align-left2"><h6>Charged tips</h6></td>
+                                            <td class="align-right"><h6>0.00</h6></td>
+                                        </tr>
+  
+                                    </table>
+                                </div>
+                                
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-sm btn-primary me-2" id="historyButton"
+                                        (click)="printContent1()">Print</button>
+                                    <button type="button" class="btn btn-sm btn-primary me-2" id="historyButton"
+                                        >Details</button> 
+                                    <button type="button" class="btn btn-sm btn-primary me-2" id="historyButton"
+                                        >Done</button>       
+                                   
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="modal-footer">
-              
-            </div>
-        </div>
-    </div>
+                </div>
 </div>
-
-
- 
