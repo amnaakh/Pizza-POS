@@ -7,15 +7,15 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-profile-intro',
   standalone: true,
-  imports: [RouterLink, MatCardModule, MatButtonModule,CommonModule],
+  imports: [RouterLink, MatCardModule, MatButtonModule, CommonModule],
   templateUrl: './profile-intro.component.html',
   styleUrls: ['./profile-intro.component.scss']
 })
 export class ProfileIntroComponent implements OnInit {
   clockInTime: string | null = null;
   clockOutTime: string | null = null;
-  buttonText: string = 'Clock In'; 
-  status: string = 'Clocked out'; 
+  buttonText: string = 'Clock In';
+  status: string = 'Clocked out';
 
   ngOnInit(): void {
     this.loadTimes();
@@ -25,7 +25,7 @@ export class ProfileIntroComponent implements OnInit {
     this.clockInTime = localStorage.getItem('clockInTime');
     this.clockOutTime = localStorage.getItem('clockOutTime');
     if (this.clockInTime) {
-      this.buttonText = 'Clock Out'; 
+      this.buttonText = 'Clock Out';
       this.status = this.clockOutTime ? 'Clocked out' : 'Clocked in As Administrator';
     } else if (this.clockOutTime) {
       this.status = 'Clocked out';
@@ -56,16 +56,16 @@ export class ProfileIntroComponent implements OnInit {
 
   formatDateTime(date: Date): string {
     const day = String(date.getDate()).padStart(2, '0');
-    const month = String(date.getMonth() + 1).padStart(2, '0'); 
-    const year = String(date.getFullYear()).slice(-2); 
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const year = String(date.getFullYear()).slice(-2);
 
     let hours = date.getHours();
     const minutes = String(date.getMinutes()).padStart(2, '0');
     const seconds = String(date.getSeconds()).padStart(2, '0');
     const ampm = hours >= 12 ? 'PM' : 'AM';
-    
+
     hours = hours % 12;
-    hours = hours ? hours : 12; 
+    hours = hours ? hours : 12;
     const strHours = String(hours).padStart(2, '0');
 
     return `${day}-${month}-${year} ${strHours}:${minutes}:${seconds} ${ampm}`;
