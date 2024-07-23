@@ -402,6 +402,12 @@ export const routes: Routes = [
     },
     { path: 'to-do-list', component: ToDoListComponent },
     // Here add new pages component
+<<<<<<< HEAD
 
     {path: '**', component: NotFoundComponent}// This line will remain down from the whole pages component list
+=======
+    { path: 'to-do-list', component: ToDoListComponent },
+    {path: '**', component: NotFoundComponent} // This line will remain down from the whole pages component list
+
+>>>>>>> main
 ];
