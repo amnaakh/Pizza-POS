@@ -2,7 +2,7 @@
     &.to-do-list-card {
         .search-box {
             margin-bottom: 23px;
-            
+
             input {
                 height: 46px;
                 border-radius: 6px;
@@ -141,7 +141,7 @@
                         .mdc-checkbox {
                             padding: 0;
                             margin: 0;
-    
+
                             .mdc-checkbox__native-control {
                                 top: 0;
                                 left: 0;
@@ -177,7 +177,7 @@
         &.to-do-list-card {
             .search-box {
                 margin-bottom: 20px;
-                
+
                 input {
                     height: 45px;
                     padding: {
@@ -200,7 +200,7 @@
                     }
                     .mat-mdc-cell {
                         padding: 15px;
-    
+
                         .task-name {
                             h6 {
                                 font-size: 13px;
@@ -232,7 +232,7 @@
         &.to-do-list-card {
             .search-box {
                 margin-bottom: 20px;
-                
+
                 input {
                     padding: {
                         left: 18px;
@@ -272,3 +272,62 @@
 
 /* Min width 1600px */
 @media only screen and (min-width: 1600px) {}
+
+/* Couleurs principales */
+/* Couleurs principales */
+:root {
+  --color-1: #fceabd; /* couleur secondaire claire */
+  --color-2: #f5c54c; /* couleur secondaire */
+  --color-3: #d18501; /* couleur accentuée */
+  --color-4: #8d1b06; /* couleur primaire */
+  --color-5: #4f1410; /* couleur sombre */
+  --color-6: #90551b; /* couleur complémentaire */
+}
+
+.default-btn {
+  background-color: #90551b; /* couleur sombre pour le fond */
+  color: #fceabd; /* couleur claire pour le texte */
+  font-size: 16px;
+  padding: 12px 24px;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+}
+
+.default-btn:hover {
+  background-color: #90551b; /* couleur primaire au survol */
+  transform: translateY(-2px);
+}
+
+.default-btn:active {
+  background-color: var(--color-6); /* couleur complémentaire lors du clic */
+  transform: translateY(0);
+}
+
+.done-btn {
+  /* Ajoutez des styles spécifiques au bouton "Done" si nécessaire */
+}
+
+.settle-btn {
+  /* Ajoutez des styles spécifiques au bouton "Settle All" si nécessaire */
+}
+
+.buttons-list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5px; /* Espacement entre les boutons */
+}
+
+.to-do-list-container {
+  height: 400px;
+  width: 600px;
+  background-color: #fceabd;
+
+}
+
+.overlay{
+  background-color: #90551b;
+}

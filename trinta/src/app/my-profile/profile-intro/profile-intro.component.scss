@@ -24,21 +24,21 @@
                             min-width: auto;
                             border-radius: 6px;
                             padding: 10px 15px 11px;
-                            color: var(--primaryColor);
-                            background: rgba(55, 97, 238, 0.10);
+                            color: #fceabd;
+                            background: #90551b;
                             font: {
                                 size: 14px;
                                 weight: 600;
-                                family: var(--headingFontFamily);
+                                family: #fceabd;
                             };
                             &:nth-child(2) {
-                                color: var(--whiteColor);
-                                background-color: var(--primaryColor);
+                                color: #fceabd;
+                                background-color: #90551b;
                             }
                         }
                     }
-                
-                          
+
+
                 }
             }
         }
@@ -65,7 +65,7 @@
                             };
                         }
                     }
-                    
+
                     .buttons-list {
                         margin-top: 20px;
 
@@ -79,7 +79,7 @@
             }
         }
     }
-    
+
 
 }
 
