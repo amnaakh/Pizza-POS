@@ -8,11 +8,12 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCardModule } from '@angular/material/card';
 import { MatNativeDateModule } from '@angular/material/core';
 import { FeathericonsModule } from '../../icons/feathericons/feathericons.module';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-stats:not(2)',
   standalone: true,
-  imports: [RouterLink, MatFormFieldModule, MatInputModule, MatNativeDateModule, MatCardModule, CommonModule, FeathericonsModule, MatDatepickerModule, MatSelectModule],
+  imports: [RouterLink, MatFormFieldModule, MatInputModule, MatNativeDateModule, MatCardModule, CommonModule, FeathericonsModule, MatDatepickerModule, MatSelectModule, FormsModule],
   templateUrl: './stats.component.html',
   styleUrls: ['./stats.component.scss']
 })
@@ -32,6 +33,7 @@ export class StatsComponent implements OnInit {
   selectedFromDate: string | null = null;
   selectedToDate: string | null = null;
   ReportTime: string | null = null;
+  calculatorInput: string = '';
 
   get totalDue(): number {
     return this.users.reduce((total, user) => total + user.Due, 0);
@@ -50,6 +52,32 @@ export class StatsComponent implements OnInit {
     const year = now.getFullYear();
     const time = now.toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit', hour12: true });
     this.ReportTime = `${day} ${month} ${year}, ${time}`;
+  }
+
+  appendNumber(number: number): void {
+    this.calculatorInput += number;
+  }
+
+  appendComma(): void {
+    if (!this.calculatorInput.includes(',')) {
+      this.calculatorInput += ',';
+    }
+  }
+
+  clearInput(): void {
+    this.calculatorInput = '';
+  }
+
+  increment(): void {
+    let value = parseFloat(this.calculatorInput.replace(',', '.')) || 0;
+    this.calculatorInput = (value + 1).toString().replace('.', ',');
+  }
+
+  decrement(): void {
+    let value = parseFloat(this.calculatorInput.replace(',', '.')) || 0;
+    if (value > 0) {
+      this.calculatorInput = (value - 1).toString().replace('.', ',');
+    }
   }
 
   onUserSelect(event: Event): void {
@@ -81,10 +109,6 @@ export class StatsComponent implements OnInit {
     }
   }
 
-  showDeclareTips() {
-
-  }
-  
   onFromDateChange(event: Event): void {
     const inputElement = event.target as HTMLInputElement;
     this.selectedFromDate = inputElement.value;
@@ -94,6 +118,7 @@ export class StatsComponent implements OnInit {
     const inputElement = event.target as HTMLInputElement;
     this.selectedToDate = inputElement.value;
   }
+
   printContent() {
     const printWindow = window.open('', '', 'height=600,width=800');
     const content = document.getElementById('printableContent')?.innerHTML || '';
@@ -108,7 +133,6 @@ export class StatsComponent implements OnInit {
     printWindow?.print();
   }
 
-
   printContent1() {
     const printWindow = window.open('', '', 'height=600,width=800');
     const content = document.getElementById('printableContent1')?.innerHTML || '';
@@ -122,7 +146,4 @@ export class StatsComponent implements OnInit {
     printWindow?.focus();
     printWindow?.print();
   }
-
-
- 
 }

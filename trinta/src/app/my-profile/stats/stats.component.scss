@@ -247,10 +247,77 @@ button:hover {
   margin-top: 20px; /* Espacement du texte "Exit" */
 }
 
-
-
-
-.modal-content {
+.calculator {
+    display: grid;
+    gap: 10px;
+  }
+  
+  .calculator-display {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 10px;
+  }
+  
+  .calculator-buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Ensure each button takes equal space */
+    gap: 10px; /* Gap between buttons */
+  }
+  
+  .calculator button,
+  .calculator-input,
+  .clear-btn,
+  .increment-decrement {
+    padding: 20px;
+    font-size: 18px;
+    background-color: #efd24e; /* Dark yellow color */
+    border: 1px solid #ccc;
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  .clear-btn,
+  .append-zero-btn {
+    background-color: #333; /* Dark background color for both */
+    color: white; /* Text color for both */
+  }
+  
+  .clear-btn:hover,
+  .append-zero-btn:hover {
+    background-color: #555; /* Darker background color on hover */
+  }
+  
+  .calculator-input {
+    font-size: 24px;
+    text-align: right;
+    padding: 10px;
+    background-color: white; /* Set background color to white */
+    border: 1px solid #ccc; /* Maintain border color */
+  }
+  
+  button:hover {
+    background-color: #e6b800; /* Slightly darker shade on hover */
+  }
+  
+  .modal-header .close {
+    padding: 0;
+    margin: 0;
+  }
+  
+  .modal-title {
+    margin: 0;
+  }
+  
+  .modal-footer {
+    display: flex;
+    justify-content: space-between;
+  }
+  .modal-footer-buttons {
+    display: flex; /* Align buttons in a row */
+    gap: 10px; /* Space between the buttons */
+  }
+  
+  .modal-content {
     background-color: #f8f9fa; /* Light background color */
     border-radius: 8px; /* Rounded corners */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
@@ -298,7 +365,6 @@ button:hover {
     margin-left: 0.5rem; /* Adjust the spacing between buttons */
   }
   
-  /* Center the 'Cancel' button */
   .modal-footer .btn-secondary {
     margin-left: 1rem; /* Add space from the 'Pay' button */
   }
