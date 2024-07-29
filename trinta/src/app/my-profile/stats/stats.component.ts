@@ -34,6 +34,8 @@ export class StatsComponent implements OnInit {
   selectedToDate: string | null = null;
   ReportTime: string | null = null;
   calculatorInput: string = '';
+  calculatorInput1: string = '';
+  Assigned: boolean = false ;
 
   get totalDue(): number {
     return this.users.reduce((total, user) => total + user.Due, 0);
@@ -77,6 +79,34 @@ export class StatsComponent implements OnInit {
     let value = parseFloat(this.calculatorInput.replace(',', '.')) || 0;
     if (value > 0) {
       this.calculatorInput = (value - 1).toString().replace('.', ',');
+    }
+  }
+
+
+
+  appendNumber1(number: number): void {
+    this.calculatorInput1 += number;
+  }
+
+  appendComma1(): void {
+    if (!this.calculatorInput1.includes(',')) {
+      this.calculatorInput1 += ',';
+    }
+  }
+
+  clearInput1(): void {
+    this.calculatorInput1 = '';
+  }
+
+  increment1(): void {
+    let value = parseFloat(this.calculatorInput1.replace(',', '.')) || 0;
+    this.calculatorInput1 = (value + 1).toString().replace('.', ',');
+  }
+
+  decrement1(): void {
+    let value = parseFloat(this.calculatorInput1.replace(',', '.')) || 0;
+    if (value > 0) {
+      this.calculatorInput1 = (value - 1).toString().replace('.', ',');
     }
   }
 
@@ -145,5 +175,14 @@ export class StatsComponent implements OnInit {
     printWindow?.document.close();
     printWindow?.focus();
     printWindow?.print();
+  }
+
+  showAssignmentAlert(): void {
+    if (this.selectedUsername) {
+      alert(`Drawer is assigned to ${this.selectedUsername}`);
+      this.Assigned = true;
+    } else {
+      alert('No user selected');
+    }
   }
 }

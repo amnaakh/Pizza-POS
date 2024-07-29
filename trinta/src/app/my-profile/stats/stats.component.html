@@ -118,7 +118,7 @@
         </button>
     </div>
 
-    <div class="col-xxxl-2 col-sm-6 col-md-4">
+    <div class="col-xxxl-2 col-sm-6 col-md-4" *ngIf="!Assigned">
         <button data-toggle="modal" data-target="#kk">
             <mat-card class="trinta-card pm-stat-card mb-25 bg-white border-none d-block text-center">
                 <mat-card-content>
@@ -148,11 +148,21 @@
         </button>
     </div>
 
-    <!-- <div class="icon">
-        <button class="exit-button">
-            Exit
+    <div class="col-xxxl-2 col-sm-6 col-md-4"  >
+        <button data-toggle="modal" data-target="#drawerstatus">
+            <mat-card class="trinta-card pm-stat-card mb-25 bg-white border-none d-block text-center">
+                <mat-card-content>
+                    <div class="icon d-flex align-items-center justify-content-center ml-auto mr-auto">
+                        <i-feather name="bar-chart-2"></i-feather>
+                    </div>
+                    <span class="d-block text-gray">
+                        Cash drawer status
+                    </span>
+                </mat-card-content>
+            </mat-card>
         </button>
-    </div> -->
+    </div>
+
 </div>
 
 
@@ -357,8 +367,6 @@
 
     </div>
 </div>
-
-
 
 
 <!-- modal -->
@@ -666,8 +674,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-10 d-flex">
-                            <mat-card
-                                class="trinta-card profile-intro-card mb-25 bg-white border-none d-block flex-grow-1">
+                            <mat-card class="trinta-card profile-intro-card mb-25 bg-white border-none d-block flex-grow-1">
                                 <mat-card-header>
                                     <mat-card-title>
                                         <h5 class="mt-0 mb-0">Select User</h5>
@@ -675,27 +682,19 @@
                                 </mat-card-header>
                                 <mat-card-content>
                                     <div class="user-select">
-
-                                        <select id="userSelect" class="form-select" multiple
-                                            (change)="onUserSelect($event)">
-
-                                            <option *ngFor="let user of users" [value]="user.id">{{
-                                                user.username }}
-                                            </option>
+                                        <select id="userSelect" class="form-select" multiple (change)="onUserSelect($event)">
+                                            <option *ngFor="let user of users" [value]="user.id">{{ user.username }}</option>
                                         </select>
                                     </div>
                                 </mat-card-content>
                             </mat-card>
                         </div>
-
                     </div>
                 </div>
             </div>
             <div class="modal-footer">
-
-                <button type="button" class="btn btn-sm btn-primary me-2" id="payButton">Ok</button>
-                <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal"
-                    id="cancelButton">Cancel</button>
+                <button type="button" class="btn btn-sm btn-primary me-2" data-toggle="modal" data-target="#Ok">Ok</button>
+                <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">Cancel</button>
             </div>
         </div>
     </div>
@@ -1014,6 +1013,273 @@
     </div>
 </div>
 
+<!-- Add Cash Drawer Modal -->
+<div class="modal fade" id="Ok" tabindex="-1" role="dialog" aria-labelledby="noSaleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="noSaleModalLabel">Please Enter drawer initial balance</h5>
+            </div>
+            <div class="modal-body">
+                <div class="calculator">
+                    <div class="calculator-display">
+                        <button class="increment-decrement" (click)="decrement1()">-</button>
+                        <input type="text" class="calculator-input" [(ngModel)]="calculatorInput1" readonly>
+                        <button class="increment-decrement" (click)="increment1()">+</button>
+                    </div>
+                    <div class="calculator-buttons">
+                        <button (click)="appendNumber1(7)">7</button>
+                        <button (click)="appendNumber1(8)">8</button>
+                        <button (click)="appendNumber1(9)">9</button>
+                        <button (click)="appendNumber1(4)">4</button>
+                        <button (click)="appendNumber1(5)">5</button>
+                        <button (click)="appendNumber1(6)">6</button>
+                        <button (click)="appendNumber1(1)">1</button>
+                        <button (click)="appendNumber1(2)">2</button>
+                        <button (click)="appendNumber1(3)">3</button>
+                        <button (click)="appendComma1()">,</button>
+                        <button class="append-zero-btn" (click)="appendNumber1(0)">0</button>
+                        <button class="clear-btn" (click)="clearInput1()">Clear</button>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="modal-footer-buttons">
+                    <button type="button" class="btn btn-primary"  data-dismiss="modal" (click)="showAssignmentAlert()">Ok</button>
+                    <button type="button" class="btn btn-secondary" >Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Cash drawer status Modal -->
+<div class="modal fade" id="drawerstatus" tabindex="-1" role="dialog" aria-labelledby="server" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content h-100">
+            <div class="modal-header">
+                <h5 class="modal-title" id="server">Drawer Status</h5>
+            </div>
+            <div class="modal-body d-flex h-100">
+                <div class="col-2 justify-content-between ">
+                    <!-- Large Buttons on the left side -->
+                    <button type="button"  style="height:24%" class="btn btn-dark-yellow mb-2 flex-grow-1">Drawer Bleed</button>
+                    <button type="button" style="height:24%" class="btn btn-dark-yellow mb-2 flex-grow-1">No Sale</button>
+                    <button type="button" style="height:24%" class="btn btn-dark-yellow mb-2 flex-grow-1">Payout</button>
+                    <button type="button" style="height:24%" class="btn btn-dark-yellow mb-2 flex-grow-1">Cash In</button>
+                </div>
+                <div class="col-10 p-3">
+                    <div class="text-center">
+                        <h4>Demo Store</h4>
+                        <h5>Cash Drawer Report</h5>
+                        <h6>Owner: Adam K</h6>
+                        <hr>
+                        <h6>From: 28 juil., 2024 02:12 PM</h6>
+                        <h6>Report time: 28 juil., 2024 03:43 PM</h6>
+                    </div>
+                    <hr>
+                    <h6>Sales Balance</h6>
+                    <div>
+                        <table>
+                            <tr>
+                                <td class="align-left1">
+                                    <h6>Gross receipts</h6>
+                                </td>
+                                <td class="align-right">
+                                    <h6>0.00</h6>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="align-left1">
+                                    <h6>-Cash receipts</h6>
+                                </td>
+                                <td class="align-right">
+                                    <h6>0.00</h6>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="align-left1">
+                                    <h6>-Credit cards</h6>
+                                </td>
+                                <td class="align-right">
+                                    <h6>0.00</h6>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="align-left1">
+                                    <h6>-Debit cards</h6>
+                                </td>
+                                <td class="align-right">
+                                    <h6>0.00</h6>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="align-left1">
+                                    <h6>-Customer payments</h6>
+                                </td>
+                                <td class="align-right">
+                                    <h6>0.00</h6>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="align-left1">
+                                    <h6>-Custom payments</h6>
+                                </td>
+                                <td class="align-right">
+                                    <h6>0.00</h6>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="align-left1">
+                                    <h6>-Gift returns</h6>
+                                </td>
+                                <td class="align-right">
+                                    <h6>0.00</h6>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="align-left1">
+                                    <h6>-Gift cert. change</h6>
+                                </td>
+                                <td class="align-right">
+                                    <h6>0.00</h6>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="align-left1">
+                                    <h6>+Refund</h6>
+                                </td>
+                                <td class="align-right">
+                                    <h6>0.00</h6>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="align-left2">
+                                    <h6>=Receipt diff</h6>
+                                </td>
+                                <td class="align-right">
+                                    <h6>0.00</h6>
+                                </td>
+                            </tr>
+                        </table>
+                        <hr>
+                        <table>
+                            <tr>
+                                <td class="align-left2">
+                                    <h6>+Cash tips</h6>
+                                </td>
+                                <td class="align-right">
+                                    <h6>0.00</h6>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="align-left2">
+                                    <h6>+Charged tips</h6>
+                                </td>
+                                <td class="align-right">
+                                    <h6>0.00</h6>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="align-left2">
+                                    <h6>-Tips paid</h6>
+                                </td>
+                                <td class="align-right">
+                                    <h6>0.00</h6>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="align-left2">
+                                    <h6>=Tips diff</h6>
+                                </td>
+                                <td class="align-right">
+                                    <h6>0.00</h6>
+                                </td>
+                            </tr>
+                        </table>
+                        <hr>
+                        <h6>Cash balance</h6>
+                        <table>
+                            <tr>
+                                <td class="align-left2">
+                                    <h6>Cash</h6>
+                                </td>
+                                <td class="align-right">
+                                    <h6>0.00</h6>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="align-left2">
+                                    <h6>-Tips paid</h6>
+                                </td>
+                                <td class="align-right">
+                                    <h6>0.00</h6>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="align-left2">
+                                    <h6>-Pay out</h6>
+                                </td>
+                                <td class="align-right">
+                                    <h6>0.00</h6>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="align-left2">
+                                    <h6>+Refund</h6>
+                                </td>
+                                <td class="align-right">
+                                    <h6>0.00</h6>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="align-left2">
+                                    <h6>+Begin cash</h6>
+                                </td>
+                                <td class="align-right">
+                                    <h6>5.00</h6>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="align-left2">
+                                    <h6>+Cash in</h6>
+                                </td>
+                                <td class="align-right">
+                                    <h6>0.00</h6>
+                                </td>
+                            </tr>
+                        </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-sm btn-primary me-2" id="historyButton"
+                    (click)="printContent1()">Print</button>
+                <button type="button" class="btn btn-sm btn-primary me-2"
+                    id="historyButton">Details</button>
+                <button type="button" class="btn btn-sm btn-primary me-2" id="historyButton">Transfer user</button>
+                <button type="button" class="btn btn-sm btn-primary me-2"
+                id="historyButton">Close Drawer</button>
+            <button type="button" class="btn btn-sm btn-primary me-2" id="historyButton">Done</button>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+    .btn-dark-yellow {
+        background-color: #FFA500; /* Dark yellow color */
+        color: white;
+        padding: 20px;
+        font-size: 1em;
+        flex-grow: 1;
+    }
+
+    
+
+    
+
+    
+</style>
 
 
 
@@ -1021,7 +1287,7 @@
 
 
 
-
+<!-- OpenTickets Modal -->
 <div class="modal fade" id="openticketsModal" tabindex="-1" role="dialog" aria-labelledby="openticketsModal"
     aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
