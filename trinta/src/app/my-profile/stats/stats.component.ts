@@ -35,7 +35,13 @@ export class StatsComponent implements OnInit {
   ReportTime: string | null = null;
   calculatorInput: string = '';
   calculatorInput1: string = '';
+  calculatorInput2: string = '';
+  calculatorInput3: string = '';
+  calculatorInput4: string = '';
   Assigned: boolean = false ;
+  payoutReason: string = '';
+  payoutRecipient: string = '';
+  payoutNote: string = '';
 
   get totalDue(): number {
     return this.users.reduce((total, user) => total + user.Due, 0);
@@ -45,6 +51,10 @@ export class StatsComponent implements OnInit {
 
   ngOnInit(): void {
     this.setReportTime();
+  }
+
+  changestatus1(): void {
+    // Your logic here
   }
 
   setReportTime(): void {
@@ -83,7 +93,7 @@ export class StatsComponent implements OnInit {
   }
 
 
-
+//////////////////////////////////////////////////////////////////////
   appendNumber1(number: number): void {
     this.calculatorInput1 += number;
   }
@@ -109,6 +119,90 @@ export class StatsComponent implements OnInit {
       this.calculatorInput1 = (value - 1).toString().replace('.', ',');
     }
   }
+
+//////////////////////////////////////////////////////////////////////
+  appendNumber2(number: number): void {
+    this.calculatorInput2 += number;
+  }
+
+  appendComma2(): void {
+    if (!this.calculatorInput2.includes(',')) {
+      this.calculatorInput2 += ',';
+    }
+  }
+
+  clearInput2(): void {
+    this.calculatorInput2 = '';
+  }
+
+  increment2(): void {
+    let value = parseFloat(this.calculatorInput2.replace(',', '.')) || 0;
+    this.calculatorInput2 = (value + 1).toString().replace('.', ',');
+  }
+
+  decrement2(): void {
+    let value = parseFloat(this.calculatorInput2.replace(',', '.')) || 0;
+    if (value > 0) {
+      this.calculatorInput2 = (value - 1).toString().replace('.', ',');
+    }
+  }
+
+  //////////////////////////////////////////////////////////////////////
+  appendNumber3(number: number): void {
+    this.calculatorInput3 += number;
+  }
+
+  appendComma3(): void {
+    if (!this.calculatorInput3.includes(',')) {
+      this.calculatorInput3 += ',';
+    }
+  }
+
+  clearInput3(): void {
+    this.calculatorInput3 = '';
+  }
+
+  increment3(): void {
+    let value = parseFloat(this.calculatorInput3.replace(',', '.')) || 0;
+    this.calculatorInput3 = (value + 1).toString().replace('.', ',');
+  }
+
+  decrement3(): void {
+    let value = parseFloat(this.calculatorInput3.replace(',', '.')) || 0;
+    if (value > 0) {
+      this.calculatorInput3 = (value - 1).toString().replace('.', ',');
+    }
+  }
+  //////////////////////////////////////////////////////////////////////
+  appendNumber4(number: number): void {
+    this.calculatorInput4 += number;
+  }
+
+  appendComma4(): void {
+    if (!this.calculatorInput4.includes(',')) {
+      this.calculatorInput4 += ',';
+    }
+  }
+
+  clearInput4(): void {
+    this.calculatorInput4 = '';
+    this.payoutReason = '';
+    this.payoutRecipient = '';
+    this.payoutNote = '';
+  }
+
+  increment4(): void {
+    let value = parseFloat(this.calculatorInput4.replace(',', '.')) || 0;
+    this.calculatorInput4 = (value + 1).toString().replace('.', ',');
+  }
+
+  decrement4(): void {
+    let value = parseFloat(this.calculatorInput4.replace(',', '.')) || 0;
+    if (value > 0) {
+      this.calculatorInput4 = (value - 1).toString().replace('.', ',');
+    }
+  }
+
 
   onUserSelect(event: Event): void {
     const selectElement = event.target as HTMLSelectElement;
@@ -185,4 +279,13 @@ export class StatsComponent implements OnInit {
       alert('No user selected');
     }
   }
+
+
+  changestatus(): void {
+   
+      this.Assigned = false;
+    
+  }
 }
+
+

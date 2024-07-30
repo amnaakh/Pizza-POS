@@ -148,7 +148,7 @@
         </button>
     </div>
 
-    <div class="col-xxxl-2 col-sm-6 col-md-4"  >
+    <div class="col-xxxl-2 col-sm-6 col-md-4" *ngIf="Assigned">
         <button data-toggle="modal" data-target="#drawerstatus">
             <mat-card class="trinta-card pm-stat-card mb-25 bg-white border-none d-block text-center">
                 <mat-card-content>
@@ -674,7 +674,8 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-10 d-flex">
-                            <mat-card class="trinta-card profile-intro-card mb-25 bg-white border-none d-block flex-grow-1">
+                            <mat-card
+                                class="trinta-card profile-intro-card mb-25 bg-white border-none d-block flex-grow-1">
                                 <mat-card-header>
                                     <mat-card-title>
                                         <h5 class="mt-0 mb-0">Select User</h5>
@@ -682,8 +683,10 @@
                                 </mat-card-header>
                                 <mat-card-content>
                                     <div class="user-select">
-                                        <select id="userSelect" class="form-select" multiple (change)="onUserSelect($event)">
-                                            <option *ngFor="let user of users" [value]="user.id">{{ user.username }}</option>
+                                        <select id="userSelect" class="form-select" multiple
+                                            (change)="onUserSelect($event)">
+                                            <option *ngFor="let user of users" [value]="user.id">{{ user.username }}
+                                            </option>
                                         </select>
                                     </div>
                                 </mat-card-content>
@@ -693,7 +696,8 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-sm btn-primary me-2" data-toggle="modal" data-target="#Ok">Ok</button>
+                <button type="button" class="btn btn-sm btn-primary me-2" data-dismiss="modal" data-toggle="modal"
+                    data-target="#Ok">Ok</button>
                 <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">Cancel</button>
             </div>
         </div>
@@ -1006,7 +1010,8 @@
             <div class="modal-footer">
                 <div class="modal-footer-buttons">
                     <button type="button" class="btn btn-primary">Ok</button>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal"
+                        (click)="clearInput()">Cancel</button>
                 </div>
             </div>
         </div>
@@ -1045,8 +1050,9 @@
             </div>
             <div class="modal-footer">
                 <div class="modal-footer-buttons">
-                    <button type="button" class="btn btn-primary"  data-dismiss="modal" (click)="showAssignmentAlert()">Ok</button>
-                    <button type="button" class="btn btn-secondary" >Cancel</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="showAssignmentAlert()"
+                        data-dismiss="modal">Ok</button>
+                    <button type="button" class="btn btn-secondary" (click)="clearInput1()">Cancel</button>
                 </div>
             </div>
         </div>
@@ -1063,10 +1069,14 @@
             <div class="modal-body d-flex h-100">
                 <div class="col-2 justify-content-between ">
                     <!-- Large Buttons on the left side -->
-                    <button type="button"  style="height:24%" class="btn btn-dark-yellow mb-2 flex-grow-1">Drawer Bleed</button>
-                    <button type="button" style="height:24%" class="btn btn-dark-yellow mb-2 flex-grow-1">No Sale</button>
-                    <button type="button" style="height:24%" class="btn btn-dark-yellow mb-2 flex-grow-1">Payout</button>
-                    <button type="button" style="height:24%" class="btn btn-dark-yellow mb-2 flex-grow-1">Cash In</button>
+                    <button type="button" style="height:24%" class="btn btn-dark-yellow mb-2 flex-grow-1"
+                        data-toggle="modal" data-target="#bleed">Drawer Bleed</button>
+                    <button type="button" style="height:24%" class="btn btn-dark-yellow mb-2 flex-grow-1">No
+                        Sale</button>
+                    <button type="button" style="height:24%" class="btn btn-dark-yellow mb-2 flex-grow-1"
+                        data-toggle="modal" data-target="#payout">Payout</button>
+                    <button type="button" style="height:24%" class="btn btn-dark-yellow mb-2 flex-grow-1"
+                        data-toggle="modal" data-target="#cashIn">Cash In</button>
                 </div>
                 <div class="col-10 p-3">
                     <div class="text-center">
@@ -1077,8 +1087,10 @@
                         <h6>From: 28 juil., 2024 02:12 PM</h6>
                         <h6>Report time: 28 juil., 2024 03:43 PM</h6>
                     </div>
+                    &nbsp;
+                    <h6 class="text-center">Sales Balance</h6>
                     <hr>
-                    <h6>Sales Balance</h6>
+
                     <div>
                         <table>
                             <tr>
@@ -1089,6 +1101,7 @@
                                     <h6>0.00</h6>
                                 </td>
                             </tr>
+                            &nbsp;
                             <tr>
                                 <td class="align-left1">
                                     <h6>-Cash receipts</h6>
@@ -1153,6 +1166,7 @@
                                     <h6>0.00</h6>
                                 </td>
                             </tr>
+                            <hr>
                             <tr>
                                 <td class="align-left2">
                                     <h6>=Receipt diff</h6>
@@ -1161,9 +1175,7 @@
                                     <h6>0.00</h6>
                                 </td>
                             </tr>
-                        </table>
-                        <hr>
-                        <table>
+                            <hr>
                             <tr>
                                 <td class="align-left2">
                                     <h6>+Cash tips</h6>
@@ -1188,6 +1200,7 @@
                                     <h6>0.00</h6>
                                 </td>
                             </tr>
+                            <hr>
                             <tr>
                                 <td class="align-left2">
                                     <h6>=Tips diff</h6>
@@ -1196,10 +1209,10 @@
                                     <h6>0.00</h6>
                                 </td>
                             </tr>
-                        </table>
-                        <hr>
-                        <h6>Cash balance</h6>
-                        <table>
+                            &nbsp;
+
+                            <h6 class="text-center">Cash balance</h6>
+                            <hr>
                             <tr>
                                 <td class="align-left2">
                                     <h6>Cash</h6>
@@ -1229,7 +1242,7 @@
                                     <h6>+Refund</h6>
                                 </td>
                                 <td class="align-right">
-                                    <h6>0.00</h6>
+                                    <h6>2.00</h6>
                                 </td>
                             </tr>
                             <tr>
@@ -1248,43 +1261,346 @@
                                     <h6>0.00</h6>
                                 </td>
                             </tr>
+                            <tr>
+                                <td class="align-left2">
+                                    <h6>-Drawer bleed</h6>
+                                </td>
+                                <td class="align-right">
+                                    <h6>0.00</h6>
+                                </td>
+                            </tr>
+                            <hr>
+                            <tr>
+                                <td class="align-left2">
+                                    <h6>=Drawer accountable</h6>
+                                </td>
+                                <td class="align-right">
+                                    <h6>2.00</h6>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="align-left2">
+                                    <h6>>Declared tips</h6>
+                                </td>
+                                <td class="align-right">
+                                    <h6>0.00</h6>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="align-left2">
+                                    <h6>>Cash to deposit</h6>
+                                </td>
+                                <td class="align-right">
+                                    <h6>0.00</h6>
+                                </td>
+                            </tr>
                         </table>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-sm btn-primary me-2" id="historyButton"
-                    (click)="printContent1()">Print</button>
-                <button type="button" class="btn btn-sm btn-primary me-2"
-                    id="historyButton">Details</button>
-                <button type="button" class="btn btn-sm btn-primary me-2" id="historyButton">Transfer user</button>
-                <button type="button" class="btn btn-sm btn-primary me-2"
-                id="historyButton">Close Drawer</button>
-            <button type="button" class="btn btn-sm btn-primary me-2" id="historyButton">Done</button>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-sm btn-primary me-2" id="historyButton"
+                            (click)="printContent1()">Print</button>
+                        <button type="button" class="btn btn-sm btn-primary me-2" id="historyButton">Details</button>
+                        <button type="button" class="btn btn-sm btn-primary me-2" id="historyButton" data-toggle="modal"
+                            data-target="#transfeuser">Transfer user</button>
+                        <button type="button" class="btn btn-sm btn-primary me-2" id="historyButton" data-toggle="modal"
+                            data-target="#closeDrawerModal" data-dismiss="modal">Close Drawer</button>
+                        <button type="button" class="btn btn-sm btn-primary me-2" id="historyButton"
+                            data-dismiss="modal">Done</button>
 
-
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </div>
 <style>
     .btn-dark-yellow {
-        background-color: #FFA500; /* Dark yellow color */
+        background-color: #FFA500;
+        /* Dark yellow color */
         color: white;
         padding: 20px;
         font-size: 1em;
         flex-grow: 1;
     }
-
-    
-
-    
-
-    
 </style>
 
 
 
+<!-- Payout Modal -->
+<div class="modal fade" id="payout" tabindex="-1" role="dialog" aria-labelledby="noSaleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="noSaleModalLabel">Payout</h5>
+            </div>
+            <div class="modal-body">
+                <div class="calculator" style="width:30%">
+                    <h6 class="modal-title text-center" id="noSaleModalLabel">Amount paid out</h6>
+                    <div class="calculator-display">
+                        <button class="increment-decrement" (click)="decrement2()">-</button>
+                        <input type="text" class="calculator-input" [(ngModel)]="calculatorInput4" readonly>
+                        <button class="increment-decrement" (click)="increment2()">+</button>
+                    </div>
+                    <div class="calculator-buttons">
+                        <button (click)="appendNumber4(7)">7</button>
+                        <button (click)="appendNumber4(8)">8</button>
+                        <button (click)="appendNumber4(9)">9</button>
+                        <button (click)="appendNumber4(4)">4</button>
+                        <button (click)="appendNumber4(5)">5</button>
+                        <button (click)="appendNumber4(6)">6</button>
+                        <button (click)="appendNumber4(1)">1</button>
+                        <button (click)="appendNumber4(2)">2</button>
+                        <button (click)="appendNumber4(3)">3</button>
+                        <button (click)="appendComma4()">,</button>
+                        <button class="append-zero-btn" (click)="appendNumber4(0)">0</button>
+                        <button class="clear-btn" (click)="clearInput4()">Clear</button>
+                    </div>
+                </div> &nbsp;
+                <div class="form-group">
+                    <label for="payoutReason">Select pay out reason</label>
+                    <select class="form-control" id="payoutReason" [(ngModel)]="payoutReason">
+                        <!-- Add options here -->
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="payoutRecipient">Select pay out recipient</label>
+                    <select class="form-control" id="payoutRecipient" [(ngModel)]="payoutRecipient">
+                        <!-- Add options here -->
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="payoutNote">Note</label>
+                    <textarea class="form-control" id="payoutNote" rows="3" [(ngModel)]="payoutNote"></textarea>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="modal-footer-buttons">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" data-toggle="modal"
+                        data-target="#closed">Ok</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal"
+                        (click)="clearInput4()">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 
+
+<!-- close drawer  Modal -->
+<div class="modal fade" id="closeDrawerModal" tabindex="-1" role="dialog" aria-labelledby="closeDrawerLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="closeDrawerLabel">Confirm</h5>
+
+            </div>
+            <div class="modal-body">
+                Are you sure you want to close the drawer?
+            </div>
+
+            <div class="modal-footer">
+
+                <button type="button" class="xx" id="historyButton" data-toggle="modal" data-target="#amount"
+                    data-dismiss="modal">Yes</button>
+                <button type="button" class="xx" id="historyButton" data-dismiss="modal">No</button>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- close drawer amount Modal -->
+<div class="modal fade" id="amount" tabindex="-1" role="dialog" aria-labelledby="noSaleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="noSaleModalLabel">Enter cash to deposit amount</h5>
+            </div>
+            <div class="modal-body">
+                <div class="calculator">
+                    <div class="calculator-display">
+                        <button class="increment-decrement" (click)="decrement2()">-</button>
+                        <input type="text" class="calculator-input" [(ngModel)]="calculatorInput4" readonly>
+                        <button class="increment-decrement" (click)="increment2()">+</button>
+                    </div>
+                    <div class="calculator-buttons">
+                        <button (click)="appendNumber4(7)">7</button>
+                        <button (click)="appendNumber4(8)">8</button>
+                        <button (click)="appendNumber4(9)">9</button>
+                        <button (click)="appendNumber4(4)">4</button>
+                        <button (click)="appendNumber4(5)">5</button>
+                        <button (click)="appendNumber4(6)">6</button>
+                        <button (click)="appendNumber4(1)">1</button>
+                        <button (click)="appendNumber4(2)">2</button>
+                        <button (click)="appendNumber4(3)">3</button>
+                        <button (click)="appendComma4()">,</button>
+                        <button class="append-zero-btn" (click)="appendNumber4(0)">0</button>
+                        <button class="clear-btn" (click)="clearInput4()">Clear</button>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="modal-footer-buttons">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" data-toggle="modal"
+                        data-target="#closed">Ok</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal"
+                        (click)="clearInput4()">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- close drawer  Modal -->
+<div class="modal fade" id="closed" tabindex="-1" role="dialog" aria-labelledby="closeDrawerLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="closeDrawerLabel">Info</h5>
+
+            </div>
+            <div class="modal-body">
+                Drawer is closed
+            </div>
+
+            <div class="modal-footer">
+
+
+                <button type="button" class="xx" id="historyButton" data-dismiss="modal"
+                    (click)="changestatus()">Ok</button>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Transfer user Modal -->
+<div class="modal fade" id="transfeuser" tabindex="-1" role="dialog" aria-labelledby="kk" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="kk">Select user</h5>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-10 d-flex">
+                            <mat-card
+                                class="trinta-card profile-intro-card mb-25 bg-white border-none d-block flex-grow-1">
+                                <mat-card-header>
+                                    <mat-card-title>
+                                        <h5 class="mt-0 mb-0">Select User</h5>
+                                    </mat-card-title>
+                                </mat-card-header>
+                                <mat-card-content>
+                                    <div class="user-select">
+                                        <select id="userSelect" class="form-select" multiple
+                                            (change)="onUserSelect($event)">
+                                            <option *ngFor="let user of users" [value]="user.id">{{ user.username }}
+                                            </option>
+                                        </select>
+                                    </div>
+                                </mat-card-content>
+                            </mat-card>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-sm btn-primary me-2">Ok</button>
+                <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Drawer bleed Modal -->
+<div class="modal fade" id="bleed" tabindex="-1" role="dialog" aria-labelledby="noSaleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="noSaleModalLabel">Enter drawer bleed amount</h5>
+            </div>
+            <div class="modal-body">
+                <div class="calculator">
+                    <div class="calculator-display">
+                        <button class="increment-decrement" (click)="decrement2()">-</button>
+                        <input type="text" class="calculator-input" [(ngModel)]="calculatorInput2" readonly>
+                        <button class="increment-decrement" (click)="increment2()">+</button>
+                    </div>
+                    <div class="calculator-buttons">
+                        <button (click)="appendNumber2(7)">7</button>
+                        <button (click)="appendNumber2(8)">8</button>
+                        <button (click)="appendNumber2(9)">9</button>
+                        <button (click)="appendNumber2(4)">4</button>
+                        <button (click)="appendNumber2(5)">5</button>
+                        <button (click)="appendNumber2(6)">6</button>
+                        <button (click)="appendNumber2(1)">1</button>
+                        <button (click)="appendNumber2(2)">2</button>
+                        <button (click)="appendNumber2(3)">3</button>
+                        <button (click)="appendComma2()">,</button>
+                        <button class="append-zero-btn" (click)="appendNumber2(0)">0</button>
+                        <button class="clear-btn" (click)="clearInput2()">Clear</button>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="modal-footer-buttons">
+                    <button type="button" class="btn btn-primary">Ok</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal"
+                        (click)="clearInput2()">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Cash in Modal -->
+<div class="modal fade" id="cashIn" tabindex="-1" role="dialog" aria-labelledby="noSaleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="noSaleModalLabel">Enter amount</h5>
+            </div>
+            <div class="modal-body">
+                <div class="calculator">
+                    <div class="calculator-display">
+                        <button class="increment-decrement" (click)="decrement3()">-</button>
+                        <input type="text" class="calculator-input" [(ngModel)]="calculatorInput3" readonly>
+                        <button class="increment-decrement" (click)="increment3()">+</button>
+                    </div>
+                    <div class="calculator-buttons">
+                        <button (click)="appendNumber3(7)">7</button>
+                        <button (click)="appendNumber3(8)">8</button>
+                        <button (click)="appendNumber3(9)">9</button>
+                        <button (click)="appendNumber3(4)">4</button>
+                        <button (click)="appendNumber3(5)">5</button>
+                        <button (click)="appendNumber3(6)">6</button>
+                        <button (click)="appendNumber3(1)">1</button>
+                        <button (click)="appendNumber3(2)">2</button>
+                        <button (click)="appendNumber3(3)">3</button>
+                        <button (click)="appendComma3()">,</button>
+                        <button class="append-zero-btn" (click)="appendNumber3(0)">0</button>
+                        <button class="clear-btn" (click)="clearInput3()">Clear</button>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="modal-footer-buttons">
+                    <button type="button" class="btn btn-primary">Ok</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal"
+                        (click)="clearInput3()">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 <!-- OpenTickets Modal -->
