@@ -167,7 +167,7 @@
 
 
 
-<!-- modal -->
+<!-- modal DECLARE TIPS -->
 <div class="modal fade" id="ll" tabindex="-1" role="dialog" aria-labelledby="ll" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
@@ -175,84 +175,27 @@
                 <h5 class="modal-title" id="ll">Declare Tips</h5>
             </div>
             <div class="modal-body">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-10 d-flex">
-                            <mat-card
-                                class="trinta-card profile-intro-card mb-25 bg-white border-none d-block flex-grow-1">
-                                <mat-card-header>
-
-                                </mat-card-header>
-                                <mat-card-content>
-                                    <div class="row">
-                                        <div class="col-12 d-flex">
-                                            <div>
-
-
-                                                <table
-                                                    style="width: 250%; border: 1px solid #b0acac; border-collapse: collapse;">
-                                                    <thead>
-                                                        <tr>
-                                                            <th
-                                                                style="border: 1px solid #b0acac; padding: 8px; width: 50%;">
-                                                                <h6>Declared Time</h6>
-                                                            </th>
-                                                            <th
-                                                                style="border: 1px solid #b0acac; padding: 8px;width: 50%;">
-                                                                <h6>Amount</h6>
-                                                            </th>
-                                                            <th
-                                                                style="border: 1px solid #b0acac; padding: 8px;width: 70%;">
-                                                                <h6> </h6>
-                                                            </th>
-
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-
-
-
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </mat-card-content>
-                            </mat-card>
-                        </div>
-
-                    </div>
-                </div>
+                <table style="width: 100%; border: 1px solid #b0acac; border-collapse: collapse;">
+                    <thead>
+                        <tr>
+                            <th style="border: 1px solid #b0acac; padding: 8px;">Declared Time</th>
+                            <th style="border: 1px solid #b0acac; padding: 8px;">Amount</th>
+                            <th style="border: 1px solid #b0acac; padding: 8px;"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let tip of declaredTips">
+                            <td style="border: 1px solid #b0acac; padding: 8px;">{{ tip.time }}</td>
+                            <td style="border: 1px solid #b0acac; padding: 8px;">{{ tip.amount }}</td>
+                            <td style="border: 1px solid #8B8000; padding: 8px;"><button style="background-color:#CF9033" data-toggle="modal" data-target="#edit">Edit</button></td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
             <div class="modal-footer">
-
-                <button type="button" class="btn btn-sm btn-primary me-2" id="payButton" data-toggle="modal"
-                    data-target="#history1">Tips details</button>
-                <button type="button" class="btn btn-sm btn-primary me-2" data-toggle="modal"
-                    data-target="#Add">Add</button>
-                <button type="button" class="btn btn-sm btn-primary me-2" id="payButton">Done</button>
-
+                <button type="button" class="btn btn-sm btn-primary me-2" data-toggle="modal" data-target="#history1">Tips details</button>
+                <button type="button" class="btn btn-sm btn-primary me-2" data-toggle="modal" data-target="#Add">Add</button>
+                <button type="button" class="btn btn-sm btn-primary me-2">Done</button>
             </div>
         </div>
     </div>
@@ -965,7 +908,8 @@
                             <button type="button" class="btn btn-sm btn-primary me-2" id="historyButton"
                                 (click)="printContent1()">Print</button>
                             <button type="button" class="btn btn-sm btn-primary me-2"
-                                id="historyButton">Details</button>
+                                id="historyButton" data-toggle="modal"
+                                data-target="#reportModal">Details</button>
                             <button type="button" class="btn btn-sm btn-primary me-2" id="historyButton">Done</button>
 
                         </div>
@@ -1008,15 +952,50 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <div class="modal-footer-buttons">
-                    <button type="button" class="btn btn-primary">Ok</button>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal"
-                        (click)="clearInput()">Cancel</button>
-                </div>
+                <button type="button" class="btn btn-primary" (click)="addDeclaredTip()">Ok</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clearInput()">Cancel</button>
             </div>
         </div>
     </div>
 </div>
+<!-- Edit Declare Tips Modal -->
+<div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="noSaleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="noSaleModalLabel">Enter declare tips amount</h5>
+            </div>
+            <div class="modal-body">
+                <div class="calculator">
+                    <div class="calculator-display">
+                        <button class="increment-decrement" (click)="decrement()">-</button>
+                        <input type="text" class="calculator-input" [(ngModel)]="calculatorInput" readonly>
+                        <button class="increment-decrement" (click)="increment()">+</button>
+                    </div>
+                    <div class="calculator-buttons">
+                        <button (click)="appendNumber(7)">7</button>
+                        <button (click)="appendNumber(8)">8</button>
+                        <button (click)="appendNumber(9)">9</button>
+                        <button (click)="appendNumber(4)">4</button>
+                        <button (click)="appendNumber(5)">5</button>
+                        <button (click)="appendNumber(6)">6</button>
+                        <button (click)="appendNumber(1)">1</button>
+                        <button (click)="appendNumber(2)">2</button>
+                        <button (click)="appendNumber(3)">3</button>
+                        <button (click)="appendComma()">,</button>
+                        <button class="append-zero-btn" (click)="appendNumber(0)">0</button>
+                        <button class="clear-btn" (click)="clearInput()">Clear</button>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" >Ok</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clearInput()">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 <!-- Add Cash Drawer Modal -->
 <div class="modal fade" id="Ok" tabindex="-1" role="dialog" aria-labelledby="noSaleModalLabel" aria-hidden="true">
@@ -1299,7 +1278,8 @@
                     <div class="modal-footer">
                         <button type="button" class="btn btn-sm btn-primary me-2" id="historyButton"
                             (click)="printContent1()">Print</button>
-                        <button type="button" class="btn btn-sm btn-primary me-2" id="historyButton">Details</button>
+                        <button type="button" class="btn btn-sm btn-primary me-2" id="historyButton" data-toggle="modal"
+                        data-target="#details">Details</button>
                         <button type="button" class="btn btn-sm btn-primary me-2" id="historyButton" data-toggle="modal"
                             data-target="#transfeuser">Transfer user</button>
                         <button type="button" class="btn btn-sm btn-primary me-2" id="historyButton" data-toggle="modal"
@@ -1323,7 +1303,6 @@
         flex-grow: 1;
     }
 </style>
-
 
 
 <!-- Payout Modal -->
@@ -1601,6 +1580,168 @@
         </div>
     </div>
 </div>
+<!--summary details  Modal -->
+<div class="modal fade" id="reportModal" tabindex="-1" aria-labelledby="reportModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="reportModalLabel">Server Summary Detail Report</h5>
+               
+            </div>
+            <div class="modal-body">
+                <div class="report-container">
+                    <div class="report-header text-center">
+                       
+                            <div class="report-title">Demo store</div>
+                            <div>Demo address line 1</div>
+                            <div>Demo address line 2</div>
+                            <div>Demo address line 3</div>
+                            <div>Demo telephone</div>
+                        
+                        <div > <strong>Server summary detail report</strong></div>
+                    </div>
+                    
+                    
+
+                    <div class="report-section"  style="text-align:left">
+                        <div>Staff : Adam K</div> 
+                        <div>From: 14-08-20 09:49 PM WAT</div>
+                        <div>To: 01-08-24 05:04 PM WAT</div>
+                    </div>
+
+                    <div class="report-section" style="text-align:right">
+                        <div>Currency: USD ($)</div>
+                        <div>Report time: 01-08-24 05:04 PM WAT</div>
+                        
+                    </div>
+
+                    <div class="report-section">
+                        <h5>Payment Type: Cash</h5>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Time</th>
+                                    <th>Ticket id</th>
+                                    <th>Customer</th>
+                                    <th>Amount ($)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>13-08-21 08:41:59 PM</td>
+                                    <td>1631417549988</td>
+                                    <td></td>
+                                    <td>16.82</td>
+                                </tr>
+                                <tr>
+                                    <td>13-08-21 08:43:10 PM</td>
+                                    <td>1627687121880</td>
+                                    <td></td>
+                                    <td>12.71</td>
+                                </tr>
+                                <tr>
+                                    <td>11-06-24 12:15:20 AM</td>
+                                    <td>1718646034425</td>
+                                    <td></td>
+                                    <td>3.99</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="totals">
+                            <strong>Total: 33.52</strong>
+                        </div>
+                    </div>
+
+                    <div class="report-section">
+                        <h5>Payment Type: Custom Payment</h5>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Time</th>
+                                    <th>Ticket id</th>
+                                    <th>Customer</th>
+                                    <th>Amount ($)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>06-06-23 04:54:08 PM</td>
+                                    <td>1686958802827</td>
+                                    <td></td>
+                                    <td>5.30</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="totals">
+                            <strong>Total: 5.30</strong>
+                        </div>
+                    </div>
+
+                    <div class="totals">
+                        <strong>Grand total: 38.82</strong>
+                    </div>
+
+                    <div class="modal-footer">
+                        
+                        <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal"
+                            id="cancelButton">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="modal fade" id="details" tabindex="-1" aria-labelledby="reportModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="reportModalLabel">Server Summary Detail Report</h5>
+               
+            </div>
+            <div class="modal-body">
+                <div class="report-container">
+                    <div class="report-header text-center">
+                       
+                            <div class="report-title">Demo store</div>
+                            <div>Demo address line 1</div>
+                            <div>Demo address line 2</div>
+                            <div>Demo address line 3</div>
+                            <div>Demo telephone</div>
+                        
+                        <div > <strong>Sales balance detail report</strong></div>
+                    </div>
+                    
+                    
+
+                    <div class="report-section"  style="text-align:left">
+                        <div>Assigned to : Adam K</div> 
+                        <div>From: 14-08-20 09:49 PM WAT</div>
+                        <div>To: 01-08-24 05:04 PM WAT</div>
+                    </div>
+
+                    <div class="report-section" style="text-align:right">
+                        <div>Currency: USD ($)</div>
+                        <div>Report time: 01-08-24 05:04 PM WAT</div>
+                        
+                    </div>
+
+                  
+
+                    <div class="modal-footer">
+                        
+                        <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal"
+                            id="cancelButton">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 
 
 <!-- OpenTickets Modal -->
@@ -1884,3 +2025,5 @@
         </div>
     </div>
 </div>
+
+

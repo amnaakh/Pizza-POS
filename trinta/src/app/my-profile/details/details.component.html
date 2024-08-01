@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Server Summary Detail Report</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .report-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #000;
+        }
+        .report-header, .report-footer {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .report-title {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .report-section {
+            margin-bottom: 20px;
+        }
+        .report-section table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        .report-section table, .report-section th, .report-section td {
+            border: 1px solid #000;
+        }
+        .report-section th, .report-section td {
+            padding: 8px;
+            text-align: left;
+        }
+        .report-section th {
+            background-color: #f2f2f2;
+        }
+        .totals {
+            text-align: right;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="report-container">
+        <div class="report-header">
+            <div class="report-title">Server summary detail report</div>
+        </div>
+        
+        <div class="report-section">
+            <div>Demo store</div>
+            <div>Demo address line 1</div>
+            <div>Demo address line 2</div>
+            <div>Demo address line 3</div>
+            <div>Demo telephone</div>
+        </div>
+
+        <div class="report-section">
+            <div>Staff : Adam K</div>
+            <div>From: 14-08-20 09:49 PM WAT</div>
+            <div>To: 01-08-24 05:04 PM WAT</div>
+        </div>
+
+        <div class="report-section">
+            <div>Report time: 01-08-24 05:04 PM WAT</div>
+            <div>Currency: USD ($)</div>
+        </div>
+
+        <div class="report-section">
+            <h3>Payment Type: Cash</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Time</th>
+                        <th>Ticket id</th>
+                        <th>Customer</th>
+                        <th>Amount ($)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>13-08-21 08:41:59 PM</td>
+                        <td>1631417549988</td>
+                        <td></td>
+                        <td>16.82</td>
+                    </tr>
+                    <tr>
+                        <td>13-08-21 08:43:10 PM</td>
+                        <td>1627687121880</td>
+                        <td></td>
+                        <td>12.71</td>
+                    </tr>
+                    <tr>
+                        <td>11-06-24 12:15:20 AM</td>
+                        <td>1718646034425</td>
+                        <td></td>
+                        <td>3.99</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="totals">
+                <strong>Total: 33.52</strong>
+            </div>
+        </div>
+
+        <div class="report-section">
+            <h3>Payment Type: Custom Payment</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Time</th>
+                        <th>Ticket id</th>
+                        <th>Customer</th>
+                        <th>Amount ($)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>06-06-23 04:54:08 PM</td>
+                        <td>1686958802827</td>
+                        <td></td>
+                        <td>5.30</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="totals">
+                <strong>Total: 5.30</strong>
+            </div>
+        </div>
+
+        <div class="report-footer">
+            <strong>Grand total: 38.82</strong>
+        </div>
+    </div>
+</body>
+</html>

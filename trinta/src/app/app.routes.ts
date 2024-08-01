@@ -154,6 +154,7 @@ import { ListboxComponent } from './ui-elements/listbox/listbox.component';
 import { ListComponent } from './ui-elements/list/list.component';
 import { InputComponent } from './ui-elements/input/input.component';
 import { TooltipComponent } from './ui-elements/tooltip/tooltip.component';
+import { DetailsComponent } from './my-profile/details/details.component';
 
 export const routes: Routes = [
     {path: '', component: EcommerceComponent},
@@ -372,12 +373,14 @@ export const routes: Routes = [
         ]
     },
     {path: 'my-profile', component: MyProfileComponent},
+    {path: 'details', component: DetailsComponent},
     {
         path: 'settings',
         component: SettingsComponent,
         children: [
             {path: '', component: AccountSettingsComponent},
             {path: 'change-password', component: ChangePasswordComponent},
+           
             {path: 'connections', component: ConnectionsComponent},
             {path: 'privacy-policy', component: PrivacyPolicyComponent},
             {path: 'terms-conditions', component: TermsConditionsComponent}

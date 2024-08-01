@@ -25,6 +25,10 @@ export class StatsComponent implements OnInit {
     { id: 4, username: 'Sara P', firstName: 'Sara', lastName: 'P', Due: 92 },
     { id: 5, username: 'Juthi M', firstName: 'Juthi', lastName: 'M', Due: 28 },
   ];
+  declaredTips: { time: string, amount: number }[] = [
+    { time: '01/08/24 06:34:35 PM', amount: 0 },
+    { time: '01/08/24 06:34:56 PM', amount: 5 }
+  ];
   selectedUserId: number | null = null;
   selectedUsername: string | null = null;
   selectedlastname: string | null = null;
@@ -63,8 +67,21 @@ export class StatsComponent implements OnInit {
     const month = now.toLocaleString('fr-FR', { month: 'short' });
     const year = now.getFullYear();
     const time = now.toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit', hour12: true });
-    this.ReportTime = `${day} ${month} ${year}, ${time}`;
+    this.ReportTime = `${day} ${month} ${year} ${time}`;
   }
+
+  addDeclaredTip() {
+    const amount = parseFloat(this.calculatorInput);
+    if (!isNaN(amount)) {
+      const currentTime = new Date().toLocaleString();
+      this.declaredTips.push({ time: currentTime, amount: amount });
+      this.clearInput();
+    }
+  }
+
+  
+
+ 
 
   appendNumber(number: number): void {
     this.calculatorInput += number;

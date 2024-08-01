@@ -399,4 +399,42 @@ button:hover {
   .col-md-8 {
     max-height: 100%; /* Full height of the modal */
   }
+
+  body {
+    font-family: Arial, sans-serif;
+}
+.report-container {
+    max-width: 100%;
+    padding: 20px;
+}
+.report-header, .report-footer {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.report-title {
+    font-size: 24px;
+    font-weight: bold;
+}
+.report-section {
+    margin-bottom: 20px;
+}
+.report-section table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+.report-section table, .report-section th, .report-section td {
+    border: 1px solid #000;
+}
+.report-section th, .report-section td {
+    padding: 8px;
+    text-align: left;
+}
+.report-section th {
+    background-color: #f2f2f2;
+}
+.totals {
+    text-align: right;
+    margin-top: 20px;
+}
   
