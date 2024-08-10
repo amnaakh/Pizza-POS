@@ -341,12 +341,9 @@ export class StatsComponent implements OnInit {
   }
 
   showAssignmentAlert(): void {
-    if (this.selectedUsername) {
-      alert(`Drawer is assigned to ${this.selectedUsername}`);
+   
       this.Assigned = true;
-    } else {
-      alert('No user selected');
-    }
+    
   }
 
 

@@ -441,4 +441,197 @@ button:hover {
 //   max-width: 70%; /* Increase width to 90% of the viewport width */
 //   width: 70%; /* Set the width to 90% of the viewport width */
 // }
-  
+
+.align-right {
+    text-align: right;
+}
+
+.align-left {
+    text-align: left;
+    padding-right: 20px;
+    /* Adjust the padding as needed */
+}
+
+
+.align-left1 {
+    text-align: left;
+    padding-right: 93px;
+    /* Adjust the padding as needed */
+}
+
+.align-left2 {
+    text-align: left;
+    padding-right: 83px;
+    /* Adjust the padding as needed */
+}
+.btn-dark-yellow {
+  background-color: #FFA500;
+  /* Dark yellow color */
+  color: white;
+  padding: 20px;
+  font-size: 1em;
+  flex-grow: 1;
+}
+
+
+.modal-body {
+  max-height: calc(100vh - 100px);
+  overflow-y: auto;
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+
+
+
+.dark-yellow-btn {
+    background-color: #ffcc00;
+    color: #000;
+    border: none;
+    height: 30px;
+    width: 30px;
+    padding: 0;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 5px;
+}
+
+.dark-yellow-btn:hover {
+    background-color: #e6b800;
+}
+
+.input-group-append .btn {
+    margin-left: 5px;
+}
+
+.keyboard {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+    padding: 10px;
+    background-color: #f8f9fa;
+}
+
+.keyboard .key {
+    flex: 1 1 40px;
+    padding: 10px;
+    background-color: #e6b800;
+    border: 1px solid #e6b800;
+    border-radius: 5px;
+    font-size: 18px;
+    text-align: center;
+    margin: 2px;
+}
+
+.keyboard .key:hover {
+    background-color: #d4d4d4;
+}
+
+
+
+.dark-yellow-btn {
+    background-color: #ffcc00;
+    color: #000;
+    border: none;
+    height: 30px;
+    width: 30px;
+    padding: 0;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 5px;
+}
+
+.dark-yellow-btn:hover {
+    background-color: #e6b800;
+}
+
+.input-group-append .btn {
+    margin-left: 5px;
+}
+
+.keyboard {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+    padding: 10px;
+    background-color: #f8f9fa;
+}
+
+.keyboard .key {
+    flex: 1 1 40px;
+    padding: 10px;
+    background-color: #e6b800;
+    border: 1px solid #e6b800;
+    border-radius: 5px;
+    font-size: 18px;
+    text-align: center;
+    margin: 2px;
+}
+
+.keyboard .key:hover {
+    background-color: #d4d4d4;
+}
+
+
+.dark-yellow-btn {
+    background-color: #ffcc00;
+    color: #000;
+    border: none;
+    height: 30px;
+    width: 30px;
+    padding: 0;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 5px;
+}
+
+.dark-yellow-btn:hover {
+    background-color: #e6b800;
+}
+
+.input-group-append .btn {
+    margin-left: 5px;
+}
+
+.keyboard {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+    padding: 10px;
+    background-color: #f8f9fa;
+}
+
+.keyboard .key {
+    flex: 1 1 40px;
+    padding: 10px;
+    background-color: #e6b800;
+    border: 1px solid #e6b800;
+    border-radius: 5px;
+    font-size: 18px;
+    text-align: center;
+    margin: 2px;
+}
+
+.keyboard .key:hover {
+    background-color: #d4d4d4;
+}
+
+
+
+   
+   
+
+    .modal-body {
+        max-height: calc(100vh - 100px);
+        overflow-y: auto;
+    }
+
+    body.modal-open {
+        overflow: hidden;
+    }
+
+
