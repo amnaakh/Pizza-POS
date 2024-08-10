@@ -26,9 +26,11 @@ export class StatsComponent implements OnInit {
     { id: 5, username: 'Juthi M', firstName: 'Juthi', lastName: 'M', Due: 28 },
   ];
   declaredTips: { time: string, amount: number }[] = [
-    { time: '01/08/24 06:34:35 PM', amount: 0 },
-    { time: '01/08/24 06:34:56 PM', amount: 5 }
+    { time: '01/08/24, 06:34:35 PM', amount: 0 },
+    { time: '01/08/24, 06:34:56 PM', amount: 5 }
   ];
+
+  selectedTipIndex: number | null = null;
   selectedUserId: number | null = null;
   selectedUsername: string | null = null;
   selectedlastname: string | null = null;
@@ -46,6 +48,12 @@ export class StatsComponent implements OnInit {
   payoutReason: string = '';
   payoutRecipient: string = '';
   payoutNote: string = '';
+  recipientInput: string = '';
+  recipientInput1: string = '';
+  recipientInput2: string = '';
+  payoutReasons: string[] = [];
+  recipients: string[] = [];
+ 
 
   get totalDue(): number {
     return this.users.reduce((total, user) => total + user.Due, 0);
@@ -74,12 +82,28 @@ export class StatsComponent implements OnInit {
     const amount = parseFloat(this.calculatorInput);
     if (!isNaN(amount)) {
       const currentTime = new Date().toLocaleString();
-      this.declaredTips.push({ time: currentTime, amount: amount });
+      this.declaredTips.push({ time: currentTime ,amount: amount });
       this.clearInput();
     }
   }
 
-  
+  openEditModal(index: number) {
+    this.selectedTipIndex = index;
+   
+  }
+
+  updateTip() {
+    if (this.selectedTipIndex !== null) {
+      this.declaredTips[this.selectedTipIndex].amount = parseFloat(this.calculatorInput);
+    }
+    this.clearInput();
+  }
+  clearInputx() {
+    this.calculatorInput = '';
+    this.selectedTipIndex = null;
+  }
+
+
 
  
 
@@ -288,6 +312,34 @@ export class StatsComponent implements OnInit {
     printWindow?.print();
   }
 
+  printContent2() {
+    const printWindow = window.open('', '', 'height=600,width=800');
+    const content = document.getElementById('printableContent2')?.innerHTML || '';
+    
+    printWindow?.document.write('<html><head><title>Print</title>');
+    printWindow?.document.write('<style> /* Add any specific styles you need for printing */ </style>');
+    printWindow?.document.write('</head><body >');
+    printWindow?.document.write(content);
+    printWindow?.document.write('</body></html>');
+    printWindow?.document.close();
+    printWindow?.focus();
+    printWindow?.print();
+  }
+
+  printContent3() {
+    const printWindow = window.open('', '', 'height=600,=800');
+    const content = document.getElementById('printableContent3')?.innerHTML || '';
+    
+    printWindow?.document.write('<html><head><title>Print</title>');
+    printWindow?.document.write('<style> /* Add any specific styles you need for printing */ </style>');
+    printWindow?.document.write('</head><body >');
+    printWindow?.document.write(content);
+    printWindow?.document.write('</body></html>');
+    printWindow?.document.close();
+    printWindow?.focus();
+    printWindow?.print();
+  }
+
   showAssignmentAlert(): void {
     if (this.selectedUsername) {
       alert(`Drawer is assigned to ${this.selectedUsername}`);
@@ -300,9 +352,73 @@ export class StatsComponent implements OnInit {
 
   changestatus(): void {
    
-      this.Assigned = false;
-    
+      this.Assigned = false;  }
+
+////////////////////////////////////////////////////////
+addReason(): void {
+    if (this.recipientInput.trim()) {
+      this.payoutReasons.push(this.recipientInput.trim());
+      this.payoutReason = this.recipientInput.trim();
+      this.recipientInput = '';
+    }
   }
+  appendChar(char: string): void {
+    this.recipientInput += char;
+  }
+
+  clearRecipientInput(): void {
+    if (this.recipientInput.length > 0) {
+      this.recipientInput = this.recipientInput.slice(0, -1);
+    }
+  }
+
+  clearInputre(): void {
+    this.recipientInput = '';
+  }
+  
+////////////////////////////////////////////////////////
+  addRecipient(): void {
+    if (this.recipientInput1.trim()) {
+      this.recipients.push(this.recipientInput1.trim());
+      this.payoutRecipient = this.recipientInput1.trim();
+      this.recipientInput1 = '';
+    }
+  }
+  appendChar1(char: string): void {
+    this.recipientInput1 += char;
+  }
+
+  clearRecipientInput1(): void {
+    if (this.recipientInput1.length > 0) {
+      this.recipientInput1 = this.recipientInput1.slice(0, -1);
+    }
+  }
+
+  clearInputre1(): void {
+    this.recipientInput1 = '';
+  }
+////////////////////////////////////////////////////////
+addnote(): void {
+  if (this.recipientInput2.trim()) {
+   
+    this.payoutNote = this.recipientInput2.trim();
+    this.recipientInput2 = '';
+  }
+}
+appendChar2(char: string): void {
+  this.recipientInput2 += char;
+}
+
+clearRecipientInput2(): void {
+  if (this.recipientInput2.length > 0) {
+    this.recipientInput2 = this.recipientInput2.slice(0, -1);
+  }
+}
+
+clearInputre2(): void {
+  this.recipientInput2 = '';
+}
+
 }
 
 

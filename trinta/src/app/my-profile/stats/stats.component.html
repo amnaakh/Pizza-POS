@@ -184,10 +184,12 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let tip of declaredTips">
+                        <tr *ngFor="let tip of declaredTips; let i = index">
                             <td style="border: 1px solid #b0acac; padding: 8px;">{{ tip.time }}</td>
                             <td style="border: 1px solid #b0acac; padding: 8px;">{{ tip.amount }}</td>
-                            <td style="border: 1px solid #8B8000; padding: 8px;"><button style="background-color:#CF9033" data-toggle="modal" data-target="#edit">Edit</button></td>
+                            <td style="border: 1px solid #8B8000; padding: 8px;">
+                                <button style="background-color:#CF9033" (click)="openEditModal(i)" data-toggle="modal" data-target="#edit">Edit</button>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -195,19 +197,18 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-sm btn-primary me-2" data-toggle="modal" data-target="#history1">Tips details</button>
                 <button type="button" class="btn btn-sm btn-primary me-2" data-toggle="modal" data-target="#Add">Add</button>
-                <button type="button" class="btn btn-sm btn-primary me-2">Done</button>
+                <button type="button" class="btn btn-sm btn-primary me-2" data-dismiss="modal">Done</button>
             </div>
         </div>
     </div>
 </div>
 
-
 <!-- modal -->
-<div class="modal fade" id="history1" tabindex="-1" role="dialog" aria-labelledby="noSaleModalLabel" aria-hidden="true">
+<div class="modal fade" id="history1" tabindex="-1" role="dialog" aria-labelledby="mm" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
+        <div class="modal-content"> 
             <div class="modal-header">
-                <h5 class="modal-title" id="noSaleModalLabel">Server Tips Report</h5>
+                <h5 class="modal-title" id="mm">Server Tips Report</h5>
             </div>
             <div class="modal-body">
                 <div class="row">
@@ -227,7 +228,7 @@
                             <h6>Cash Tips: $0.00 </h6>
                             <h6>Charged Tips: $0.00</h6>
                             <h6>Declared Tips: $0.00</h6>
-                            ------------------------------------------------------------
+                            ----------------------------------------------------------
 
                             <div class="row">
                                 <div class="col-md-2">
@@ -268,8 +269,8 @@
 
 
                             </div>
-                            ------------------------------------------------------------
-                            ------------------------------------------------------------
+                            ----------------------------------------------------------
+                            --------------------------------------------------------
                             <div class="row">
                                 <div class="col-md-2">
                                     <h6></h6>
@@ -313,17 +314,17 @@
 
 
 <!-- modal -->
-<div class="modal fade" id="noSaleModal" tabindex="-1" role="dialog" aria-labelledby="noSaleModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
+<div class="modal fade" id="noSaleModal" tabindex="-1" role="dialog" aria-labelledby="noSaleModalLabel" 
+    aria-hidden="true" >
+    <div class="modal-dialog modal-lg" role="document" >
+        <div class="modal-content" >
+            <div class="modal-header"> 
                 <h5 class="modal-title" id="noSaleModalLabel">Tips Management</h5>
             </div>
-            <div class="modal-body">
+            <div class="modal-body" >
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-3 d-flex">
+                        <div class="col-md-3 d-flex ">
                             <mat-card
                                 class="trinta-card profile-intro-card mb-25 bg-white border-none d-block flex-grow-1">
                                 <mat-card-header>
@@ -449,8 +450,7 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-sm btn-primary me-2" id="historyButton" data-toggle="modal"
                     data-target="#history">History</button>
-                <button type="button" class="btn btn-sm btn-primary me-2" id="payButton" data-toggle="modal"
-                    data-target="#history1">Details</button>
+                <button type="button" class="btn btn-sm btn-primary me-2" data-toggle="modal" data-target="#history1">Tips details</button>
                 <button type="button" class="btn btn-sm btn-primary me-2" id="payButton">Pay</button>
                 <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal"
                     id="cancelButton">Cancel</button>
@@ -459,6 +459,19 @@
         </div>
     </div>
 </div>
+<style>
+   
+   
+
+    .modal-body {
+        max-height: calc(100vh - 100px);
+        overflow-y: auto;
+    }
+
+    body.modal-open {
+        overflow: hidden;
+    }
+</style>
 
 
 <!-- modal -->
@@ -904,16 +917,18 @@
                             </table>
                         </div>
 
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-sm btn-primary me-2" id="historyButton"
-                                (click)="printContent1()">Print</button>
-                            <button type="button" class="btn btn-sm btn-primary me-2"
-                                id="historyButton" data-toggle="modal"
-                                data-target="#reportModal">Details</button>
-                            <button type="button" class="btn btn-sm btn-primary me-2" id="historyButton">Done</button>
-
-                        </div>
+                       
                     </div>
+                   
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-sm btn-primary me-2" id="historyButton"
+                        (click)="printContent1()">Print</button>
+                    <button type="button" class="btn btn-sm btn-primary me-2"
+                        id="historyButton" data-toggle="modal"
+                        data-target="#reportModal">Details</button>
+                    <button type="button" class="btn btn-sm btn-primary me-2" id="historyButton">Done</button>
+
                 </div>
             </div>
         </div>
@@ -952,12 +967,15 @@
                 </div>
             </div>
             <div class="modal-footer">
+                <div class="modal-footer-buttons">
                 <button type="button" class="btn btn-primary" (click)="addDeclaredTip()">Ok</button>
                 <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clearInput()">Cancel</button>
-            </div>
+            </div></div>
         </div>
     </div>
 </div>
+
+
 <!-- Edit Declare Tips Modal -->
 <div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="noSaleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -984,18 +1002,43 @@
                         <button (click)="appendNumber(3)">3</button>
                         <button (click)="appendComma()">,</button>
                         <button class="append-zero-btn" (click)="appendNumber(0)">0</button>
-                        <button class="clear-btn" (click)="clearInput()">Clear</button>
+                        <button class="clear-btn" (click)="clearInputx()">Clear</button>
                     </div>
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary" >Ok</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="updateTip()" >Ok</button>
                 <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clearInput()">Cancel</button>
             </div>
         </div>
     </div>
 </div>
 
+
+<!-- Payout sucess  Modal -->
+<div class="modal fade" id="payout_sucess" tabindex="-1" role="dialog" aria-labelledby="closeDrawerLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="closeDrawerLabel">Message</h5>
+
+            </div>
+            <div class="modal-body">
+                Pay out successful
+            </div>
+
+            <div class="modal-footer">
+
+
+                <button type="button" class="xx" id="historyButton" data-dismiss="modal"
+                 >Print</button>
+                <button type="button" class="xx" id="historyButton" data-dismiss="modal"
+                 >Ok</button>
+
+            </div>
+        </div>
+    </div>
+</div>
 
 <!-- Add Cash Drawer Modal -->
 <div class="modal fade" id="Ok" tabindex="-1" role="dialog" aria-labelledby="noSaleModalLabel" aria-hidden="true">
@@ -1030,7 +1073,7 @@
             <div class="modal-footer">
                 <div class="modal-footer-buttons">
                     <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="showAssignmentAlert()"
-                        data-dismiss="modal">Ok</button>
+                        data-dismiss="modal" (click)="clearInput1()">Ok</button>
                     <button type="button" class="btn btn-secondary" (click)="clearInput1()">Cancel</button>
                 </div>
             </div>
@@ -1039,23 +1082,24 @@
 </div>
 
 <!-- Cash drawer status Modal -->
+
 <div class="modal fade" id="drawerstatus" tabindex="-1" role="dialog" aria-labelledby="server" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content h-100">
             <div class="modal-header">
                 <h5 class="modal-title" id="server">Drawer Status</h5>
             </div>
-            <div class="modal-body d-flex h-100">
+            <div class="modal-body d-flex h-100 overflow-auto">
                 <div class="col-2 justify-content-between ">
                     <!-- Large Buttons on the left side -->
-                    <button type="button" style="height:24%" class="btn btn-dark-yellow mb-2 flex-grow-1"
+                    <button type="button" style="height:50%" class="btn btn-dark-yellow mb-2 flex-grow-1"
                         data-toggle="modal" data-target="#bleed">Drawer Bleed</button>
-                    <button type="button" style="height:24%" class="btn btn-dark-yellow mb-2 flex-grow-1">No
+                    <button type="button" style="height:50%" class="btn btn-dark-yellow mb-2 flex-grow-1">No
                         Sale</button>
-                    <button type="button" style="height:24%" class="btn btn-dark-yellow mb-2 flex-grow-1"
-                        data-toggle="modal" data-target="#payout">Payout</button>
-                    <button type="button" style="height:24%" class="btn btn-dark-yellow mb-2 flex-grow-1"
-                        data-toggle="modal" data-target="#cashIn">Cash In</button>
+                    <button type="button" style="height:50%" class="btn btn-dark-yellow mb-2 flex-grow-1"
+                        data-toggle="modal" data-target="#payout" data-dismiss="modal">Payout</button>
+                    <button type="button" style="height:50%" class="btn btn-dark-yellow mb-2 flex-grow-1"
+                        data-toggle="modal" data-target="#cashIn" data-dismiss="modal">Cash In</button>
                 </div>
                 <div class="col-10 p-3">
                     <div class="text-center">
@@ -1302,12 +1346,22 @@
         font-size: 1em;
         flex-grow: 1;
     }
+   
+
+    .modal-body {
+        max-height: calc(100vh - 100px);
+        overflow-y: auto;
+    }
+
+    body.modal-open {
+        overflow: hidden;
+    }
 </style>
 
 
 <!-- Payout Modal -->
 <div class="modal fade" id="payout" tabindex="-1" role="dialog" aria-labelledby="noSaleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
+    <div class="modal-dialog modal-dialog-scrollable" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="noSaleModalLabel">Payout</h5>
@@ -1337,32 +1391,390 @@
                 </div> &nbsp;
                 <div class="form-group">
                     <label for="payoutReason">Select pay out reason</label>
-                    <select class="form-control" id="payoutReason" [(ngModel)]="payoutReason">
-                        <!-- Add options here -->
-                    </select>
+                    <div class="input-group">
+                        <select class="form-control" id="payoutReason" [(ngModel)]="payoutReason">
+                            <option *ngFor="let reason of payoutReasons" [value]="reason">{{ reason }}</option>
+                        </select>
+                        <div class="input-group-append">
+                            <button type="button" class="btn btn-secondary btn-sm dark-yellow-btn" data-toggle="modal" data-target="#enterReasonModal">...</button>
+                        </div>
+                    </div>
                 </div>
                 <div class="form-group">
                     <label for="payoutRecipient">Select pay out recipient</label>
-                    <select class="form-control" id="payoutRecipient" [(ngModel)]="payoutRecipient">
-                        <!-- Add options here -->
-                    </select>
+                    <div class="input-group">
+                        <select class="form-control" id="payoutRecipient" [(ngModel)]="payoutRecipient">
+                            <option *ngFor="let recipient of recipients" [value]="recipient">{{ recipient }}</option>
+                        </select>
+                        <div class="input-group-append">
+                            <button type="button" class="btn btn-secondary btn-sm dark-yellow-btn" data-toggle="modal" data-target="#recipient">...</button>
+                        </div>
+                    </div>
                 </div>
                 <div class="form-group">
                     <label for="payoutNote">Note</label>
-                    <textarea class="form-control" id="payoutNote" rows="3" [(ngModel)]="payoutNote"></textarea>
+                    <div class="input-group">
+                        <textarea class="form-control" id="payoutNote" rows="3" [(ngModel)]="payoutNote"></textarea>
+                        <div class="input-group-append">
+                            <button type="button" class="btn btn-secondary btn-sm dark-yellow-btn" data-toggle="modal" data-target="#note">...</button>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="modal-footer">
                 <div class="modal-footer-buttons">
-                    <button type="button" class="btn btn-primary" data-dismiss="modal" data-toggle="modal"
-                        data-target="#closed">Ok</button>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal"
-                        (click)="clearInput4()">Cancel</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" data-toggle="modal" data-target="#payout_sucess">Ok</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clearInput4()">Cancel</button>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+
+
+
+<!-- Payout reason Modal -->
+<div class="modal fade" id="enterReasonModal" tabindex="-1" role="dialog" aria-labelledby="enterReasonModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="enterReasonModalLabel">Enter pay out reason</h5>
+        </div>
+        <div class="modal-body">
+          <input type="text" class="form-control" [(ngModel)]="recipientInput" readonly>
+          <div class="keyboard">
+            <button class="key" (click)="appendChar('1')">1</button>
+            <button class="key" (click)="appendChar('2')">2</button>
+            <button class="key" (click)="appendChar('3')">3</button>
+            <button class="key" (click)="appendChar('4')">4</button>
+            <button class="key" (click)="appendChar('5')">5</button>
+            <button class="key" (click)="appendChar('6')">6</button>
+            <button class="key" (click)="appendChar('7')">7</button>
+            <button class="key" (click)="appendChar('8')">8</button>
+            <button class="key" (click)="appendChar('9')">9</button>
+            <button class="key" (click)="appendChar('0')">0</button>
+            <button class="key" (click)="appendChar('q')">q</button>
+            <button class="key" (click)="appendChar('w')">w</button>
+            <button class="key" (click)="appendChar('e')">e</button>
+            <button class="key" (click)="appendChar('r')">r</button>
+            <button class="key" (click)="appendChar('t')">t</button>
+            <button class="key" (click)="appendChar('y')">y</button>
+            <button class="key" (click)="appendChar('u')">u</button>
+            <button class="key" (click)="appendChar('i')">i</button>
+            <button class="key" (click)="appendChar('o')">o</button>
+            <button class="key" (click)="appendChar('p')">p</button>
+            <button class="key" (click)="appendChar('a')">a</button>
+            <button class="key" (click)="appendChar('s')">s</button>
+            <button class="key" (click)="appendChar('d')">d</button>
+            <button class="key" (click)="appendChar('f')">f</button>
+            <button class="key" (click)="appendChar('g')">g</button>
+            <button class="key" (click)="appendChar('h')">h</button>
+            <button class="key" (click)="appendChar('j')">j</button>
+            <button class="key" (click)="appendChar('k')">k</button>
+            <button class="key" (click)="appendChar('l')">l</button>
+            <button class="key" (click)="appendChar('z')">z</button>
+            <button class="key" (click)="appendChar('x')">x</button>
+            <button class="key" (click)="appendChar('c')">c</button>
+            <button class="key" (click)="appendChar('v')">v</button>
+            <button class="key" (click)="appendChar('b')">b</button>
+            <button class="key" (click)="appendChar('n')">n</button>
+            <button class="key" (click)="appendChar('m')">m</button>
+            <button class="key" (click)="appendChar('&')">&</button>
+            <button class="key" (click)="appendChar(',')">,</button>
+            <button class="key" (click)="appendChar('.')">.</button>
+            <button class="key" (click)="appendChar('-')">-</button>
+            <button class="key" (click)="appendChar('#')">#</button>
+            <button class="key" (click)="appendChar(' ')">Space</button>
+            <button class="key" (click)="clearRecipientInput()">Clear</button>
+            <button class="key" (click)="clearInputre()">Clear all</button>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <div class="modal-footer-buttons">
+            <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="addReason()">Ok</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+<style>
+.dark-yellow-btn {
+    background-color: #ffcc00;
+    color: #000;
+    border: none;
+    height: 30px;
+    width: 30px;
+    padding: 0;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 5px;
+}
+
+.dark-yellow-btn:hover {
+    background-color: #e6b800;
+}
+
+.input-group-append .btn {
+    margin-left: 5px;
+}
+
+.keyboard {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+    padding: 10px;
+    background-color: #f8f9fa;
+}
+
+.keyboard .key {
+    flex: 1 1 40px;
+    padding: 10px;
+    background-color: #e6b800;
+    border: 1px solid #e6b800;
+    border-radius: 5px;
+    font-size: 18px;
+    text-align: center;
+    margin: 2px;
+}
+
+.keyboard .key:hover {
+    background-color: #d4d4d4;
+}
+</style>
+
+
+<!-- Payout note Modal -->
+<div class="modal fade" id="note" tabindex="-1" role="dialog" aria-labelledby="enterReasonModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="enterReasonModalLabel">Enter pay out note</h5>
+        </div>
+        <div class="modal-body">
+          <input type="text" class="form-control" [(ngModel)]="recipientInput2" readonly>
+          <div class="keyboard">
+            <button class="key" (click)="appendChar2('1')">1</button>
+            <button class="key" (click)="appendChar2('2')">2</button>
+            <button class="key" (click)="appendChar2('3')">3</button>
+            <button class="key" (click)="appendChar2('4')">4</button>
+            <button class="key" (click)="appendChar2('5')">5</button>
+            <button class="key" (click)="appendChar2('6')">6</button>
+            <button class="key" (click)="appendChar2('7')">7</button>
+            <button class="key" (click)="appendChar2('8')">8</button>
+            <button class="key" (click)="appendChar2('9')">9</button>
+            <button class="key" (click)="appendChar2('0')">0</button>
+            <button class="key" (click)="appendChar2('q')">q</button>
+            <button class="key" (click)="appendChar2('w')">w</button>
+            <button class="key" (click)="appendChar2('e')">e</button>
+            <button class="key" (click)="appendChar2('r')">r</button>
+            <button class="key" (click)="appendChar2('t')">t</button>
+            <button class="key" (click)="appendChar2('y')">y</button>
+            <button class="key" (click)="appendChar2('u')">u</button>
+            <button class="key" (click)="appendChar2('i')">i</button>
+            <button class="key" (click)="appendChar2('o')">o</button>
+            <button class="key" (click)="appendChar2('p')">p</button>
+            <button class="key" (click)="appendChar2('a')">a</button>
+            <button class="key" (click)="appendChar2('s')">s</button>
+            <button class="key" (click)="appendChar2('d')">d</button>
+            <button class="key" (click)="appendChar2('f')">f</button>
+            <button class="key" (click)="appendChar2('g')">g</button>
+            <button class="key" (click)="appendChar2('h')">h</button>
+            <button class="key" (click)="appendChar2('j')">j</button>
+            <button class="key" (click)="appendChar2('k')">k</button>
+            <button class="key" (click)="appendChar2('l')">l</button>
+            <button class="key" (click)="appendChar2('z')">z</button>
+            <button class="key" (click)="appendChar2('x')">x</button>
+            <button class="key" (click)="appendChar2('c')">c</button>
+            <button class="key" (click)="appendChar2('v')">v</button>
+            <button class="key" (click)="appendChar2('b')">b</button>
+            <button class="key" (click)="appendChar2('n')">n</button>
+            <button class="key" (click)="appendChar2('m')">m</button>
+            <button class="key" (click)="appendChar2('&')">&</button>
+            <button class="key" (click)="appendChar2(',')">,</button>
+            <button class="key" (click)="appendChar2('.')">.</button>
+            <button class="key" (click)="appendChar2('-')">-</button>
+            <button class="key" (click)="appendChar2('#')">#</button>
+            <button class="key" (click)="appendChar(' ')">Space</button>
+            <button class="key" (click)="clearRecipientInput()">Clear</button>
+            <button class="key" (click)="clearInputre()">Clear all</button>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <div class="modal-footer-buttons">
+            <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="addnote()" (click)="clearInputre2()">Ok</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clearInputre2()">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+<style>
+.dark-yellow-btn {
+    background-color: #ffcc00;
+    color: #000;
+    border: none;
+    height: 30px;
+    width: 30px;
+    padding: 0;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 5px;
+}
+
+.dark-yellow-btn:hover {
+    background-color: #e6b800;
+}
+
+.input-group-append .btn {
+    margin-left: 5px;
+}
+
+.keyboard {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+    padding: 10px;
+    background-color: #f8f9fa;
+}
+
+.keyboard .key {
+    flex: 1 1 40px;
+    padding: 10px;
+    background-color: #e6b800;
+    border: 1px solid #e6b800;
+    border-radius: 5px;
+    font-size: 18px;
+    text-align: center;
+    margin: 2px;
+}
+
+.keyboard .key:hover {
+    background-color: #d4d4d4;
+}
+</style>
+
+
+<!-- Payout recipient Modal -->
+<div class="modal fade" id="recipient" tabindex="-1" role="dialog" aria-labelledby="enterReasonModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="enterReasonModalLabel">Enter pay out recipient</h5>
+        </div>
+        <div class="modal-body">
+          <input type="text" class="form-control" [(ngModel)]="recipientInput1" readonly>
+          <div class="keyboard">
+            <button class="key" (click)="appendChar1('1')">1</button>
+            <button class="key" (click)="appendChar1('2')">2</button>
+            <button class="key" (click)="appendChar1('3')">3</button>
+            <button class="key" (click)="appendChar1('4')">4</button>
+            <button class="key" (click)="appendChar1('5')">5</button>
+            <button class="key" (click)="appendChar1('6')">6</button>
+            <button class="key" (click)="appendChar1('7')">7</button>
+            <button class="key" (click)="appendChar1('8')">8</button>
+            <button class="key" (click)="appendChar1('9')">9</button>
+            <button class="key" (click)="appendChar1('0')">0</button>
+            <button class="key" (click)="appendChar1('q')">q</button>
+            <button class="key" (click)="appendChar1('w')">w</button>
+            <button class="key" (click)="appendChar1('e')">e</button>
+            <button class="key" (click)="appendChar1('r')">r</button>
+            <button class="key" (click)="appendChar1('t')">t</button>
+            <button class="key" (click)="appendChar1('y')">y</button>
+            <button class="key" (click)="appendChar1('u')">u</button>
+            <button class="key" (click)="appendChar1('i')">i</button>
+            <button class="key" (click)="appendChar1('o')">o</button>
+            <button class="key" (click)="appendChar1('p')">p</button>
+            <button class="key" (click)="appendChar1('a')">a</button>
+            <button class="key" (click)="appendChar1('s')">s</button>
+            <button class="key" (click)="appendChar1('d')">d</button>
+            <button class="key" (click)="appendChar1('f')">f</button>
+            <button class="key" (click)="appendChar1('g')">g</button>
+            <button class="key" (click)="appendChar1('h')">h</button>
+            <button class="key" (click)="appendChar1('j')">j</button>
+            <button class="key" (click)="appendChar1('k')">k</button>
+            <button class="key" (click)="appendChar1('l')">l</button>
+            <button class="key" (click)="appendChar1('z')">z</button>
+            <button class="key" (click)="appendChar1('x')">x</button>
+            <button class="key" (click)="appendChar1('c')">c</button>
+            <button class="key" (click)="appendChar1('v')">v</button>
+            <button class="key" (click)="appendChar1('b')">b</button>
+            <button class="key" (click)="appendChar1('n')">n</button>
+            <button class="key" (click)="appendChar1('m')">m</button>
+            <button class="key" (click)="appendChar1('&')">&</button>
+            <button class="key" (click)="appendChar1(',')">,</button>
+            <button class="key" (click)="appendChar1('.')">.</button>
+            <button class="key" (click)="appendChar1('-')">-</button>
+            <button class="key" (click)="appendChar1('#')">#</button>
+            <button class="key" (click)="appendChar1(' ')">Space</button>
+            <button class="key" (click)="clearRecipientInput1()">Clear</button>
+            <button class="key" (click)="clearInputre1()">Clear all</button>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <div class="modal-footer-buttons">
+            <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="addRecipient()">Ok</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+<style>
+.dark-yellow-btn {
+    background-color: #ffcc00;
+    color: #000;
+    border: none;
+    height: 30px;
+    width: 30px;
+    padding: 0;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 5px;
+}
+
+.dark-yellow-btn:hover {
+    background-color: #e6b800;
+}
+
+.input-group-append .btn {
+    margin-left: 5px;
+}
+
+.keyboard {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+    padding: 10px;
+    background-color: #f8f9fa;
+}
+
+.keyboard .key {
+    flex: 1 1 40px;
+    padding: 10px;
+    background-color: #e6b800;
+    border: 1px solid #e6b800;
+    border-radius: 5px;
+    font-size: 18px;
+    text-align: center;
+    margin: 2px;
+}
+
+.keyboard .key:hover {
+    background-color: #d4d4d4;
+}
+</style>
+
 
 
 
@@ -1436,6 +1848,29 @@
 
 
 
+<!-- sucessful  cashin  Modal -->
+<div class="modal fade" id="sucess" tabindex="-1" role="dialog" aria-labelledby="closeDrawerLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="closeDrawerLabel">Info</h5>
+
+            </div>
+            <div class="modal-body">
+              Cash In  sucessfull
+            </div>
+
+            <div class="modal-footer">
+
+
+                <button type="button" class="xx" id="historyButton" data-dismiss="modal"
+                   >Ok</button>
+
+            </div>
+        </div>
+    </div>
+</div>
+
 <!-- close drawer  Modal -->
 <div class="modal fade" id="closed" tabindex="-1" role="dialog" aria-labelledby="closeDrawerLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -1486,13 +1921,14 @@
                                         </select>
                                     </div>
                                 </mat-card-content>
+                               
                             </mat-card>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-sm btn-primary me-2">Ok</button>
+                <button type="button" class="btn btn-sm btn-primary me-2" data-dismiss="modal" (click)="showAssignmentAlert()" >Ok</button>
                 <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">Cancel</button>
             </div>
         </div>
@@ -1572,7 +2008,8 @@
             </div>
             <div class="modal-footer">
                 <div class="modal-footer-buttons">
-                    <button type="button" class="btn btn-primary">Ok</button>
+                    <button type="button" class="btn btn-primary"  data-dismiss="modal" data-toggle="modal"
+                    data-target="#sucess" >Ok</button>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal"
                         (click)="clearInput3()">Cancel</button>
                 </div>
@@ -1580,6 +2017,10 @@
         </div>
     </div>
 </div>
+
+
+
+
 <!--summary details  Modal -->
 <div class="modal fade" id="reportModal" tabindex="-1" aria-labelledby="reportModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
@@ -1589,7 +2030,7 @@
                
             </div>
             <div class="modal-body">
-                <div class="report-container">
+                <div class="report-container"  id="printableContent2">
                     <div class="report-header text-center">
                        
                             <div class="report-title">Demo store</div>
@@ -1681,11 +2122,14 @@
                         <strong>Grand total: 38.82</strong>
                     </div>
 
-                    <div class="modal-footer">
+                   
+                </div>
+                <div class="modal-footer">
                         
-                        <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal"
-                            id="cancelButton">Close</button>
-                    </div>
+                    <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal"
+                        id="cancelButton">Close</button>
+                    <button type="button" class="btn btn-sm btn-primary me-2" id="historyButton"
+                        (click)="printContent2()">Print</button>
                 </div>
             </div>
         </div>
@@ -1702,7 +2146,7 @@
                
             </div>
             <div class="modal-body">
-                <div class="report-container">
+                <div class="report-container" id="printableContent3">
                     <div class="report-header text-center">
                        
                             <div class="report-title">Demo store</div>
@@ -1727,15 +2171,19 @@
                         <div>Report time: 01-08-24 05:04 PM WAT</div>
                         
                     </div>
-
+                </div>
                   
 
                     <div class="modal-footer">
                         
+                        
+                        <button type="button" class="btn btn-sm btn-primary me-2" id="historyButton"
+                             (click)="printContent3()">Print</button>
                         <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal"
-                            id="cancelButton">Close</button>
+                            id="cancelButton">Close</button> 
                     </div>
-                </div>
+
+               
             </div>
         </div>
     </div>
