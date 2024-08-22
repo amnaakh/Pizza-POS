@@ -175,7 +175,7 @@
                 <h5 class="modal-title" id="ll" style="color: #90551b;">Declare Tips</h5>
             </div>
             <div class="modal-body">
-                <table style="width: 100%; border: 1px solid #b0acac; border-collapse: collapse;">
+                <table style="width: 100%; border: 1px solid #b0acac; border-collapse: collapse;" class="table table-bordered table-hover">
                     <thead>
                         <tr>
                             <th style="border: 1px solid #b0acac; padding: 8px;">Declared Time</th>
@@ -383,7 +383,7 @@
                                                 <p *ngIf="!selectedUserId">
                                                     <strong>Showing details for all users</strong>
                                                 </p>
-                                                <table *ngIf="!selectedUserId"
+                                                <table *ngIf="!selectedUserId" class="table table-bordered table-hover"
                                                     style="width: 155%; border: 1px solid #b0acac; border-collapse: collapse;">
                                                     <thead>
                                                         <tr>
@@ -423,7 +423,7 @@
                                                 </p>
                                                 <p *ngIf="selectedUsername"> <strong> User Details
                                                         :</strong></p>
-                                                <table *ngIf="selectedUserId"
+                                                <table *ngIf="selectedUserId" class="table table-bordered table-hover"
                                                     style="width: 150%; border: 1px solid #b0acac; border-collapse: collapse;">
                                                     <thead>
                                                         <tr>
@@ -952,23 +952,23 @@
             <div class="modal-body">
                 <div class="calculator">
                     <div class="calculator-display">
-                        <button class="increment-decrement" (click)="decrement()">-</button>
+                        <button class="increment-decrement" (click)="decrement()"><p style="color: #000000;">     -  </p></button>
                         <input type="text" class="calculator-input" [(ngModel)]="calculatorInput" readonly>
-                        <button class="increment-decrement" (click)="increment()">+</button>
+                        <button class="increment-decrement" (click)="increment()"><p style="color: #000000;">    +   </p></button>
                     </div>
                     <div class="calculator-buttons">
-                        <button (click)="appendNumber(7)">7</button>
-                        <button (click)="appendNumber(8)">8</button>
-                        <button (click)="appendNumber(9)">9</button>
-                        <button (click)="appendNumber(4)">4</button>
-                        <button (click)="appendNumber(5)">5</button>
-                        <button (click)="appendNumber(6)">6</button>
-                        <button (click)="appendNumber(1)">1</button>
-                        <button (click)="appendNumber(2)">2</button>
-                        <button (click)="appendNumber(3)">3</button>
-                        <button (click)="appendComma()">.</button>
-                        <button class="append-zero-btn" (click)="appendNumber(0)">0</button>
-                        <button class="clear-btn" (click)="clearInput()">Clear</button>
+                        <button (click)="appendNumber(7)">  <p style="color: #000000;">     7   </p></button>
+                        <button (click)="appendNumber(8)"><p style="color: #000000;">     8   </p></button>
+                        <button (click)="appendNumber(9)"><p style="color: #000000;">     9   </p></button>
+                        <button (click)="appendNumber(4)"><p style="color: #000000;">     4  </p></button>
+                        <button (click)="appendNumber(5)"><p style="color: #000000;">     5   </p></button>
+                        <button (click)="appendNumber(6)"><p style="color: #000000;">     6   </p></button>
+                        <button (click)="appendNumber(1)"><p style="color: #000000;">     1   </p></button>
+                        <button (click)="appendNumber(2)"><p style="color: #000000;">     2   </p></button>
+                        <button (click)="appendNumber(3)"><p style="color: #000000;">     3   </p></button>
+                        <button (click)="appendComma()"><p style="color: #000000;">   .  </p></button>
+                        <button class="append-zero-btn" (click)="appendNumber(0)"><p style="color: #000000;">  0  </p></button>
+                        <button class="clear-btn" (click)="clearInput()"><p style="color: #000000;">    Clear  </p></button>
                     </div>
                 </div>
             </div>
@@ -994,26 +994,26 @@
             <div class="modal-header">
                 <h5 class="modal-title" id="noSaleModalLabel">Enter declare tips amount</h5>
             </div>
-            <div class="modal-body">
+             <div class="modal-body">
                 <div class="calculator">
                     <div class="calculator-display">
-                        <button class="increment-decrement" (click)="decrement()">-</button>
+                        <button class="increment-decrement" (click)="decrement()"><p style="color: #000000;">     -  </p></button>
                         <input type="text" class="calculator-input" [(ngModel)]="calculatorInput" readonly>
-                        <button class="increment-decrement" (click)="increment()">+</button>
+                        <button class="increment-decrement" (click)="increment()"><p style="color: #000000;">    +   </p></button>
                     </div>
                     <div class="calculator-buttons">
-                        <button (click)="appendNumber(7)">7</button>
-                        <button (click)="appendNumber(8)">8</button>
-                        <button (click)="appendNumber(9)">9</button>
-                        <button (click)="appendNumber(4)">4</button>
-                        <button (click)="appendNumber(5)">5</button>
-                        <button (click)="appendNumber(6)">6</button>
-                        <button (click)="appendNumber(1)">1</button>
-                        <button (click)="appendNumber(2)">2</button>
-                        <button (click)="appendNumber(3)">3</button>
-                        <button (click)="appendComma()">.</button>
-                        <button class="append-zero-btn" (click)="appendNumber(0)">0</button>
-                        <button class="clear-btn" (click)="clearInputx()">Clear</button>
+                        <button (click)="appendNumber(7)">  <p style="color: #000000;">     7   </p></button>
+                        <button (click)="appendNumber(8)"><p style="color: #000000;">     8   </p></button>
+                        <button (click)="appendNumber(9)"><p style="color: #000000;">     9   </p></button>
+                        <button (click)="appendNumber(4)"><p style="color: #000000;">     4  </p></button>
+                        <button (click)="appendNumber(5)"><p style="color: #000000;">     5   </p></button>
+                        <button (click)="appendNumber(6)"><p style="color: #000000;">     6   </p></button>
+                        <button (click)="appendNumber(1)"><p style="color: #000000;">     1   </p></button>
+                        <button (click)="appendNumber(2)"><p style="color: #000000;">     2   </p></button>
+                        <button (click)="appendNumber(3)"><p style="color: #000000;">     3   </p></button>
+                        <button (click)="appendComma()"><p style="color: #000000;">   .  </p></button>
+                        <button class="append-zero-btn" (click)="appendNumber(0)"><p style="color: #000000;">  0  </p></button>
+                        <button class="clear-btn" (click)="clearInput()"><p style="color: #000000;">    Clear  </p></button>
                     </div>
                 </div>
             </div>
@@ -1070,23 +1070,23 @@
             <div class="modal-body">
                 <div class="calculator">
                     <div class="calculator-display">
-                        <button class="increment-decrement" (click)="decrement1()">-</button>
+                        <button class="increment-decrement" (click)="decrement1()"><p style="color: #000000;">     -  </p></button>
                         <input type="text" class="calculator-input" [(ngModel)]="calculatorInput1" readonly>
-                        <button class="increment-decrement" (click)="increment1()">+</button>
+                        <button class="increment-decrement" (click)="increment1()"><p style="color: #000000;">     +  </p></button>
                     </div>
                     <div class="calculator-buttons">
-                        <button (click)="appendNumber1(7)">7</button>
-                        <button (click)="appendNumber1(8)">8</button>
-                        <button (click)="appendNumber1(9)">9</button>
-                        <button (click)="appendNumber1(4)">4</button>
-                        <button (click)="appendNumber1(5)">5</button>
-                        <button (click)="appendNumber1(6)">6</button>
-                        <button (click)="appendNumber1(1)">1</button>
-                        <button (click)="appendNumber1(2)">2</button>
-                        <button (click)="appendNumber1(3)">3</button>
-                        <button (click)="appendComma1()">.</button>
-                        <button class="append-zero-btn" (click)="appendNumber1(0)">0</button>
-                        <button class="clear-btn" (click)="clearInput1()">Clear</button>
+                        <button (click)="appendNumber1(7)"><p style="color: #000000;">    7  </p></button>
+                        <button (click)="appendNumber1(8)"><p style="color: #000000;">     8  </p></button>
+                        <button (click)="appendNumber1(9)"><p style="color: #000000;">     9 </p></button>
+                        <button (click)="appendNumber1(4)"><p style="color: #000000;">     4  </p></button>
+                        <button (click)="appendNumber1(5)"><p style="color: #000000;">     5  </p></button>
+                        <button (click)="appendNumber1(6)"><p style="color: #000000;">     6  </p></button>
+                        <button (click)="appendNumber1(1)"><p style="color: #000000;">     1  </p></button>
+                        <button (click)="appendNumber1(2)"><p style="color: #000000;">    2  </p></button>
+                        <button (click)="appendNumber1(3)"><p style="color: #000000;">     3  </p></button>
+                        <button (click)="appendComma1()"><p style="color: #000000;">   .  </p></button>
+                        <button class="append-zero-btn" (click)="appendNumber1(0)"><p style="color: #000000;">   0  </p></button>
+                        <button class="clear-btn" (click)="clearInput1()"><p style="color: #000000;">    Clear  </p></button>
                     </div>
                 </div>
             </div>
@@ -1414,23 +1414,23 @@
                 <div class="calculator" style="width:30%">
                     <h6 class="modal-title text-center" id="noSaleModalLabel">Amount paid out</h6>
                     <div class="calculator-display">
-                        <button class="increment-decrement" (click)="decrement2()">-</button>
+                        <button class="increment-decrement" (click)="decrement2()"><p style="color: #000000;">     -  </p></button>
                         <input type="text" class="calculator-input" [(ngModel)]="calculatorInput4" readonly>
-                        <button class="increment-decrement" (click)="increment2()">+</button>
+                        <button class="increment-decrement" (click)="increment2()"><p style="color: #000000;">     +  </p></button>
                     </div>
                     <div class="calculator-buttons">
-                        <button (click)="appendNumber4(7)">7</button>
-                        <button (click)="appendNumber4(8)">8</button>
-                        <button (click)="appendNumber4(9)">9</button>
-                        <button (click)="appendNumber4(4)">4</button>
-                        <button (click)="appendNumber4(5)">5</button>
-                        <button (click)="appendNumber4(6)">6</button>
-                        <button (click)="appendNumber4(1)">1</button>
-                        <button (click)="appendNumber4(2)">2</button>
-                        <button (click)="appendNumber4(3)">3</button>
-                        <button (click)="appendComma4()">.</button>
-                        <button class="append-zero-btn" (click)="appendNumber4(0)">0</button>
-                        <button class="clear-btn" (click)="clearInput4()">Clear</button>
+                        <button (click)="appendNumber4(7)"><p style="color: #000000;">   7  </p></button>
+                        <button (click)="appendNumber4(8)"><p style="color: #000000;">     8  </p></button>
+                        <button (click)="appendNumber4(9)"><p style="color: #000000;">     9  </p></button>
+                        <button (click)="appendNumber4(4)"><p style="color: #000000;">     4  </p></button>
+                        <button (click)="appendNumber4(5)"><p style="color: #000000;">     5 </p></button>
+                        <button (click)="appendNumber4(6)"><p style="color: #000000;">     6  </p></button>
+                        <button (click)="appendNumber4(1)"><p style="color: #000000;">     1  </p></button>
+                        <button (click)="appendNumber4(2)"><p style="color: #000000;">     2  </p></button>
+                        <button (click)="appendNumber4(3)"><p style="color: #000000;">     3</p></button>
+                        <button (click)="appendComma4()"><p style="color: #000000;">     .  </p></button>
+                        <button class="append-zero-btn" (click)="appendNumber4(0)"><p style="color: #000000;">     0  </p></button>
+                        <button class="clear-btn" (click)="clearInput4()"><p style="color: #000000;">     Clear  </p></button>
                     </div>
                 </div> &nbsp;
                 <div class="form-group">
@@ -1498,50 +1498,50 @@
             <div class="modal-body">
                 <input type="text" class="form-control" [(ngModel)]="recipientInput" (focus)="recipientInput=''">
                 <div class="keyboard">
-                    <button class="key" (click)="appendChar('1')">1</button>
-                    <button class="key" (click)="appendChar('2')">2</button>
-                    <button class="key" (click)="appendChar('3')">3</button>
-                    <button class="key" (click)="appendChar('4')">4</button>
-                    <button class="key" (click)="appendChar('5')">5</button>
-                    <button class="key" (click)="appendChar('6')">6</button>
-                    <button class="key" (click)="appendChar('7')">7</button>
-                    <button class="key" (click)="appendChar('8')">8</button>
-                    <button class="key" (click)="appendChar('9')">9</button>
-                    <button class="key" (click)="appendChar('0')">0</button>
-                    <button class="key" (click)="appendChar('q')">q</button>
-                    <button class="key" (click)="appendChar('w')">w</button>
-                    <button class="key" (click)="appendChar('e')">e</button>
-                    <button class="key" (click)="appendChar('r')">r</button>
-                    <button class="key" (click)="appendChar('t')">t</button>
-                    <button class="key" (click)="appendChar('y')">y</button>
-                    <button class="key" (click)="appendChar('u')">u</button>
-                    <button class="key" (click)="appendChar('i')">i</button>
-                    <button class="key" (click)="appendChar('o')">o</button>
-                    <button class="key" (click)="appendChar('p')">p</button>
-                    <button class="key" (click)="appendChar('a')">a</button>
-                    <button class="key" (click)="appendChar('s')">s</button>
-                    <button class="key" (click)="appendChar('d')">d</button>
-                    <button class="key" (click)="appendChar('f')">f</button>
-                    <button class="key" (click)="appendChar('g')">g</button>
-                    <button class="key" (click)="appendChar('h')">h</button>
-                    <button class="key" (click)="appendChar('j')">j</button>
-                    <button class="key" (click)="appendChar('k')">k</button>
-                    <button class="key" (click)="appendChar('l')">l</button>
-                    <button class="key" (click)="appendChar('z')">z</button>
-                    <button class="key" (click)="appendChar('x')">x</button>
-                    <button class="key" (click)="appendChar('c')">c</button>
-                    <button class="key" (click)="appendChar('v')">v</button>
-                    <button class="key" (click)="appendChar('b')">b</button>
-                    <button class="key" (click)="appendChar('n')">n</button>
-                    <button class="key" (click)="appendChar('m')">m</button>
-                    <button class="key" (click)="appendChar('&')">&</button>
-                    <button class="key" (click)="appendChar(',')">,</button>
-                    <button class="key" (click)="appendChar('.')">.</button>
-                    <button class="key" (click)="appendChar('-')">-</button>
-                    <button class="key" (click)="appendChar('#')">#</button>
-                    <button class="key" (click)="appendChar(' ')">Space</button>
-                    <button class="key" (click)="clearRecipientInput()">Clear</button>
-                    <button class="key" (click)="clearInputre()">Clear all</button>
+                    <button class="key" (click)="appendChar('1')"><p style="color: #000000;">     1 </p></button>
+                    <button class="key" (click)="appendChar('2')"><p style="color: #000000;">     2  </p></button>
+                    <button class="key" (click)="appendChar('3')"><p style="color: #000000;">     3  </p></button>
+                    <button class="key" (click)="appendChar('4')"><p style="color: #000000;">    4  </p></button>
+                    <button class="key" (click)="appendChar('5')"><p style="color: #000000;">     5  </p></button>
+                    <button class="key" (click)="appendChar('6')"><p style="color: #000000;">     6 </p></button>
+                    <button class="key" (click)="appendChar('7')"><p style="color: #000000;">     7 </p></button>
+                    <button class="key" (click)="appendChar('8')"><p style="color: #000000;">     8</p></button>
+                    <button class="key" (click)="appendChar('9')"><p style="color: #000000;">     9 </p></button>
+                    <button class="key" (click)="appendChar('0')"><p style="color: #000000;">     0 </p></button>
+                    <button class="key" (click)="appendChar('q')"><p style="color: #000000;">     q </p></button>
+                    <button class="key" (click)="appendChar('w')"><p style="color: #000000;">     w  </p></button>
+                    <button class="key" (click)="appendChar('e')"><p style="color: #000000;">     e </p></button>
+                    <button class="key" (click)="appendChar('r')"><p style="color: #000000;">     r  </p></button>
+                    <button class="key" (click)="appendChar('t')"><p style="color: #000000;">     t  </p></button>
+                    <button class="key" (click)="appendChar('y')"><p style="color: #000000;">     y  </p></button>
+                    <button class="key" (click)="appendChar('u')"><p style="color: #000000;">     u </p></button>
+                    <button class="key" (click)="appendChar('i')"><p style="color: #000000;">     i </p></button>
+                    <button class="key" (click)="appendChar('o')"><p style="color: #000000;">     o  </p></button>
+                    <button class="key" (click)="appendChar('p')"><p style="color: #000000;">     p  </p></button>
+                    <button class="key" (click)="appendChar('a')"><p style="color: #000000;">     a </p></button>
+                    <button class="key" (click)="appendChar('s')"><p style="color: #000000;">     s  </p></button>
+                    <button class="key" (click)="appendChar('d')"><p style="color: #000000;">     d </p></button>
+                    <button class="key" (click)="appendChar('f')"><p style="color: #000000;">     f  </p></button>
+                    <button class="key" (click)="appendChar('g')"><p style="color: #000000;">     g  </p></button>
+                    <button class="key" (click)="appendChar('h')"><p style="color: #000000;">     h  </p></button>
+                    <button class="key" (click)="appendChar('j')"><p style="color: #000000;">     j  </p></button>
+                    <button class="key" (click)="appendChar('k')"><p style="color: #000000;">     k </p></button>
+                    <button class="key" (click)="appendChar('l')"><p style="color: #000000;">     l </p></button>
+                    <button class="key" (click)="appendChar('z')"><p style="color: #000000;">     z </p></button>
+                    <button class="key" (click)="appendChar('x')"><p style="color: #000000;">     x  </p></button>
+                    <button class="key" (click)="appendChar('c')"><p style="color: #000000;">     c  </p></button>
+                    <button class="key" (click)="appendChar('v')"><p style="color: #000000;">     v  </p></button>
+                    <button class="key" (click)="appendChar('b')"><p style="color: #000000;">     b  </p></button>
+                    <button class="key" (click)="appendChar('n')"><p style="color: #000000;">     n  </p></button>
+                    <button class="key" (click)="appendChar('m')"><p style="color: #000000;">     m  </p></button>
+                    <button class="key" (click)="appendChar('&')"><p style="color: #000000;">     & </p></button>
+                    <button class="key" (click)="appendChar(',')"><p style="color: #000000;">     ,  </p></button>
+                    <button class="key" (click)="appendChar('.')"><p style="color: #000000;">     .  </p></button>
+                    <button class="key" (click)="appendChar('-')"><p style="color: #000000;">     - </p></button>
+                    <button class="key" (click)="appendChar('#')"><p style="color: #000000;">     #  </p></button>
+                    <button class="key" (click)="appendChar(' ')"><p style="color: #000000;">    Space</p></button>
+                    <button class="key" (click)="clearRecipientInput()"><p style="color: #000000;">    Clear</p></button>
+                    <button class="key" (click)="clearInputre()"><p style="color: #000000;">   Clear all  </p></button>
                 </div>
             </div>
             <div class="modal-footer">
@@ -1572,50 +1572,49 @@
             <div class="modal-body">
                 <input type="text" class="form-control" [(ngModel)]="recipientInput2" (focus)="recipientInput=''">
                 <div class="keyboard">
-                    <button class="key" (click)="appendChar2('1')">1</button>
-                    <button class="key" (click)="appendChar2('2')">2</button>
-                    <button class="key" (click)="appendChar2('3')">3</button>
-                    <button class="key" (click)="appendChar2('4')">4</button>
-                    <button class="key" (click)="appendChar2('5')">5</button>
-                    <button class="key" (click)="appendChar2('6')">6</button>
-                    <button class="key" (click)="appendChar2('7')">7</button>
-                    <button class="key" (click)="appendChar2('8')">8</button>
-                    <button class="key" (click)="appendChar2('9')">9</button>
-                    <button class="key" (click)="appendChar2('0')">0</button>
-                    <button class="key" (click)="appendChar2('q')">q</button>
-                    <button class="key" (click)="appendChar2('w')">w</button>
-                    <button class="key" (click)="appendChar2('e')">e</button>
-                    <button class="key" (click)="appendChar2('r')">r</button>
-                    <button class="key" (click)="appendChar2('t')">t</button>
-                    <button class="key" (click)="appendChar2('y')">y</button>
-                    <button class="key" (click)="appendChar2('u')">u</button>
-                    <button class="key" (click)="appendChar2('i')">i</button>
-                    <button class="key" (click)="appendChar2('o')">o</button>
-                    <button class="key" (click)="appendChar2('p')">p</button>
-                    <button class="key" (click)="appendChar2('a')">a</button>
-                    <button class="key" (click)="appendChar2('s')">s</button>
-                    <button class="key" (click)="appendChar2('d')">d</button>
-                    <button class="key" (click)="appendChar2('f')">f</button>
-                    <button class="key" (click)="appendChar2('g')">g</button>
-                    <button class="key" (click)="appendChar2('h')">h</button>
-                    <button class="key" (click)="appendChar2('j')">j</button>
-                    <button class="key" (click)="appendChar2('k')">k</button>
-                    <button class="key" (click)="appendChar2('l')">l</button>
-                    <button class="key" (click)="appendChar2('z')">z</button>
-                    <button class="key" (click)="appendChar2('x')">x</button>
-                    <button class="key" (click)="appendChar2('c')">c</button>
-                    <button class="key" (click)="appendChar2('v')">v</button>
-                    <button class="key" (click)="appendChar2('b')">b</button>
-                    <button class="key" (click)="appendChar2('n')">n</button>
-                    <button class="key" (click)="appendChar2('m')">m</button>
-                    <button class="key" (click)="appendChar2('&')">&</button>
-                    <button class="key" (click)="appendChar2(',')">,</button>
-                    <button class="key" (click)="appendChar2('.')">.</button>
-                    <button class="key" (click)="appendChar2('-')">-</button>
-                    <button class="key" (click)="appendChar2('#')">#</button>
-                    <button class="key" (click)="appendChar(' ')">Space</button>
-                    <button class="key" (click)="clearRecipientInput()">Clear</button>
-                    <button class="key" (click)="clearInputre()">Clear all</button>
+                    <button class="key" (click)="appendChar2('1')"><p style="color: #000000;">     1 </p></button>
+                    <button class="key" (click)="appendChar2('2')"><p style="color: #000000;">     2  </p></button>
+                    <button class="key" (click)="appendChar2('3')"><p style="color: #000000;">     3  </p></button>
+                    <button class="key" (click)="appendChar2('4')"><p style="color: #000000;">     4  </p></button>
+                    <button class="key" (click)="appendChar2('5')"><p style="color: #000000;">     5  </p></button>
+                    <button class="key" (click)="appendChar2('6')"><p style="color: #000000;">     6  </p></button>
+                    <button class="key" (click)="appendChar2('7')"><p style="color: #000000;">     7  </p></button>
+                    <button class="key" (click)="appendChar2('8')"><p style="color: #000000;">     8  </p></button>
+                    <button class="key" (click)="appendChar2('9')"><p style="color: #000000;">     9  </p></button>
+                    <button class="key" (click)="appendChar2('0')"><p style="color: #000000;">     0 </p></button>
+                    <button class="key" (click)="appendChar2('q')"><p style="color: #000000;">     q  </p></button>
+                    <button class="key" (click)="appendChar2('w')"><p style="color: #000000;">     w  </p></button>
+                    <button class="key" (click)="appendChar2('e')"><p style="color: #000000;">     e  </p></button>
+                    <button class="key" (click)="appendChar2('r')"><p style="color: #000000;">     r  </p></button>
+                    <button class="key" (click)="appendChar2('t')"><p style="color: #000000;">     t  </p></button>
+                    <button class="key" (click)="appendChar2('y')"><p style="color: #000000;">     y  </p></button>
+                    <button class="key" (click)="appendChar2('u')"><p style="color: #000000;">     u  </p></button>
+                    <button class="key" (click)="appendChar2('i')"><p style="color: #000000;">     i  </p></button>
+                    <button class="key" (click)="appendChar2('o')"><p style="color: #000000;">     o  </p></button>
+                    <button class="key" (click)="appendChar2('p')"><p style="color: #000000;">     p  </p></button>
+                    <button class="key" (click)="appendChar2('a')"><p style="color: #000000;">     a  </p></button>
+                    <button class="key" (click)="appendChar2('d')"><p style="color: #000000;">     d  </p></button>
+                    <button class="key" (click)="appendChar2('f')"><p style="color: #000000;">     f </p></button>
+                    <button class="key" (click)="appendChar2('g')"><p style="color: #000000;">     g </p></button>
+                    <button class="key" (click)="appendChar2('h')"><p style="color: #000000;">     h  </p></button>
+                    <button class="key" (click)="appendChar2('j')"><p style="color: #000000;">     j  </p></button>
+                    <button class="key" (click)="appendChar2('k')"><p style="color: #000000;">     k  </p></button>
+                    <button class="key" (click)="appendChar2('l')"><p style="color: #000000;">     l </p></button>
+                    <button class="key" (click)="appendChar2('z')"><p style="color: #000000;">     z  </p></button>
+                    <button class="key" (click)="appendChar2('x')"><p style="color: #000000;">     x  </p></button>
+                    <button class="key" (click)="appendChar2('c')"><p style="color: #000000;">     c  </p></button>
+                    <button class="key" (click)="appendChar2('v')"><p style="color: #000000;">     v  </p></button>
+                    <button class="key" (click)="appendChar2('b')"><p style="color: #000000;">     b  </p></button>
+                    <button class="key" (click)="appendChar2('n')"><p style="color: #000000;">     n  </p></button>
+                    <button class="key" (click)="appendChar2('m')"><p style="color: #000000;">     m </p></button>
+                    <button class="key" (click)="appendChar2('&')"><p style="color: #000000;">     &  </p></button>
+                    <button class="key" (click)="appendChar2(',')"><p style="color: #000000;">     ,  </p></button>
+                    <button class="key" (click)="appendChar2('.')"><p style="color: #000000;">     .  </p></button>
+                    <button class="key" (click)="appendChar2('-')"><p style="color: #000000;">     -  </p></button>
+                    <button class="key" (click)="appendChar2('#')"><p style="color: #000000;">     #  </p></button>
+                    <button class="key" (click)="appendChar(' ')"><p style="color: #000000;">    Space  </p></button>
+                    <button class="key" (click)="clearRecipientInput()"><p style="color: #000000;">    Clear </p></button>
+                    <button class="key" (click)="clearInputre()"><p style="color: #000000;">    Clear all </p></button>
                 </div>
             </div>
             <div class="modal-footer">
@@ -1753,18 +1752,18 @@
                         <button class="increment-decrement" (click)="increment2()">+</button>
                     </div>
                     <div class="calculator-buttons">
-                        <button (click)="appendNumber4(7)">7</button>
-                        <button (click)="appendNumber4(8)">8</button>
-                        <button (click)="appendNumber4(9)">9</button>
-                        <button (click)="appendNumber4(4)">4</button>
-                        <button (click)="appendNumber4(5)">5</button>
-                        <button (click)="appendNumber4(6)">6</button>
-                        <button (click)="appendNumber4(1)">1</button>
-                        <button (click)="appendNumber4(2)">2</button>
-                        <button (click)="appendNumber4(3)">3</button>
-                        <button (click)="appendComma4()">.</button>
-                        <button class="append-zero-btn" (click)="appendNumber4(0)">0</button>
-                        <button class="clear-btn" (click)="clearInput4()">Clear</button>
+                        <button (click)="appendNumber4(7)"><p style="color: #000000;">    7  </p></button>
+                        <button (click)="appendNumber4(8)"><p style="color: #000000;">     8  </p></button>
+                        <button (click)="appendNumber4(9)"><p style="color: #000000;">     9  </p></button>
+                        <button (click)="appendNumber4(4)"><p style="color: #000000;">     4  </p></button>
+                        <button (click)="appendNumber4(5)"><p style="color: #000000;">     5  </p></button>
+                        <button (click)="appendNumber4(6)"><p style="color: #000000;">     6  </p></button>
+                        <button (click)="appendNumber4(1)"><p style="color: #000000;">     1 </p></button>
+                        <button (click)="appendNumber4(2)"><p style="color: #000000;">     2 </p></button>
+                        <button (click)="appendNumber4(3)"><p style="color: #000000;">     3  </p></button>
+                        <button (click)="appendComma4()"><p style="color: #000000;">     .  </p></button>
+                        <button class="append-zero-btn" (click)="appendNumber4(0)"><p style="color: #000000;">     0 </p></button>
+                        <button class="clear-btn" (click)="clearInput4()"><p style="color: #000000;">   Clear </p></button>
                     </div>
                 </div>
             </div>
@@ -1912,23 +1911,23 @@
             <div class="modal-body">
                 <div class="calculator">
                     <div class="calculator-display">
-                        <button class="increment-decrement" (click)="decrement2()">-</button>
+                        <button class="increment-decrement" (click)="decrement2()"><p style="color: #000000;">     -  </p></button>
                         <input type="text" class="calculator-input" [(ngModel)]="calculatorInput2" readonly>
-                        <button class="increment-decrement" (click)="increment2()">+</button>
+                        <button class="increment-decrement" (click)="increment2()"><p style="color: #000000;">     +  </p></button>
                     </div>
                     <div class="calculator-buttons">
-                        <button (click)="appendNumber2(7)">7</button>
-                        <button (click)="appendNumber2(8)">8</button>
-                        <button (click)="appendNumber2(9)">9</button>
-                        <button (click)="appendNumber2(4)">4</button>
-                        <button (click)="appendNumber2(5)">5</button>
-                        <button (click)="appendNumber2(6)">6</button>
-                        <button (click)="appendNumber2(1)">1</button>
-                        <button (click)="appendNumber2(2)">2</button>
-                        <button (click)="appendNumber2(3)">3</button>
-                        <button (click)="appendComma2()">.</button>
-                        <button class="append-zero-btn" (click)="appendNumber2(0)">0</button>
-                        <button class="clear-btn" (click)="clearInput2()">Clear</button>
+                        <button (click)="appendNumber2(7)"><p style="color: #000000;">     7  </p></button>
+                        <button (click)="appendNumber2(8)"><p style="color: #000000;">     8  </p></button>
+                        <button (click)="appendNumber2(9)"><p style="color: #000000;">     9  </p></button>
+                        <button (click)="appendNumber2(4)"><p style="color: #000000;">     4  </p></button>
+                        <button (click)="appendNumber2(5)"><p style="color: #000000;">     5  </p></button>
+                        <button (click)="appendNumber2(6)"><p style="color: #000000;">     6  </p></button>
+                        <button (click)="appendNumber2(1)"><p style="color: #000000;">     1  </p></button>
+                        <button (click)="appendNumber2(2)"><p style="color: #000000;">     2  </p></button>
+                        <button (click)="appendNumber2(3)"><p style="color: #000000;">     3  </p></button>
+                        <button (click)="appendComma2()"><p style="color: #000000;">     .  </p></button>
+                        <button class="append-zero-btn" (click)="appendNumber2(0)"><p style="color: #000000;">     0  </p></button>
+                        <button class="clear-btn" (click)="clearInput2()"><p style="color: #000000;">  Clear </p></button>
                     </div>
                 </div>
             </div>
@@ -1956,23 +1955,23 @@
             <div class="modal-body">
                 <div class="calculator">
                     <div class="calculator-display">
-                        <button class="increment-decrement" (click)="decrement3()">-</button>
+                        <button class="increment-decrement" (click)="decrement3()"><p style="color: #000000;">    - </p></button>
                         <input type="text" class="calculator-input" [(ngModel)]="calculatorInput3" readonly>
-                        <button class="increment-decrement" (click)="increment3()">+</button>
+                        <button class="increment-decrement" (click)="increment3()"><p style="color: #000000;">     +  </p></button>
                     </div>
                     <div class="calculator-buttons">
-                        <button (click)="appendNumber3(7)">7</button>
-                        <button (click)="appendNumber3(8)">8</button>
-                        <button (click)="appendNumber3(9)">9</button>
-                        <button (click)="appendNumber3(4)">4</button>
-                        <button (click)="appendNumber3(5)">5</button>
-                        <button (click)="appendNumber3(6)">6</button>
-                        <button (click)="appendNumber3(1)">1</button>
-                        <button (click)="appendNumber3(2)">2</button>
-                        <button (click)="appendNumber3(3)">3</button>
-                        <button (click)="appendComma3()">.</button>
-                        <button class="append-zero-btn" (click)="appendNumber3(0)">0</button>
-                        <button class="clear-btn" (click)="clearInput3()">Clear</button>
+                        <button (click)="appendNumber3(7)"><p style="color: #000000;">     7  </p></button>
+                        <button (click)="appendNumber3(8)"><p style="color: #000000;">     8  </p></button>
+                        <button (click)="appendNumber3(9)"><p style="color: #000000;">     9  </p></button>
+                        <button (click)="appendNumber3(4)"><p style="color: #000000;">     4  </p></button>
+                        <button (click)="appendNumber3(5)"><p style="color: #000000;">     5  </p></button>
+                        <button (click)="appendNumber3(6)"><p style="color: #000000;">     6  </p></button>
+                        <button (click)="appendNumber3(1)"><p style="color: #000000;">     1  </p></button>
+                        <button (click)="appendNumber3(2)"><p style="color: #000000;">     2  </p></button>
+                        <button (click)="appendNumber3(3)"><p style="color: #000000;">     3  </p></button>
+                        <button (click)="appendComma3()"><p style="color: #000000;">   .  </p></button>
+                        <button class="append-zero-btn" (click)="appendNumber3(0)"><p style="color: #000000;">  0 </p></button>
+                        <button class="clear-btn" (click)="clearInput3()"><p style="color: #000000;">    Clear </p></button>
                     </div>
                 </div>
             </div>
@@ -1990,7 +1989,7 @@
         </div>
     </div>
 </div>
-
+ 
 
 
 
