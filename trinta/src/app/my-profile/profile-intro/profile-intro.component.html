@@ -19,12 +19,14 @@
             <h5> Administrator </h5>
             <h5> Has staff bank: No </h5>
           </div>
-          <div class="buttons-list d-flex align-items-center justify-content-between">
-            <a routerLink="/settings/change-password" class="default-btn" mat-button>
-              Change password
+          <div class="buttons-list d-flex align-items-center justify-content-between " 
+          
+        >
+            <a routerLink="/settings/change-password" class="default-btn" mat-button style="background-color:#CF9033">
+             <p style="color: #ebe6dd;">   Change password  </p>
             </a>
-            <a href="mailto:demo@contact.com" class="default-btn" mat-button>
-              Message
+            <a href="mailto:demo@contact.com" class="default-btn" mat-button style="background-color:#CF9033">
+             <p style="color: #ebe6dd;">     Message   </p>
             </a>
           </div>
         </mat-card-content>
@@ -79,8 +81,8 @@
           </div>
 
           <div class="buttons-list d-flex justify-content-center">
-            <a (click)="setClockInTime()" class="default-btn" mat-button>
-              {{ buttonText }}
+            <a (click)="setClockInTime()" class="default-btn" mat-button style="background-color:#CF9033" >
+             <p style="color: #ebe6dd;">      {{ buttonText }}     </p>
             </a>
           </div>
 

@@ -172,7 +172,7 @@
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="ll">Declare Tips</h5>
+                <h5 class="modal-title" id="ll" style="color: #90551b;">Declare Tips</h5>
             </div>
             <div class="modal-body">
                 <table style="width: 100%; border: 1px solid #b0acac; border-collapse: collapse;">
@@ -196,11 +196,18 @@
                 </table>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-sm btn-primary me-2" data-toggle="modal"
-                    data-target="#history1">Tips details</button>
-                <button type="button" class="btn btn-sm btn-primary me-2" data-toggle="modal"
-                    data-target="#Add">Add</button>
-                <button type="button" class="btn btn-sm btn-primary me-2" data-dismiss="modal">Done</button>
+                <button type="button" class="btn btn-sm btn-primary me-2" data-toggle="modal" data-target="#history1"
+                    style="background-color: #fceabd;">
+                    <p style="color: #060400;">Tips details </p>
+                </button>
+                <button type="button" class="btn btn-sm btn-primary me-2" data-toggle="modal" data-target="#Add"
+                    style="background-color: #fceabd;">
+                    <p style="color: #060400;">Add</p>
+                </button>
+                <button type="button" class="btn btn-sm btn-primary me-2" data-dismiss="modal"
+                    style="background-color: #fceabd;">
+                    <p style="color: #060400;">Done</p>
+                </button>
             </div>
         </div>
     </div>
@@ -211,7 +218,7 @@
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="mm">Server Tips Report</h5>
+                <h5 class="modal-title" id="mm" style="color: #90551b;">Server Tips Report</h5>
             </div>
             <div class="modal-body">
                 <div class="row">
@@ -232,66 +239,72 @@
                             <h6>Charged Tips: $0.00</h6>
                             <h6>Declared Tips: $0.00</h6>
                             --------------------------------------------------------
+                            <table class="table no-borders">
+                                <thead>
+                                    <tr>
+                                        <td>
+                                            <h6>Token</h6>
+                                        </td>
+                                        <td>
+                                            <h6>Ticket</h6>
+                                        </td>
+                                        <td>
+                                            <h6>Charged</h6>
+                                        </td>
+                                        <td>
+                                            <h6>Cash</h6>
+                                        </td>
+                                        <td>
+                                            <h6>Tips</h6>
+                                        </td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <h6>No</h6>
+                                        </td>
+                                        <td>
+                                            <h6>Total</h6>
+                                        </td>
+                                        <td>
+                                            <h6>Tips</h6>
+                                        </td>
+                                        <td>
+                                            <h6>Tips</h6>
+                                        </td>
+                                        <td>
+                                            <h6>Paid</h6>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="5">-------------------------------------------------------</td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="5">-------------------------------------------------------</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <h6> </h6>
+                                        </td>
+                                        <td>
+                                            <h6>0.00</h6>
+                                        </td>
+                                        <td>
+                                            <h6>0.00</h6>
+                                        </td>
+                                        <td>
+                                            <h6>0.00</h6>
+                                        </td>
+                                        <td>
+                                            <h6>0.00</h6>
+                                        </td>
 
-                            <div class="row">
-                                <div class="col-md-2">
-                                    <h6>Token</h6>
-                                </div>
-                                <div class="col-md-2">
-                                    <h6>Ticket</h6>
-                                </div>
-                                <div class="col-md-2">
-                                    <h6>Charged</h6>
-                                </div>
-                                <div class="col-md-2">
-                                    <h6>Cash</h6>
-                                </div>
-                                <div class="col-md-2">
-                                    <h6>Tips</h6>
-                                </div>
-
-                            </div>
-
-                            <div class="row">
-                                <div class="col-md-2">
-                                    <h6>No</h6>
-                                </div>
-                                <div class="col-md-2">
-                                    <h6>Total</h6>
-                                </div>
-                                <div class="col-md-2">
-                                    <h6>Tips</h6>
-                                </div>
-                                <div class="col-md-2">
-                                    <h6>Tips</h6>
-                                </div>
-                                <div class="col-md-2">
-                                    <h6>Paid</h6>
-                                </div>
+                                    </tr>
+                                </tbody>
+                            </table>
 
 
-
-                            </div>
-                            --------------------------------------------------------
-                            --------------------------------------------------------
-                            <div class="row">
-                                <div class="col-md-2">
-                                    <h6></h6>
-                                </div>
-                                <div class="col-md-2">
-                                    <h6>0.00</h6>
-                                </div>
-                                <div class="col-md-2">
-                                    <h6>0.00</h6>
-                                </div>
-                                <div class="col-md-2">
-                                    <h6>0.00</h6>
-                                </div>
-                                <div class="col-md-2">
-                                    <h6>0.00</h6>
-                                </div>
-
-                            </div>
                             &nbsp;
                             <div align="right">
                                 <h6>Total Tips : $ 0.00</h6>
@@ -301,12 +314,17 @@
                             </div>
 
                         </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-sm btn-primary me-2" id="historyButton"
-                                (click)="printContent()">Print</button>
-                            <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal"
-                                id="cancelButton">Cancel</button>
-                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-sm btn-primary me-2" id="historyButton"
+                            (click)="printContent()" style="background-color: #fceabd;">
+                            <p style="color: #060400;">Print </p>
+                        </button>
+                        <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal" id="cancelButton"
+                            style="background-color: #fceabd;">
+                            <p style="color: #060400;">Cancel </p>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -452,12 +470,19 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-sm btn-primary me-2" id="historyButton" data-toggle="modal"
-                    data-target="#history">History</button>
+                    data-target="#history">
+                    <p style="color: #060400;">History </p>
+                </button>
                 <button type="button" class="btn btn-sm btn-primary me-2" data-toggle="modal" data-target="#history1"
-                    data-dismiss="modal">Tips details</button>
-                <button type="button" class="btn btn-sm btn-primary me-2" id="payButton">Pay</button>
-                <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal"
-                    id="cancelButton">Cancel</button>
+                    data-dismiss="modal">
+                    <p style="color: #060400;">Tips details </p>
+                </button>
+                <button type="button" class="btn btn-sm btn-primary me-2" id="payButton">
+                    <p style="color: #060400;">Pay </p>
+                </button>
+                <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal" id="cancelButton">
+                    <p style="color: #060400;">Cancel </p>
+                </button>
 
             </div>
         </div>
@@ -527,67 +552,72 @@
                         <h6>Cash Tips: $0.00 </h6>
                         <h6>Charged Tips: $0.00</h6>
                         <h6>Declared Tips: $0.00</h6>
-                        ------------------------------------------------------------
+                        -------------------------------------------------------
 
-                        <div class="row">
-                            <div class="col-md-2">
-                                <h6>Token</h6>
-                            </div>
-                            <div class="col-md-2">
-                                <h6>Ticket</h6>
-                            </div>
-                            <div class="col-md-2">
-                                <h6>Charged</h6>
-                            </div>
-                            <div class="col-md-2">
-                                <h6>Cash</h6>
-                            </div>
-                            <div class="col-md-2">
-                                <h6>Tips</h6>
-                            </div>
+                        <table class="table no-borders">
+                            <thead>
+                                <tr>
+                                    <td>
+                                        <h6>Token</h6>
+                                    </td>
+                                    <td>
+                                        <h6>Ticket</h6>
+                                    </td>
+                                    <td>
+                                        <h6>Charged</h6>
+                                    </td>
+                                    <td>
+                                        <h6>Cash</h6>
+                                    </td>
+                                    <td>
+                                        <h6>Tips</h6>
+                                    </td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <h6>No</h6>
+                                    </td>
+                                    <td>
+                                        <h6>Total</h6>
+                                    </td>
+                                    <td>
+                                        <h6>Tips</h6>
+                                    </td>
+                                    <td>
+                                        <h6>Tips</h6>
+                                    </td>
+                                    <td>
+                                        <h6>Paid</h6>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="5">-------------------------------------------------------</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="5">-------------------------------------------------------</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <h6> </h6>
+                                    </td>
+                                    <td>
+                                        <h6>0.00</h6>
+                                    </td>
+                                    <td>
+                                        <h6>0.00</h6>
+                                    </td>
+                                    <td>
+                                        <h6>0.00</h6>
+                                    </td>
+                                    <td>
+                                        <h6>0.00</h6>
+                                    </td>
 
-                        </div>
-
-                        <div class="row">
-                            <div class="col-md-2">
-                                <h6>No</h6>
-                            </div>
-                            <div class="col-md-2">
-                                <h6>Total</h6>
-                            </div>
-                            <div class="col-md-2">
-                                <h6>Tips</h6>
-                            </div>
-                            <div class="col-md-2">
-                                <h6>Tips</h6>
-                            </div>
-                            <div class="col-md-2">
-                                <h6>Paid</h6>
-                            </div>
-
-
-
-                        </div>
-                        ------------------------------------------------------------
-                        ------------------------------------------------------------
-                        <div class="row">
-                            <div class="col-md-2">
-                                <h6></h6>
-                            </div>
-                            <div class="col-md-2">
-                                <h6>0.00</h6>
-                            </div>
-                            <div class="col-md-2">
-                                <h6>0.00</h6>
-                            </div>
-                            <div class="col-md-2">
-                                <h6>0.00</h6>
-                            </div>
-                            <div class="col-md-2">
-                                <h6>0.00</h6>
-                            </div>
-
-                        </div>
+                                </tr>
+                            </tbody>
+                        </table>
                         &nbsp;
                         <div align="right">
                             <h6>Total Tips : $ 0.00</h6>
@@ -599,9 +629,12 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-sm btn-primary me-2" id="historyButton"
-                            (click)="printContent()">Print</button>
-                        <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal"
-                            id="cancelButton">Cancel</button>
+                            (click)="printContent()">
+                            <p style="color: #060400;">Print </p>
+                        </button>
+                        <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal" id="cancelButton">
+                            <p style="color: #060400;">Cancel </p>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -645,8 +678,12 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-sm btn-primary me-2" data-dismiss="modal" data-toggle="modal"
-                    data-target="#Ok">Ok</button>
-                <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">Cancel</button>
+                    data-target="#Ok">
+                    <p style="color: #060400;">Ok </p>
+                </button>
+                <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">
+                    <p style="color: #060400;">Cancel </p>
+                </button>
             </div>
         </div>
     </div>
@@ -887,11 +924,16 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-sm btn-primary me-2" id="historyButton"
-                        (click)="printContent1()">Print</button>
+                        (click)="printContent1()">
+                        <p style="color: #060400;">Print </p>
+                    </button>
                     <button type="button" class="btn btn-sm btn-primary me-2" id="historyButton" data-toggle="modal"
-                        data-target="#reportModal">Details</button>
-                    <button type="button" class="btn btn-sm btn-primary me-2" id="historyButton"
-                        data-dismiss="modal">Done</button>
+                        data-target="#reportModal">
+                        <p style="color: #060400;">Details </p>
+                    </button>
+                    <button type="button" class="btn btn-sm btn-primary me-2" id="historyButton" data-dismiss="modal">
+                        <p style="color: #060400;">Done </p>
+                    </button>
 
                 </div>
             </div>
@@ -924,7 +966,7 @@
                         <button (click)="appendNumber(1)">1</button>
                         <button (click)="appendNumber(2)">2</button>
                         <button (click)="appendNumber(3)">3</button>
-                        <button (click)="appendComma()">,</button>
+                        <button (click)="appendComma()">.</button>
                         <button class="append-zero-btn" (click)="appendNumber(0)">0</button>
                         <button class="clear-btn" (click)="clearInput()">Clear</button>
                     </div>
@@ -932,9 +974,12 @@
             </div>
             <div class="modal-footer">
                 <div class="modal-footer-buttons">
-                    <button type="button" class="btn btn-primary"  data-dismiss="modal" (click)="addDeclaredTip()">Ok</button>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal"
-                        (click)="clearInput()">Cancel</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="addDeclaredTip()">
+                        <p style="color: #060400;">Ok </p>
+                    </button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clearInput()">
+                        <p style="color: #060400;">Cancel </p>
+                    </button>
                 </div>
             </div>
         </div>
@@ -966,16 +1011,21 @@
                         <button (click)="appendNumber(1)">1</button>
                         <button (click)="appendNumber(2)">2</button>
                         <button (click)="appendNumber(3)">3</button>
-                        <button (click)="appendComma()">,</button>
+                        <button (click)="appendComma()">.</button>
                         <button class="append-zero-btn" (click)="appendNumber(0)">0</button>
                         <button class="clear-btn" (click)="clearInputx()">Clear</button>
                     </div>
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="updateTip()">Ok</button>
-                <button type="button" class="btn btn-secondary" data-dismiss="modal"
-                    (click)="clearInput()">Cancel</button>
+                <div class="modal-footer-buttons">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="updateTip()">
+                        <p style="color: #060400;">Ok </p>
+                    </button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clearInput()">
+                        <p style="color: #060400;">Cancel </p>
+                    </button>
+                </div>
             </div>
         </div>
     </div>
@@ -983,8 +1033,8 @@
 
 
 <!-- Payout sucess  Modal -->
-<div class="modal fade" id="payout_sucess" tabindex="-1" role="dialog" aria-labelledby="closeDrawerLabel"
-    aria-hidden="true">
+<div *ngIf="isPayoutSuccessVisible" class="modal fade" id="payout_sucess" tabindex="-1" role="dialog"
+    aria-labelledby="closeDrawerLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -998,8 +1048,12 @@
             <div class="modal-footer">
 
 
-                <button type="button" class="xx" id="historyButton" data-dismiss="modal">Print</button>
-                <button type="button" class="xx" id="historyButton" data-dismiss="modal">Ok</button>
+                <button type="button" class="xx" id="historyButton" data-dismiss="modal">
+                    <p style="color: #060400;">Print</p>
+                </button>
+                <button type="button" class="xx" id="historyButton" data-dismiss="modal">
+                    <p style="color: #060400;">Ok</p>
+                </button>
 
             </div>
         </div>
@@ -1030,7 +1084,7 @@
                         <button (click)="appendNumber1(1)">1</button>
                         <button (click)="appendNumber1(2)">2</button>
                         <button (click)="appendNumber1(3)">3</button>
-                        <button (click)="appendComma1()">,</button>
+                        <button (click)="appendComma1()">.</button>
                         <button class="append-zero-btn" (click)="appendNumber1(0)">0</button>
                         <button class="clear-btn" (click)="clearInput1()">Clear</button>
                     </div>
@@ -1038,9 +1092,13 @@
             </div>
             <div class="modal-footer">
                 <div class="modal-footer-buttons">
-                    <button type="button" class="btn btn-primary" data-dismiss="modal" 
-                    data-toggle="modal" data-target="#transfer1"   (click)="clearInput1()">Ok</button>
-                    <button type="button" class="btn btn-secondary" (click)="clearInput1()">Cancel</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" data-toggle="modal"
+                        data-target="#transfer1" (click)="clearInput1()">
+                        <p style="color: #060400;">Ok</p>
+                    </button>
+                    <button type="button" class="btn btn-secondary" (click)="clearInput1()">
+                        <p style="color: #060400;">Cancel</p>
+                    </button>
                 </div>
             </div>
         </div>
@@ -1064,7 +1122,10 @@
 
             <div class="modal-footer">
 
-                <button type="button" class="xx" id="historyButton" data-dismiss="modal" (click)="showAssignmentAlert()">Ok</button>
+                <button type="button" class="xx" id="historyButton" data-dismiss="modal"
+                    (click)="showAssignmentAlert()">
+                    <p style="color: #060400;">Ok</p>
+                </button>
 
             </div>
         </div>
@@ -1249,7 +1310,7 @@
                                     <h6>-Pay out</h6>
                                 </td>
                                 <td class="align-right">
-                                    <h6>0.00</h6>
+                                    <h6>{{calculatorInput4}}</h6>
                                 </td>
                             </tr>
                             <tr>
@@ -1273,7 +1334,7 @@
                                     <h6>+Cash in</h6>
                                 </td>
                                 <td class="align-right">
-                                    <h6>0.00</h6>
+                                    <h6>{{calculatorInput3}}</h6>
                                 </td>
                             </tr>
                             <tr>
@@ -1313,15 +1374,25 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-sm btn-primary me-2" id="historyButton"
-                            (click)="printContent1()">Print</button>
+                            (click)="printContent1()">
+                            <p style="color: #060400;">Print</p>
+                        </button>
                         <button type="button" class="btn btn-sm btn-primary me-2" id="historyButton" data-toggle="modal"
-                            data-target="#details">Details</button>
+                            data-target="#details">
+                            <p style="color: #060400;">Details</p>
+                        </button>
                         <button type="button" class="btn btn-sm btn-primary me-2" id="historyButton" data-toggle="modal"
-                            data-target="#transfeuser">Transfer user</button>
+                            data-target="#transfeuser">
+                            <p style="color: #060400;">Transfer user </p>
+                        </button>
                         <button type="button" class="btn btn-sm btn-primary me-2" id="historyButton" data-toggle="modal"
-                            data-target="#closeDrawerModal" data-dismiss="modal">Close Drawer</button>
+                            data-target="#closeDrawerModal" data-dismiss="modal">
+                            <p style="color: #060400;">Close Drawer </p>
+                        </button>
                         <button type="button" class="btn btn-sm btn-primary me-2" id="historyButton"
-                            data-dismiss="modal">Done</button>
+                            data-dismiss="modal">
+                            <p style="color: #060400;">Done </p>
+                        </button>
 
                     </div>
                 </div>
@@ -1357,7 +1428,7 @@
                         <button (click)="appendNumber4(1)">1</button>
                         <button (click)="appendNumber4(2)">2</button>
                         <button (click)="appendNumber4(3)">3</button>
-                        <button (click)="appendComma4()">,</button>
+                        <button (click)="appendComma4()">.</button>
                         <button class="append-zero-btn" (click)="appendNumber4(0)">0</button>
                         <button class="clear-btn" (click)="clearInput4()">Clear</button>
                     </div>
@@ -1399,15 +1470,19 @@
             </div>
             <div class="modal-footer">
                 <div class="modal-footer-buttons">
-                    <button type="button" class="btn btn-primary" data-dismiss="modal" data-toggle="modal"
-                        data-target="#payout_sucess">Ok</button>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal"
-                        (click)="clearInput4()">Cancel</button>
+                    <button type="button" class="btn btn-primary" (click)="handlePayoutOk()" data-toggle="modal"
+                        data-target="#payout_sucess">
+                        <p style="color: #060400;">Ok</p>
+                    </button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clearInput4()">
+                        <p style="color: #060400;">Cancel</p>
+                    </button>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
 
 
 
@@ -1421,7 +1496,7 @@
                 <h5 class="modal-title" id="enterReasonModalLabel">Enter pay out reason</h5>
             </div>
             <div class="modal-body">
-                <input type="text" class="form-control" [(ngModel)]="recipientInput" readonly>
+                <input type="text" class="form-control" [(ngModel)]="recipientInput" (focus)="recipientInput=''">
                 <div class="keyboard">
                     <button class="key" (click)="appendChar('1')">1</button>
                     <button class="key" (click)="appendChar('2')">2</button>
@@ -1471,8 +1546,12 @@
             </div>
             <div class="modal-footer">
                 <div class="modal-footer-buttons">
-                    <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="addReason()">Ok</button>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="addReason()">
+                        <p style="color: #060400;">Ok </p>
+                    </button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                        <p style="color: #060400;">Cancel </p>
+                    </button>
                 </div>
             </div>
         </div>
@@ -1491,7 +1570,7 @@
                 <h5 class="modal-title" id="enterReasonModalLabel">Enter pay out note</h5>
             </div>
             <div class="modal-body">
-                <input type="text" class="form-control" [(ngModel)]="recipientInput2" readonly>
+                <input type="text" class="form-control" [(ngModel)]="recipientInput2" (focus)="recipientInput=''">
                 <div class="keyboard">
                     <button class="key" (click)="appendChar2('1')">1</button>
                     <button class="key" (click)="appendChar2('2')">2</button>
@@ -1542,9 +1621,12 @@
             <div class="modal-footer">
                 <div class="modal-footer-buttons">
                     <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="addnote()"
-                        (click)="clearInputre2()">Ok</button>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal"
-                        (click)="clearInputre2()">Cancel</button>
+                        (click)="clearInputre2()">
+                        <p style="color: #060400;">Ok </p>
+                    </button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clearInputre2()">
+                        <p style="color: #060400;">Cancel </p>
+                    </button>
                 </div>
             </div>
         </div>
@@ -1560,9 +1642,9 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="enterReasonModalLabel">Enter pay out recipient</h5>
-            </div>
+            </div> 
             <div class="modal-body">
-                <input type="text" class="form-control" [(ngModel)]="recipientInput1" readonly>
+                <input type="text" class="form-control" [(ngModel)]="recipientInput1" (focus)="recipientInput=''">
                 <div class="keyboard">
                     <button class="key" (click)="appendChar1('1')">1</button>
                     <button class="key" (click)="appendChar1('2')">2</button>
@@ -1612,9 +1694,12 @@
             </div>
             <div class="modal-footer">
                 <div class="modal-footer-buttons">
-                    <button type="button" class="btn btn-primary" data-dismiss="modal"
-                        (click)="addRecipient()">Ok</button>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="addRecipient()">
+                        <p style="color: #060400;">Ok</p>
+                    </button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                        <p style="color: #060400;">Cancel</p>
+                    </button>
                 </div>
             </div>
         </div>
@@ -1677,7 +1762,7 @@
                         <button (click)="appendNumber4(1)">1</button>
                         <button (click)="appendNumber4(2)">2</button>
                         <button (click)="appendNumber4(3)">3</button>
-                        <button (click)="appendComma4()">,</button>
+                        <button (click)="appendComma4()">.</button>
                         <button class="append-zero-btn" (click)="appendNumber4(0)">0</button>
                         <button class="clear-btn" (click)="clearInput4()">Clear</button>
                     </div>
@@ -1686,9 +1771,12 @@
             <div class="modal-footer">
                 <div class="modal-footer-buttons">
                     <button type="button" class="btn btn-primary" data-dismiss="modal" data-toggle="modal"
-                        data-target="#closed">Ok</button>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal"
-                        (click)="clearInput4()">Cancel</button>
+                        data-target="#closed">
+                        <p style="color: #060400;">Ok </p>
+                    </button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clearInput4()">
+                        <p style="color: #060400;">Cancel </p>
+                    </button>
                 </div>
             </div>
         </div>
@@ -1698,7 +1786,8 @@
 
 
 <!-- sucessful  cashin  Modal -->
-<div class="modal fade" id="sucess" tabindex="-1" role="dialog" aria-labelledby="closeDrawerLabel" aria-hidden="true">
+<div *ngIf="isCashInSuccessVisible" class="modal fade" id="sucess" tabindex="-1" role="dialog"
+    aria-labelledby="closeDrawerLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -1706,13 +1795,13 @@
 
             </div>
             <div class="modal-body">
-                Cash In sucessfull
+                Cash In successful
             </div>
 
             <div class="modal-footer">
-
-
-                <button type="button" class="xx" id="historyButton" data-dismiss="modal">Ok</button>
+                <button type="button" class="xx" id="historyButton" data-dismiss="modal">
+                    <p style="color: #060400;">Ok </p>
+                </button>
 
             </div>
         </div>
@@ -1734,8 +1823,9 @@
             <div class="modal-footer">
 
 
-                <button type="button" class="xx" id="historyButton" data-dismiss="modal"
-                    (click)="changestatus()">Ok</button>
+                <button type="button" class="xx" id="historyButton" data-dismiss="modal" (click)="changestatus()">
+                    <p style="color: #060400;">Ok </p>
+                </button>
 
             </div>
         </div>
@@ -1776,14 +1866,19 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-sm btn-primary me-2" data-dismiss="modal"
-                data-toggle="modal"  data-target="#sucess_transfer"     >Ok</button>
-                <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-sm btn-primary me-2" data-dismiss="modal" data-toggle="modal"
+                    data-target="#sucess_transfer">
+                    <p style="color: #060400;">Ok </p>
+                </button>
+                <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">
+                    <p style="color: #060400;">Cancel </p>
+                </button>
             </div>
         </div>
     </div>
 </div>
-<!--Drawer bleed Modal -->
+
+<!--transfer user sucess Modal -->
 <div class="modal fade" id="sucess_transfer" tabindex="-1" role="dialog" aria-labelledby="closeDrawerLabel"
     aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -1798,7 +1893,9 @@
 
             <div class="modal-footer">
 
-                <button type="button" class="xx" id="historyButton" data-dismiss="modal">Ok</button>
+                <button type="button" class="xx" id="historyButton" data-dismiss="modal">
+                    <p style="color: #060400;">Ok </p>
+                </button>
 
             </div>
         </div>
@@ -1829,7 +1926,7 @@
                         <button (click)="appendNumber2(1)">1</button>
                         <button (click)="appendNumber2(2)">2</button>
                         <button (click)="appendNumber2(3)">3</button>
-                        <button (click)="appendComma2()">,</button>
+                        <button (click)="appendComma2()">.</button>
                         <button class="append-zero-btn" (click)="appendNumber2(0)">0</button>
                         <button class="clear-btn" (click)="clearInput2()">Clear</button>
                     </div>
@@ -1837,9 +1934,12 @@
             </div>
             <div class="modal-footer">
                 <div class="modal-footer-buttons">
-                    <button type="button" class="btn btn-primary">Ok</button>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal"
-                        (click)="clearInput2()">Cancel</button>
+                    <button type="button" class="btn btn-primary" (click)="validateDrawerBleed()">
+                        <p style="color: #060400;">Ok </p>
+                    </button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clearInput2()">
+                        <p style="color: #060400;">Cancel </p>
+                    </button>
                 </div>
             </div>
         </div>
@@ -1870,7 +1970,7 @@
                         <button (click)="appendNumber3(1)">1</button>
                         <button (click)="appendNumber3(2)">2</button>
                         <button (click)="appendNumber3(3)">3</button>
-                        <button (click)="appendComma3()">,</button>
+                        <button (click)="appendComma3()">.</button>
                         <button class="append-zero-btn" (click)="appendNumber3(0)">0</button>
                         <button class="clear-btn" (click)="clearInput3()">Clear</button>
                     </div>
@@ -1878,10 +1978,13 @@
             </div>
             <div class="modal-footer">
                 <div class="modal-footer-buttons">
-                    <button type="button" class="btn btn-primary" data-dismiss="modal" data-toggle="modal"
-                        data-target="#sucess">Ok</button>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal"
-                        (click)="clearInput3()">Cancel</button>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#sucess"
+                        (click)="handleCashInOk()">
+                        <p style="color: #060400;">Ok</p>
+                    </button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clearInput3()">
+                        <p style="color: #060400;">Cancel</p>
+                    </button>
                 </div>
             </div>
         </div>
@@ -1995,11 +2098,14 @@
 
                 </div>
                 <div class="modal-footer">
-
-                    <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal"
-                        id="cancelButton">Close</button>
                     <button type="button" class="btn btn-sm btn-primary me-2" id="historyButton"
-                        (click)="printContent2()">Print</button>
+                    (click)="printContent2()">
+                    <p style="color: #060400;">Print </p>
+                </button>
+                    <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal" id="cancelButton">
+                        <p style="color: #060400;">Close</p>
+                    </button>
+                   
                 </div>
             </div>
         </div>
@@ -2048,9 +2154,12 @@
 
 
                     <button type="button" class="btn btn-sm btn-primary me-2" id="historyButton"
-                        (click)="printContent3()">Print</button>
-                    <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal"
-                        id="cancelButton">Close</button>
+                        (click)="printContent3()">
+                        <p style="color: #060400;">Print </p>
+                    </button>
+                    <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal" id="cancelButton">
+                        <p style="color: #060400;">Close</p>
+                    </button>
                 </div>
 
 

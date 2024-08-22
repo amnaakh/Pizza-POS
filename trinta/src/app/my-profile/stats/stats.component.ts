@@ -53,8 +53,8 @@ export class StatsComponent implements OnInit {
   recipientInput2: string = '';
   payoutReasons: string[] = [];
   recipients: string[] = [];
- 
-
+  isPayoutSuccessVisible = false;
+  isCashInSuccessVisible= false;
   get totalDue(): number {
     return this.users.reduce((total, user) => total + user.Due, 0);
   }
@@ -79,7 +79,9 @@ export class StatsComponent implements OnInit {
   }
 
   addDeclaredTip() {
+   
     const amount = parseFloat(this.calculatorInput);
+    
     if (!isNaN(amount)) {
       const currentTime = new Date().toLocaleString();
       this.declaredTips.push({ time: currentTime ,amount: amount });
@@ -112,8 +114,8 @@ export class StatsComponent implements OnInit {
   }
 
   appendComma(): void {
-    if (!this.calculatorInput.includes(',')) {
-      this.calculatorInput += ',';
+    if (!this.calculatorInput.includes('.')) {
+      this.calculatorInput += '.';
     }
   }
 
@@ -140,8 +142,8 @@ export class StatsComponent implements OnInit {
   }
 
   appendComma1(): void {
-    if (!this.calculatorInput1.includes(',')) {
-      this.calculatorInput1 += ',';
+    if (!this.calculatorInput1.includes('.')) {
+      this.calculatorInput1 += '.';
     }
   }
 
@@ -167,8 +169,8 @@ export class StatsComponent implements OnInit {
   }
 
   appendComma2(): void {
-    if (!this.calculatorInput2.includes(',')) {
-      this.calculatorInput2 += ',';
+    if (!this.calculatorInput2.includes('.')) {
+      this.calculatorInput2 += '.';
     }
   }
 
@@ -194,8 +196,8 @@ export class StatsComponent implements OnInit {
   }
 
   appendComma3(): void {
-    if (!this.calculatorInput3.includes(',')) {
-      this.calculatorInput3 += ',';
+    if (!this.calculatorInput3.includes('.')) {
+      this.calculatorInput3 += '.';
     }
   }
 
@@ -220,8 +222,8 @@ export class StatsComponent implements OnInit {
   }
 
   appendComma4(): void {
-    if (!this.calculatorInput4.includes(',')) {
-      this.calculatorInput4 += ',';
+    if (!this.calculatorInput4.includes('.')) {
+      this.calculatorInput4 += '.';
     }
   }
 
@@ -243,6 +245,55 @@ export class StatsComponent implements OnInit {
       this.calculatorInput4 = (value - 1).toString().replace('.', ',');
     }
   }
+
+  handlePayoutOk() {
+    if (!this.calculatorInput4 || this.calculatorInput4.trim() === '') {
+        alert('Please enter payout amount');
+    } else {
+      
+      this.closePayoutModal();
+        this.isPayoutSuccessVisible = true;
+    }
+}
+closePayoutModal() {
+  const payoutModal = document.getElementById('payout');
+  if (payoutModal) {
+      payoutModal.classList.remove('show');
+      payoutModal.setAttribute('aria-hidden', 'true');
+      payoutModal.setAttribute('style', 'display: none;');
+      const modalBackdrop = document.querySelector('.modal-backdrop');
+      if (modalBackdrop) {
+          modalBackdrop.parentNode?.removeChild(modalBackdrop);
+      }
+  }}
+  handleCashInOk() {
+    if (!this.calculatorInput3 || this.calculatorInput3.trim() === '' || this.calculatorInput3 === '0') {
+      alert('Amount must be greater than zero');
+  }  else {
+      this.closeCashInModal();
+        this.isCashInSuccessVisible = true;
+    }
+}
+
+closeCashInModal() {
+  const cashinModal = document.getElementById('cashIn');
+  if (cashinModal) {
+    cashinModal.classList.remove('show');
+      cashinModal.setAttribute('aria-hidden', 'true');
+      cashinModal.setAttribute('style', 'display: none;');
+      const modalBackdrop = document.querySelector('.modal-backdrop');
+      if (modalBackdrop) {
+          modalBackdrop.parentNode?.removeChild(modalBackdrop);
+      }
+  }}
+
+validateDrawerBleed() {
+  if (!this.calculatorInput2 || this.calculatorInput2.trim() === '') {
+      alert('Invalid number');
+  } 
+}
+
+
 
 
   onUserSelect(event: Event): void {

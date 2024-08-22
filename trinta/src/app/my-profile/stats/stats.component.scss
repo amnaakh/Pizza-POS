@@ -333,7 +333,7 @@ button:hover {
   }
   
   .modal-title {
-    color: #007bff; /* Primary color for title */
+    color: #90551b; /* Primary color for title */
     font-weight: bold; /* Bold text */
   }
   
@@ -346,11 +346,11 @@ button:hover {
   }
   
   .modal-footer .btn-primary {
-    background-color: #007bff; /* Primary button color */
+    background-color: #fceabd; /* Primary button color */
   }
   
   .modal-footer .btn-secondary {
-    background-color: #dc3545; /* Secondary button color */
+    background-color: #fceabd; /* Secondary button color */
   }
   
   .modal-footer .btn-sm {
@@ -635,3 +635,20 @@ body.modal-open {
     }
 
 
+    .no-borders {
+      border-collapse: collapse;
+  }
+  
+  .no-borders td {
+      border: none;
+      font-weight: normal;
+  }
+  
+  .no-borders td[colspan="5"] {
+      text-align: center;
+  }
+  
+  .no-borders thead td {
+      font-weight: normal;
+  }
+  
