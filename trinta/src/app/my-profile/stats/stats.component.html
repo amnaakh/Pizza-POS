@@ -703,7 +703,7 @@
                         <form>
                             <label for="userOptions">Select User :</label>
                             <select id="userOptions" name="userOptions" class="form-control"
-                                (change)="onUserSelect($event)">
+                                  (change)="onUserSelect($event)">
                                 <option *ngFor="let user of users" [value]="user.id">{{user.username}}
                                 </option>
                             </select>
